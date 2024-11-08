@@ -1,0 +1,18 @@
+.header
+  z-index: 2
+  padding: 20px
+  position: sticky
+  top: 0
+  background-color: var(--colors-header, var(--mantine-color-body))
+  pointer-events: none
+  > *
+    pointer-events: all
+
+  &::before
+    content: " "
+    pointer-events: none
+    opacity: var(--header-opacity, 1)
+    position: absolute
+    inset: 0
+    left: -50px
+    box-shadow: 25px -15px 35px 0px black
