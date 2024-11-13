@@ -4,7 +4,7 @@ export const COLORS: { [color: string]: string } = {
   body: "#DCBEBE",
   light: "#DCBEBE",
   header: "#381705",
-  footer: "#381705",
+  footer: "#451414",
   headerIcons: "#FFFFFF",
 };
 
@@ -84,7 +84,8 @@ Object.entries(COLORS).map(([key, value]) => {
 export const appTheme = createTheme({
   /** Put your mantine theme override here */
   fontFamily: "Cabin",
-  // primaryColor: "boastful-blue",
+  primaryColor: "dark",
+
   cursorType: "pointer",
   colors: {
     // "boastful-blue": LB_COLOR_PALETTES.blue,
@@ -93,12 +94,38 @@ export const appTheme = createTheme({
     // "boastful-red": LB_COLOR_PALETTES.red,
     // "boastful-purple": LB_COLOR_PALETTES.purple,
     // dark: LB_COLOR_PALETTES.cyan,
+    // white: [
+    //   "#ffffff",
+    //   "#ffffff",
+    //   "#ffffff",
+    //   "#ffffff",
+    //   "#ffffff",
+    //   "#ffffff",
+    //   "#ffffff",
+    //   "#ffffff",
+    //   "#ffffff",
+    //   "#ffffff",
+    // ],
+    dark: [
+      "#f7f3f2",
+      "#e8e6e5",
+      "#d2c9c6",
+      "#bdaaa4",
+      "#ab9087",
+      "#a17f74",
+      "#894d4d",
+      "#7e4141",
+      "#451414",
+      "#381705",
+    ],
   },
   components: {
     Anchor: Anchor.extend({
       defaultProps: {
         underline: "never",
         fw: "bolder",
+        // color: "white",
+        c: "white",
       },
     }),
     "Menu.Dropdown": Menu.Dropdown.extend({

@@ -1,5 +1,9 @@
 export const DEFAULT_LOCALE = {
   email: "Email",
+  home: "Home",
+  services: "Services",
+  portfolio: "Portfolio",
+  about: "About",
 };
 
 type Key = keyof typeof DEFAULT_LOCALE;

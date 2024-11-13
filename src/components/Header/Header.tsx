@@ -1,27 +1,28 @@
-import { Group, useComputedColorScheme } from "@mantine/core";
+// import { Group, useComputedColorScheme } from "@mantine/core";
+import { Group } from "@mantine/core";
 import HomeIcon from "./components/HomeIcon";
 import useSize from "localboast/hooks/useSize";
-import useUpdatingRef from "localboast/hooks/useUpdatingRef";
-import cx from "localboast/utils/cx";
+// import useUpdatingRef from "localboast/hooks/useUpdatingRef";
 import { useEffect } from "react";
 // import * as LINKS from "constants/links";
 // import { IconApps, IconHammer, IconHeartHandshake, IconVideo, IconVocabulary } from "@tabler/icons-react";
 // import getCopy from "constants/localisation";
 
 import styles from "./styles.module.sass";
+import Navigation from "./components/Navigation";
 // import Paths from "Paths";
 // import HeaderNavItem from "./components/HeaderNavItem/HeaderNavItem";
 
-interface HeaderProps {
-  scrollTop: number;
-}
+// interface HeaderProps {
+//   scrollTop: number;
+// }
 
-const SCROLL_FADE_RATE = 0.4;
-const SCROLL_MIN_OPACITY = 0.3;
+// const SCROLL_FADE_RATE = 0.4;
+// const SCROLL_MIN_OPACITY = 0.3;
 
-const Header = (props: HeaderProps) => {
+const Header = () => {
   const { size, setRef } = useSize();
-  const colorScheme = useComputedColorScheme();
+  // const colorScheme = useComputedColorScheme();
 
   // Need to know header height so body can adjust to fit it
   useEffect(() => {
@@ -30,29 +31,29 @@ const Header = (props: HeaderProps) => {
     }
   }, [size?.height]);
 
-  const updateHeaderColorRef = useUpdatingRef(() => {
-    let alpha = 1;
+  // const updateHeaderColorRef = useUpdatingRef(() => {
+  //   let alpha = 1;
 
-    const headerHeight = size?.height;
-    const offset = props.scrollTop;
+  //   const headerHeight = size?.height;
+  //   const offset = props.scrollTop;
 
-    if (!(headerHeight && offset)) {
-      alpha = 1;
-    } else {
-      alpha = Math.max(SCROLL_MIN_OPACITY, (headerHeight - offset * SCROLL_FADE_RATE) / headerHeight);
-    }
+  //   if (!(headerHeight && offset)) {
+  //     alpha = 1;
+  //   } else {
+  //     alpha = Math.max(SCROLL_MIN_OPACITY, (headerHeight - offset * SCROLL_FADE_RATE) / headerHeight);
+  //   }
 
-    document.documentElement.style.setProperty("--header-opacity", `${alpha * 100}%`);
-  });
+  //   document.documentElement.style.setProperty("--header-opacity", `${alpha * 100}%`);
+  // });
 
-  // Update header color on colorScheme or scrollTop change
-  useEffect(() => {
-    updateHeaderColorRef.current();
-  }, [props.scrollTop, colorScheme, updateHeaderColorRef]);
+  // // Update header color on colorScheme or scrollTop change
+  // useEffect(() => {
+  //   updateHeaderColorRef.current();
+  // }, [props.scrollTop, colorScheme, updateHeaderColorRef]);
 
   return (
     <Group
-      justify="space-between"
+      display="grid"
       wrap="nowrap"
       id="page-header"
       ref={(ref) => {
@@ -60,9 +61,8 @@ const Header = (props: HeaderProps) => {
       }}
       className={styles.header}
     >
-      <Group wrap="nowrap">
-        <HomeIcon />
-      </Group>
+      <Navigation />
+      <HomeIcon />
       <Group gap={20}></Group>
     </Group>
   );

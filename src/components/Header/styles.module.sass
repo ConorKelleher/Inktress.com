@@ -1,18 +1,25 @@
 .header
   z-index: 2
-  padding: 20px
   position: sticky
+  padding: 20px
   top: 0
+  row-gap: 0 !important
   background-color: var(--colors-header, var(--mantine-color-body))
   pointer-events: none
+  grid-template-columns: 1fr 1fr 1fr
   > *
     pointer-events: all
+
+  @media (max-width: $mantine-breakpoint-xs)
+    padding: 10px
+  @media (max-width: $mantine-breakpoint-md)
+    grid-template-columns: 1fr 1fr
 
   &::before
     content: " "
     pointer-events: none
-    opacity: var(--header-opacity, 1)
+    opacity: 0.3
     position: absolute
     inset: 0
     left: -50px
-    box-shadow: 25px -15px 35px 0px black
+    box-shadow: 25px -15px 10px 25px black

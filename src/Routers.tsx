@@ -3,6 +3,7 @@ import ExternalLinkPage from "Pages/ExternalLinkPage";
 import { ExternalLinkMappings } from "Pages/ExternalLinkPage/constants";
 import HomePage from "Pages/HomePage";
 import Root from "Pages/Root";
+import ServicesPage from "Pages/ServicesPage";
 import Paths from "Paths";
 import { ReactNode } from "react";
 
@@ -30,6 +31,10 @@ export const RootRouter = wrapRoutesInErrors([
       {
         path: Paths.HomePage,
         element: <HomePage />,
+      },
+      {
+        path: Paths.Services,
+        element: <ServicesPage />,
       },
     ],
   },

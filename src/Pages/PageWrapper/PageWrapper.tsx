@@ -27,7 +27,7 @@ const PageWrapper = (props: React.PropsWithChildren) => {
         className={styles.scrollArea}
         onScrollPositionChange={setScrollPos}
       >
-        <Header scrollTop={scrollPos.y} />
+        <Header />
         <Body>{props.children}</Body>
         <Footer scrollTop={scrollPos.y} scrollTo={scrollTo} scrollBy={scrollBy} viewportRef={viewportRef} />
       </ScrollArea.Autosize>
