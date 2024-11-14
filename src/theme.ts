@@ -1,4 +1,4 @@
-import { Anchor, Menu, createTheme } from "@mantine/core";
+import { Anchor, MantineColorsTuple, Menu, createTheme } from "@mantine/core";
 
 export const COLORS: { [color: string]: string } = {
   body: "#DCBEBE",
@@ -35,7 +35,9 @@ Object.entries(COLORS).map(([key, value]) => {
 // LB_COLORS.darkFooterIcons = LB_COLORS.boastfulBlue;
 
 // // All generated from the base branding colour scheme with https://mantine.dev/colors-generator
-// const LB_COLOR_PALETTES: { [color: string]: MantineColorsTuple } = {
+export const COLOR_PALETTES: { [color: string]: MantineColorsTuple } = {
+  dark: ["#f7f3f2", "#e8e6e5", "#d2c9c6", "#bdaaa4", "#ab9087", "#a17f74", "#A87272", "#7C3F3F", "#451414", "#381705"],
+};
 //   blue: ["#e8fbfe", "#d9f1f6", "#b3e2eb", "#8ad2df", "#6ac5d5", "#55bccf", "#47b8cd", "#36a1b5", "#2790a2", "#007d8f"],
 //   yellow: [
 //     "#fff9e0",
@@ -88,36 +90,7 @@ export const appTheme = createTheme({
 
   cursorType: "pointer",
   colors: {
-    // "boastful-blue": LB_COLOR_PALETTES.blue,
-    // "boastful-yellow": LB_COLOR_PALETTES.yellow,
-    // "boastful-green": LB_COLOR_PALETTES.green,
-    // "boastful-red": LB_COLOR_PALETTES.red,
-    // "boastful-purple": LB_COLOR_PALETTES.purple,
-    // dark: LB_COLOR_PALETTES.cyan,
-    // white: [
-    //   "#ffffff",
-    //   "#ffffff",
-    //   "#ffffff",
-    //   "#ffffff",
-    //   "#ffffff",
-    //   "#ffffff",
-    //   "#ffffff",
-    //   "#ffffff",
-    //   "#ffffff",
-    //   "#ffffff",
-    // ],
-    dark: [
-      "#f7f3f2",
-      "#e8e6e5",
-      "#d2c9c6",
-      "#bdaaa4",
-      "#ab9087",
-      "#a17f74",
-      "#894d4d",
-      "#7e4141",
-      "#451414",
-      "#381705",
-    ],
+    dark: COLOR_PALETTES.dark,
   },
   components: {
     Anchor: Anchor.extend({

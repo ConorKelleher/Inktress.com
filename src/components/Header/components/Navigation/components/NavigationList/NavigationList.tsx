@@ -13,7 +13,7 @@ export interface NavigationListProps {
 export interface NavigationItemProps extends NavLinkProps, Pick<NavigationListProps, "onClickItem"> {}
 
 const NavigationItem = ({ onClickItem, ...navLinkProps }: NavigationItemProps) => (
-  <Haptic>
+  <Haptic focusScaleMultiplier={0.75}>
     <NavLink
       {...navLinkProps}
       onClick={() =>
