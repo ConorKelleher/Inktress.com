@@ -3,8 +3,8 @@ import ExternalLinkPage from "Pages/ExternalLinkPage";
 import { ExternalLinkMappings } from "Pages/ExternalLinkPage/constants";
 import HomePage from "Pages/HomePage";
 import Root from "Pages/Root";
-import ServicesPage from "Pages/ServicesPage";
-import Paths from "Paths";
+import ServicesPage, { SingleServicePage } from "Pages/ServicesPage";
+import Paths, { SERVICES_ROUTES } from "Paths";
 import { ReactNode } from "react";
 
 type Route = {
@@ -35,6 +35,10 @@ export const RootRouter = wrapRoutesInErrors([
       {
         path: Paths.Services,
         element: <ServicesPage />,
+        children: Object.values(SERVICES_ROUTES).map((servicePath) => ({
+          path: servicePath,
+          element: <SingleServicePage />,
+        })),
       },
     ],
   },

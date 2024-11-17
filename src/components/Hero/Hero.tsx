@@ -2,6 +2,7 @@ import { Anchor, Group, Image, Stack, Text } from "@mantine/core";
 import styles from "./styles.module.sass";
 import { Link } from "react-router-dom";
 import { CSSProperties } from "react";
+import { Haptic } from "localboast";
 
 export interface HeroProps {
   imageSrc: string;
@@ -28,7 +29,11 @@ const Hero = (props: HeroProps) => {
       <Stack className={styles.hero_text_section} gap="40px">
         <Text>{props.headingText}</Text>
         <Text>{props.bodyText}</Text>
-        {hasCTA && <Anchor {...anchorProps}>{props.ctaText}</Anchor>}
+        {hasCTA && (
+          <Haptic>
+            <Anchor {...anchorProps}>{props.ctaText}</Anchor>
+          </Haptic>
+        )}
       </Stack>
     </Group>
   );
