@@ -1,0 +1,20 @@
+.slow_image_container
+  position: relative
+  display: flex
+  justify-content: center
+  height: 100%
+  width: 100%
+
+.slow_image
+  position: absolute
+  inset: 0
+  height: 100%
+  width: 100%
+  opacity: 1
+  animation: 0.25s ease-in 0s 1 appear
+
+@keyframes appear
+  0%
+    opacity: 0
+  100%
+    opacity: 1

@@ -1,10 +1,13 @@
+import AboutPage from "Pages/AboutPage";
+import ContactPage from "Pages/ContactPage";
 import ErrorPage from "Pages/ErrorPage";
 import ExternalLinkPage from "Pages/ExternalLinkPage";
 import { ExternalLinkMappings } from "Pages/ExternalLinkPage/constants";
 import HomePage from "Pages/HomePage";
+import PortfolioPage, { SinglePortfolioPage } from "Pages/PortfolioPage";
 import Root from "Pages/Root";
 import ServicesPage, { SingleServicePage } from "Pages/ServicesPage";
-import Paths, { SERVICES_ROUTES } from "Paths";
+import Paths, { ServicesPaths } from "Paths";
 import { ReactNode } from "react";
 
 type Route = {
@@ -29,16 +32,32 @@ export const RootRouter = wrapRoutesInErrors([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: Paths.HomePage,
+        path: Paths.Home,
         element: <HomePage />,
       },
       {
         path: Paths.Services,
         element: <ServicesPage />,
-        children: Object.values(SERVICES_ROUTES).map((servicePath) => ({
+        children: ServicesPaths.map((servicePath) => ({
           path: servicePath,
           element: <SingleServicePage />,
         })),
+      },
+      {
+        path: Paths.Portfolio,
+        element: <PortfolioPage />,
+        children: ServicesPaths.map((portfolioPath) => ({
+          path: portfolioPath,
+          element: <SinglePortfolioPage />,
+        })),
+      },
+      {
+        path: Paths.About,
+        element: <AboutPage />,
+      },
+      {
+        path: Paths.Contact,
+        element: <ContactPage />,
       },
     ],
   },

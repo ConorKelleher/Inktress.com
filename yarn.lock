@@ -2773,6 +2773,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"blurhash@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "blurhash@npm:2.0.5"
+  checksum: 75d5f042b5bb8ead977524a985048378a033af866534abbaee73c80030cc9fc34e6c5b7d483c68bbdb600e0ae438f2ea6140b1f46d75fcfa57a902208ae8b85e
+  languageName: node
+  linkType: hard
+
 "bowser@npm:^2.11.0":
   version: 2.11.0
   resolution: "bowser@npm:2.11.0"
@@ -4084,6 +4091,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.0.3"
     aws-sdk: "npm:^2.1515.0"
     bluebird: "npm:^3.7.2"
+    blurhash: "npm:^2.0.5"
     env-cmd: "npm:^10.1.0"
     eslint: "npm:^8.45.0"
     eslint-plugin-react-hooks: "npm:^4.6.0"

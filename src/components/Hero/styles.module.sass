@@ -22,7 +22,7 @@
   
   .hero_text_section
     height: 100%
-    padding: 20px
+    padding: 30px
     white-space: pre-wrap
     background: linear-gradient(138.46deg, var(--mantine-color-dark-6) 22.32%, var(--mantine-color-dark-7) 76.7%)
     justify-content: center
@@ -30,7 +30,7 @@
     p
       text-align: center
     p:nth-child(1)
-      font-size: 48px
+      font-size: 40px
       font-family: Alice !important
       line-height: 55px !important
     p:nth-child(2)
@@ -48,7 +48,16 @@
     grid-template-rows: 1fr 1fr
 
     .hero_text_section
+      padding: 10px
       gap: 12px !important
+      p:nth-child(1)
+        font-size: 32px
+        line-height: 30px !important
+      p:nth-child(2)
+        font-size: 16px
+
+  @media (max-width: $mantine-breakpoint-xs)
+    .hero_text_section
       p:nth-child(1)
         font-size: 26px
         line-height: 30px !important

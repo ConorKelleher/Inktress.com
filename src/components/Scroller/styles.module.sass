@@ -1,0 +1,36 @@
+@function strip-unit($number)
+  @return $number / ($number * 0 + 1)
+
+.scrollerWrapper
+  max-width: 100%
+
+.scrollArea
+  --card-width: 350
+  --card-gap: 10
+  --haptic-margin: 5
+  --available-width: calc(var(--scroller-width, 1000) - (var(--haptic-margin) * 2))
+  --unclamped-card-count: calc((var(--available-width) + var(--card-gap)) / (var(--card-width) + var(--card-gap)))
+  --card-count: round(down, var(--unclamped-card-count), 1)
+  width: calc(1px * (var(--card-width) * var(--card-count) + (var(--card-gap) * (var(--card-count) - 1)) + (var(--haptic-margin) * 2)))
+
+  & :global .mantine-ScrollArea-viewport
+    padding-left: calc(1px * var(--haptic-margin))
+    padding-right: calc(1px * var(--haptic-margin))
+
+  .showMoreButton
+    right: calc(2px * var(--haptic-margin))
+
+  div[data-orientation="horizontal"]
+    bottom: 47px !important
+
+  .contentWrapper
+    gap: calc(1px * var(--card-gap))
+    > *
+      width: calc(1px * var(--card-width)) !important
+
+  @media (max-width: $mantine-breakpoint-md)
+    --card-width: 300
+  @media (max-width: $mantine-breakpoint-sm)
+    --card-width: 250
+  @media (max-width: $mantine-breakpoint-xs)
+    --card-width: 130

@@ -1,0 +1,58 @@
+.banner
+  position: relative
+  overflow: hidden
+  background: var(--mantine-color-dark-6)
+  height: 150px
+
+  .bannerContent
+    position: relative
+    height: 100%
+    padding: 0px 20px
+    gap: 10px
+
+    &:before,
+    &:after
+      content: ""
+      position: absolute
+      inset: 0
+      --size: 37.5px
+      --color: var(--mantine-color-dark-9)
+      /* Our gradient, which we'll use twice in each variant. */
+      /* In this example we'll store it in a custom property to unclutter the remaining CSS. */
+      --gradient1: linear-gradient(to top right, var(--color) 25%, transparent 0, transparent 75%, var(--color) 0)
+      --gradient2: linear-gradient(to bottom right, var(--color) 25%, transparent 0, transparent 75%, var(--color) 0)
+      --fullback-background: var(--gradient1) calc(var(--size) / 2) calc(var(--size) / 2) / var(--size) var(--size), var(--gradient2) calc(var(--size) / 2) calc(var(--size) / 2) / var(--size) var(--size)
+      background: var(--fullback-background), var(--fullback-background), var(--fullback-background) !important
+      // background-repeat: no-repeat
+
+    &:before
+      right: 100%
+      left: -50vw
+      transform: rotate(180deg)
+    &:after
+      right: -50vw
+      left: 100%
+
+  .bannerTitle
+    font-size: 1.8rem !important
+
+  
+  @media (max-width: $mantine-breakpoint-md)
+    height: 140px
+    .bannerContent
+      &:before,
+      &:after
+        --size: 35px
+    .bannerTitle
+      font-size: 1.6rem !important
+      line-height: 1.8rem !important
+
+  @media (max-width: $mantine-breakpoint-sm)
+    height: 130px
+    .bannerContent
+      &:before,
+      &:after
+        --size: 32.5px
+    .bannerTitle
+      font-size: 1.2rem !important
+      line-height: 1.6rem !important

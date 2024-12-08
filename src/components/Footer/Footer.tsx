@@ -1,19 +1,44 @@
-import React, { MutableRefObject, forwardRef } from "react";
-import { Anchor, Box, Stack, Text } from "@mantine/core";
+import React, { FunctionComponent, MutableRefObject, forwardRef } from "react";
+import { Link } from "react-router-dom";
+import { Anchor, Box, Stack } from "@mantine/core";
 // import { Anchor, Box, Stack, Text, lighten, useComputedColorScheme } from "@mantine/core";
 import styles from "./styles.module.sass";
 import * as LINKS from "constants/links";
 import getCopy from "constants/localisation";
+import Paths from "Paths";
+import { Haptic } from "localboast";
 // import { LB_COLORS } from "theme";
 
 interface FooterAnchorProps extends React.PropsWithChildren {
   href?: string;
+  to?: string;
   target?: string;
   rel?: string;
 }
 
-const FooterAnchor = (props: FooterAnchorProps) => {
-  return <Anchor className={styles.footer_anchor} target="_blank" rel="noopener noreferrer" {...props} />;
+const FooterAnchor = ({ href, to, ...otherProps }: FooterAnchorProps) => {
+  const anchorProps = {
+    className: styles.footer_anchor,
+    target: undefined,
+    rel: undefined,
+    to: undefined as string | undefined,
+    href: undefined as string | undefined,
+    component: undefined as FunctionComponent<any> | undefined,
+    ...otherProps,
+  };
+  if (to) {
+    anchorProps.to = to;
+    anchorProps.component = Link;
+  } else {
+    anchorProps.href = href;
+    anchorProps.target = "_blank";
+    anchorProps.rel = "noopener noreferrer";
+  }
+  return (
+    <Haptic>
+      <Anchor {...anchorProps} underline="hover" />
+    </Haptic>
+  );
 };
 
 interface FooterProps {
@@ -28,7 +53,7 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>((_props, ref) => {
   // const backgroundColor = lighten(LB_COLORS.boastfulYellow, 0.2);
 
   return (
-    <div tabIndex={0} className={styles.footer_wrapper}>
+    <div className={styles.footer_wrapper}>
       <Box
         id="page-footer"
         className={styles.footer}
@@ -39,9 +64,7 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>((_props, ref) => {
       >
         <div>
           <Stack>
-            <Text size="md" fw="700">
-              Contact
-            </Text>
+            <FooterAnchor to={Paths.Contact}>{getCopy("contact")}</FooterAnchor>
             <FooterAnchor href={LINKS.MAILTO}>{getCopy("email")}</FooterAnchor>
           </Stack>
         </div>

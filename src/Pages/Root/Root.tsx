@@ -1,5 +1,5 @@
 import ErrorBoundaryDisplay from "components/ErrorBoundaryDisplay";
-import PageWrapper from "Pages/PageWrapper";
+import AppWrapper from "components/AppWrapper";
 import { Outlet } from "react-router-dom";
 
 export const UnwrappedRoot = () => (
@@ -9,9 +9,9 @@ export const UnwrappedRoot = () => (
 );
 
 const Root = () => (
-  <PageWrapper>
+  <AppWrapper>
     <UnwrappedRoot />
-  </PageWrapper>
+  </AppWrapper>
 );
 
 export default Root;

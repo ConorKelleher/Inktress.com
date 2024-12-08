@@ -6,6 +6,7 @@ import { COLORS } from "theme";
 const Body = (props: PropsWithChildren) => {
   return (
     <Box id="page-body" className={styles.body_box} style={{ backgroundColor: COLORS.body }}>
+      <div id="dropdown-container" />
       {props.children}
     </Box>
   );

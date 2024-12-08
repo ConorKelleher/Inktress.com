@@ -1,0 +1,19 @@
+.page_header
+  position: relative
+  height: 325px
+  width: 100%
+  img
+    height: 100%
+  &::after
+    box-shadow: 0px 4px 23.9px 9px #00000082 inset
+    content: ''
+    display: block
+    position: absolute
+    inset: 0
+
+  @media (max-width: $mantine-breakpoint-md)
+    height: 275px
+  @media (max-width: $mantine-breakpoint-sm)
+    height: 225px
+  @media (max-width: $mantine-breakpoint-xs)
+    height: 125px

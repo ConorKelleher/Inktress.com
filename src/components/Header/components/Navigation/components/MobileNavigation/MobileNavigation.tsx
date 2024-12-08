@@ -40,7 +40,7 @@ const MobileNavigation = (props: UnstyledButtonProps) => {
   const bodyElementRef = useRef<HTMLElement | undefined>();
 
   useEffect(() => {
-    bodyElementRef.current = document.getElementById("page-body") || undefined;
+    bodyElementRef.current = document.getElementById("dropdown-container") || undefined;
   }, []);
 
   return (

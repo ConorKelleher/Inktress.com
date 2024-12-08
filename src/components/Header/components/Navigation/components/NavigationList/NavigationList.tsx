@@ -26,7 +26,7 @@ const NavigationItem = ({ onClickItem, ...navLinkProps }: NavigationItemProps) =
 const NavigationList = ({ withHome, ...navItemProps }: NavigationListProps) => (
   <>
     {!!withHome && (
-      <Anchor component={NavigationItem} to={Paths.HomePage} {...navItemProps}>
+      <Anchor component={NavigationItem} to={Paths.Home} {...navItemProps}>
         {getCopy("home")}
       </Anchor>
     )}

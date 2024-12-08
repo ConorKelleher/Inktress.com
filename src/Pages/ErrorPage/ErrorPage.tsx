@@ -1,7 +1,8 @@
 import { Anchor, Stack, Text } from "@mantine/core";
-import PageWrapper from "Pages/PageWrapper";
+import AppWrapper from "components/AppWrapper";
 import usePageTitle from "localboast/hooks/usePageTitle";
 import { MAILTO } from "../../constants/links";
+import getCopy from "constants/localisation";
 
 export const ErrorPageContent = () => (
   <Stack align="center" justify="center" style={{ width: "100%" }}>
@@ -22,12 +23,12 @@ export const ErrorPageContent = () => (
 );
 
 const ErrorPage = () => {
-  usePageTitle("404 | Inkantress");
+  usePageTitle(getCopy("404Title"));
 
   return (
-    <PageWrapper>
+    <AppWrapper>
       <ErrorPageContent />
-    </PageWrapper>
+    </AppWrapper>
   );
 };
 
