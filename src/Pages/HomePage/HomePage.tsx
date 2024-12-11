@@ -27,7 +27,7 @@ const HomePage = () => {
         {Object.entries(Services).map(([serviceKey, serviceInfo]) => (
           <ImageCard
             key={serviceKey}
-            cardText={serviceInfo.text}
+            cardText={serviceInfo.title}
             ctaTo={`${Paths.Services}/${serviceKey}`}
             imageId={serviceInfo.thumbImageId}
           />

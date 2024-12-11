@@ -17,7 +17,7 @@ export const ServicesPageRootContent = () => {
         {Object.entries(Services).map(([serviceKey, serviceInfo]) => (
           <ImageCard
             key={serviceKey}
-            cardText={serviceInfo.text}
+            cardText={serviceInfo.title}
             ctaTo={serviceKey}
             imageId={serviceInfo.thumbImageId}
           />

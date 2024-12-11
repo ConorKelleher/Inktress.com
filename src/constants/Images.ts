@@ -15,7 +15,8 @@ import SocialProducts from "assets/images/social_products.jpg";
 import HobGob from "assets/images/hob_gob.jpg";
 import CosyGame from "assets/images/cosy_game.jpg";
 import AmandaFlyer from "assets/images/amanda_flyer.jpg";
-import CandidKombucha from "assets/images/candid_kombucha.jpg";
+import AmandaFlyers from "assets/images/amanda_flyers.jpg";
+import CandidKombuchaCan from "assets/images/candid_kombucha_can.jpg";
 import AlbumCoverHeader from "assets/images/album_cover_header.jpg";
 import BookCoverHeader from "assets/images/book_cover_header.jpg";
 import BrandingHeader from "assets/images/branding_header.jpg";
@@ -28,6 +29,14 @@ import IllustrationServicesHeader from "assets/images/illustration_services_head
 import PostersHeader from "assets/images/posters_header.jpg";
 import ScenesHeader from "assets/images/scenes_header.jpg";
 import SocialsHeader from "assets/images/socials_header.jpg";
+import AmandaLogo from "assets/images/amanda_logo.jpg";
+import GraveGirlsAlbum from "assets/images/grave_girls_album.jpg";
+import GraveGirlsBranding from "assets/images/grave_girls_branding.jpg";
+import DndPoster from "assets/images/dnd_poster.jpg";
+import BookCoverSocials from "assets/images/book_cover_socials.jpg";
+import AmandaBusinessSuite from "assets/images/amanda_business_suite.jpg";
+import TurnMeOn from "assets/images/turn_me_on.jpg";
+import Clara from "assets/images/clara.jpg";
 
 export type Image = {
   imageURL: string;
@@ -53,6 +62,7 @@ export const ImageKeys = {
   BusinessSuiteThumb: "BusinessSuiteThumb",
   CharactersHeader: "CharactersHeader",
   CharactersThumb: "CharactersThumb",
+  Clara: "Clara",
   DesignServicesHeader: "DesignServicesHeader",
   DesignServicesThumb: "DesignServicesThumb",
   LogoDesignHeader: "LogoDesignHeader",
@@ -67,6 +77,18 @@ export const ImageKeys = {
   ScenesThumb: "ScenesThumb",
   SocialsHeader: "SocialsHeader",
   SocialsThumb: "SocialsThumb",
+  AmandaFlyers: "AmandaFlyers",
+  AmandaLogo: "AmandaLogo",
+  GraveGirlsAlbum: "GraveGirlsAlbum",
+  GraveGirlsBranding: "GraveGirlsBranding",
+  DndPoster: "DndPoster",
+  PlantSalePoster: "PlantSalePoster",
+  BookCoverSocials: "BookCoverSocials",
+  AmandaBusinessSuite: "AmandaBusinessSuite",
+  TurnMeOn: "TurnMeOn",
+  UprootedCover: "UprootedCover",
+  CosyGame: "CosyGame",
+  CandidKombuchaCan: "CandidKombuchaCan",
 };
 
 export const Images: Record<keyof typeof ImageKeys, Image> = {
@@ -83,6 +105,9 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
       "|OLgCV0frq%MbcM|%2xsxGVsV@t7S1IoM|ayxa%L~V%MM|aextt7RjWCNGxtWARQogt7aef6ozWBr@%2ozWAn%s;ofNFNG%Ms:WAkCofe.ayWXRjniaeofa#RjV@Rjofozxbt6jsayofofogWBRjMyRjjZozj[M{RjkDoz",
     height: 932,
     width: 3712,
+  },
+  Clara: {
+    imageURL: Clara,
   },
   ContactHeader: {
     imageURL: ContactHeader,
@@ -146,8 +171,20 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
     imageURL: AmandaFlyer,
   },
   FlyersThumb: {
-    imageURL: CandidKombucha,
+    imageURL: CandidKombuchaCan,
   },
+  UprootedCover: { imageURL: UprootedCover },
+  AmandaFlyers: { imageURL: AmandaFlyers },
+  AmandaLogo: { imageURL: AmandaLogo },
+  GraveGirlsAlbum: { imageURL: GraveGirlsAlbum },
+  GraveGirlsBranding: { imageURL: GraveGirlsBranding },
+  DndPoster: { imageURL: DndPoster },
+  PlantSalePoster: { imageURL: PlantSalePoster },
+  BookCoverSocials: { imageURL: BookCoverSocials },
+  AmandaBusinessSuite: { imageURL: AmandaBusinessSuite },
+  TurnMeOn: { imageURL: TurnMeOn },
+  CandidKombuchaCan: { imageURL: CandidKombuchaCan },
+  CosyGame: { imageURL: CosyGame },
   AlbumCoverHeader: {
     imageURL: AlbumCoverHeader,
     blurHash:

@@ -29,6 +29,7 @@ const Hamburger = ({ isOpen: propsIsOpen, onChange, ...buttonProps }: HamburgerP
   return (
     <UnstyledButton
       {...buttonProps}
+      tabIndex={0}
       variant="subtle"
       className={cx(style.hamburger, { [style.hamburger_open]: isOpen })}
       onClick={() => setIsOpen((wasOpen) => !wasOpen)}

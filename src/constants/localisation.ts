@@ -22,6 +22,7 @@ export const DEFAULT_LOCALE = {
   clientReviews: "Client Reviews",
   getInTouchBannerTitle: "Can't Find What\nYou're Looking For?",
   getInTouchBannerCTA: "Get In Touch",
+  bookConsultationCTA: "Book Your Free Consultation",
   nickJoesburyQuote:
     "Creative and professional, done a logo for us and had one back very quickly  exactly how we wanted with only giving her a vague description!! Amazing all round.",
   aboutPageContent: AboutPageContent,

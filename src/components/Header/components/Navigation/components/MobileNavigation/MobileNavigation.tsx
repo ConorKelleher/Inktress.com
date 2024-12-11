@@ -54,13 +54,21 @@ const MobileNavigation = (props: UnstyledButtonProps) => {
         opened={opened}
         onClose={close}
         withCloseButton={false}
+        title="Open Navigation"
+        keepMounted
+        closeButtonProps={{ "aria-label": "Close Navigation" }}
         portalProps={{ target: bodyElementRef.current }}
       >
-        <Stack mt="var(--header-height)">
+        <Stack mt="var(--header-height)" component="navigation">
           <NavigationList withHome onClickItem={() => setPathChanged(true)} />
         </Stack>
       </Drawer>
-      <Hamburger {...props} isOpen={opened} onChange={(isOpen) => (isOpen ? open() : close())} />
+      <Hamburger
+        aria-label={opened ? "Close Navigation" : "Open Navigation"}
+        {...props}
+        isOpen={opened}
+        onChange={(isOpen) => (isOpen ? open() : close())}
+      />
       {/* <Button {...props} onClick={open}>
         Open Drawer
       </Button> */}

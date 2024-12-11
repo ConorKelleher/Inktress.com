@@ -53,6 +53,7 @@ const Header = () => {
 
   return (
     <Group
+      component="header"
       display="grid"
       wrap="nowrap"
       id="page-header"

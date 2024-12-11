@@ -10,7 +10,7 @@ const HomeIcon = () => {
     <Group wrap="nowrap" className={styles.logoContainer}>
       <Anchor component={Link} to={Paths.Home} className={styles.logoButton}>
         <Haptic focusScaleMultiplier={0.5}>
-          <img role="link" src={InkantressLogo} className={styles.logo} />
+          <img alt="Inkantress logo" aria-label="Back to homepage" src={InkantressLogo} className={styles.logo} />
         </Haptic>
       </Anchor>
     </Group>
