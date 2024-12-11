@@ -3,7 +3,7 @@ import { useDisclosure } from "@mantine/hooks";
 import style from "./styles.module.sass";
 import NavigationList from "../NavigationList";
 import { useLocation } from "react-router-dom";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Hamburger from "components/Hamburger";
 
 const CLOSE_TIMEOUT = 200;
@@ -21,6 +21,10 @@ const MobileNavigation = (props: UnstyledButtonProps) => {
   useEffect(() => {
     if (pathChanged) {
       if (opened) {
+        if (closeTimeoutRef.current) {
+          clearTimeout(closeTimeoutRef.current);
+          closeTimeoutRef.current = null;
+        }
         closeTimeoutRef.current = setTimeout(() => {
           clearTimeout(closeTimeoutRef.current!);
           closeTimeoutRef.current = null;
@@ -29,13 +33,16 @@ const MobileNavigation = (props: UnstyledButtonProps) => {
       }
       setPathChanged(false);
     }
+  }, [pathChanged, close, opened]);
+
+  useEffect(() => {
     return () => {
       if (closeTimeoutRef.current) {
-        // clearTimeout(closeTimeoutRef.current);
-        // closeTimeoutRef.current = null;
+        clearTimeout(closeTimeoutRef.current);
+        closeTimeoutRef.current = null;
       }
     };
-  }, [pathChanged, close, opened]);
+  }, []);
 
   const bodyElementRef = useRef<HTMLElement | undefined>();
 
@@ -59,7 +66,7 @@ const MobileNavigation = (props: UnstyledButtonProps) => {
         closeButtonProps={{ "aria-label": "Close Navigation" }}
         portalProps={{ target: bodyElementRef.current }}
       >
-        <Stack mt="var(--header-height)" component="navigation">
+        <Stack mt="var(--header-height)" component="nav">
           <NavigationList withHome onClickItem={() => setPathChanged(true)} />
         </Stack>
       </Drawer>

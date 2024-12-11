@@ -1,5 +1,5 @@
 import { Stack } from "@mantine/core";
-import ArrowButton from "components/ArrowButton/ArrowButton";
+import ArrowLink from "components/ArrowLink";
 import FancyTitle from "components/FancyTitle";
 import getCopy from "constants/localisation";
 import Paths from "Paths";
@@ -12,7 +12,7 @@ const GetInTouchBanner = () => {
         <FancyTitle c="unset" className={styles.bannerTitle}>
           {getCopy("getInTouchBannerTitle")}
         </FancyTitle>
-        <ArrowButton ctaText={getCopy("getInTouchBannerCTA")} ctaTo={`/${Paths.Contact}`} />
+        <ArrowLink ctaText={getCopy("getInTouchBannerCTA")} ctaTo={`/${Paths.Contact}`} />
       </Stack>
     </div>
   );

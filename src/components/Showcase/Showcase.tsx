@@ -1,10 +1,10 @@
 import { Group, Stack, Text } from "@mantine/core";
 import BlockButton from "components/BlockButton";
-import SlowImage from "components/SlowImage";
 import { ImageKeys } from "constants/Images";
 import getCopy from "constants/localisation";
 import Paths from "Paths";
 import styles from "./styles.module.sass";
+import Album from "components/Album";
 
 export interface ShowcaseProps {
   imageIds: (keyof typeof ImageKeys)[];
@@ -22,9 +22,7 @@ export const Showcase = (props: ShowcaseProps) => {
           <Text fz="lg">{getCopy("bookConsultationCTA")}</Text>
         </BlockButton>
       </Stack>
-      {!!props.imageIds.length && (
-        <SlowImage bg="dark.5" imageContainerClassName={styles.imageContainer} imageId={props.imageIds[0]} />
-      )}
+      {!!props.imageIds.length && <Album bg="dark.5" className={styles.imageContainer} imageIds={props.imageIds} />}
     </Group>
   );
 };

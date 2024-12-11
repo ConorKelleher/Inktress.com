@@ -1,4 +1,4 @@
-import { Anchor, Button, MantineColorsTuple, Menu, createTheme } from "@mantine/core";
+import { Anchor, MantineColorsTuple, Menu, createTheme } from "@mantine/core";
 
 const ColorPalette = [
   "#f7f3f2",

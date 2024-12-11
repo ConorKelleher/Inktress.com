@@ -26,6 +26,8 @@ export const DEFAULT_LOCALE = {
   nickJoesburyQuote:
     "Creative and professional, done a logo for us and had one back very quickly  exactly how we wanted with only giving her a vague description!! Amazing all round.",
   aboutPageContent: AboutPageContent,
+  contactFormSend: "Send",
+  contactFormSending: "Sending",
 };
 
 type Key = keyof typeof DEFAULT_LOCALE;

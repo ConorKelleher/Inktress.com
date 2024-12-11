@@ -1,7 +1,7 @@
-import { Center, Group, ScrollArea, Stack } from "@mantine/core";
-import ArrowButton from "components/ArrowButton/ArrowButton";
+import { Group, ScrollArea, Stack } from "@mantine/core";
+import ArrowLink from "components/ArrowLink";
 import FancyTitle from "components/FancyTitle";
-import { Haptic, Portal, useScrollShadow, useUniqueId, useWindowResize } from "localboast";
+import { Portal, useScrollShadow, useUniqueId, useWindowResize } from "localboast";
 import { PropsWithChildren, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.sass";
@@ -67,7 +67,7 @@ const Scroller = (props: ScrollerProps) => {
             style={{ visibility: showShowMore ? undefined : "hidden" }}
             className={styles.showMoreButton}
           >
-            <ArrowButton
+            <ArrowLink
               bg="dark.6"
               ctaText={props.ctaText || `ALL ${props.headingText.toLocaleUpperCase()}`}
               ctaTo={props.ctaTo}

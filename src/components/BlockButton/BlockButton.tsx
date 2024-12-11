@@ -1,28 +1,28 @@
-import { Anchor, AnchorProps, Group } from "@mantine/core";
+import { Button, ButtonProps, Group } from "@mantine/core";
 import { cx, Haptic } from "localboast";
-import { Link } from "react-router-dom";
 import styles from "./styles.module.sass";
-import { PropsWithChildren } from "react";
+import { ButtonHTMLAttributes } from "react";
 
-export interface BlockButtonProps extends AnchorProps, PropsWithChildren {
-  ctaTo?: string;
-  ctaHref?: string;
+export interface BlockButtonProps extends ButtonProps {
+  className?: string;
+  buttonClassName?: string;
+  type: ButtonHTMLAttributes<any>["type"];
 }
 
-const BlockButton = ({ ctaTo, children, className, ctaHref, ...otherAnchorProps }: BlockButtonProps) => {
-  const anchorProps = {
-    component: ctaTo ? Link : undefined,
-    to: ctaTo || "", // only falling back to shut up ts not handling branching paths
-    href: ctaHref,
-    ...otherAnchorProps,
-  };
+const BlockButton = ({ children, className, buttonClassName, ...buttonProps }: BlockButtonProps) => {
   return (
     <Haptic className={cx(styles.blockButton, className)}>
-      <Anchor p="7px 12px" bg="dark.9" {...anchorProps} style={{ borderRadius: 5, ...anchorProps.style }}>
+      <Button
+        p="7px 12px"
+        bg="dark.9"
+        className={buttonClassName}
+        {...buttonProps}
+        style={{ borderRadius: 5, ...buttonProps.style }}
+      >
         <Group align="center" gap="5px">
           {children}
         </Group>
-      </Anchor>
+      </Button>
     </Haptic>
   );
 };

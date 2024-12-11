@@ -6,7 +6,7 @@ export interface PageHeaderProps extends SlowImageProps {}
 const PageHeader = (props: PageHeaderProps) => {
   return (
     <div className={styles.page_header}>
-      <SlowImage {...props} style={{ objectFit: "cover", maxWidth: "unset", ...props.style }} />
+      <SlowImage {...props} imageStyle={{ objectFit: "cover", maxWidth: "unset", ...props.style }} />
     </div>
   );
 };

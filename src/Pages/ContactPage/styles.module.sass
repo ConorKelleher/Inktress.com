@@ -1,0 +1,37 @@
+.form
+  width: 800px
+  max-width: 100%
+  margin: auto
+
+  & :global .mantine-TextInput-root
+    position: relative
+  & :global .mantine-TextInput-wrapper
+    margin: 0
+  & :global .mantine-TextInput-error
+    position: absolute
+    bottom: -15px
+  input,
+  textarea
+    background-color: white
+    color: var(--mantine-color-dark-7)
+  label
+    color: var(--mantine-color-dark-7)
+    font-family: Alice
+    font-size: $mantine-font-size-lg
+
+  &Sending
+    & :global .mantine-TextInput-wrapper,
+    & :global .mantine-Textarea-wrapper
+      cursor: not-allowed
+    input,
+    textarea
+      pointer-events: none
+
+  .smallInputGroup
+    display: grid
+    grid-template-columns: 1fr 1fr
+  .mediumInputGroup
+    display: grid
+    grid-template-columns: 1fr 1fr
+    @media (max-width: $mantine-breakpoint-xs)
+      display: contents

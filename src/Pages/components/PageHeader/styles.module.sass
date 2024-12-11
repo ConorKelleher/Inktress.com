@@ -1,6 +1,10 @@
+$subheader-target-height: 325px
+$subheader-max-height: calc((100vh - var(--header-height)) / 2)
+
 .page_header
   position: relative
-  height: 325px
+  height: $subheader-target-height
+  max-height: minmax($subheader-target-height, $subheader-max-height)
   width: 100%
   img
     height: 100%

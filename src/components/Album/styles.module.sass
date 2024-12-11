@@ -1,0 +1,30 @@
+.album
+  position: relative
+  overflow: hidden
+
+.image
+  transition: left 0.3s ease
+
+.pagination
+  bottom: 3%
+  left: 50%
+  transform: translateX(-50%)
+  position: absolute
+
+  button
+    border-radius: 50%
+    background-color: white
+    border: solid 1px var(--mantine-color-dark-7)
+    height: 17px
+    width: 17px
+    padding: 0
+    border: none
+
+    &.active
+      background-color: var(--mantine-color-dark-7)
+      border: solid 1px white
+
+    &:focus-within,
+    &:hover
+      background-color: var(--mantine-color-dark-5)
+      border: solid 1px white

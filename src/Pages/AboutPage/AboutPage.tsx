@@ -1,5 +1,5 @@
 import { Stack, Text } from "@mantine/core";
-import ArrowButton from "components/ArrowButton/ArrowButton";
+import ArrowLink from "components/ArrowLink";
 import GetInTouchBanner from "components/GetInTouchBanner";
 import getCopy from "constants/localisation";
 import usePageTitle from "localboast/hooks/usePageTitle";
@@ -12,12 +12,13 @@ const AboutPage = () => {
 
   return (
     <PageWrapper>
+      {/* @ts-ignore */}
       <PageHeader imageId="AboutHeader" style={{ objectViewBox: "inset(0% 5% 0% 0%)", objectPosition: "right" }} />
       <Stack py="40" w="80%" maw={1000} gap="30" m="auto" align="center">
-        <Text c="dark.9" style={{ textAlign: "center" }}>
+        <Text c="dark.9" style={{ textAlign: "center" }} fz="lg">
           {getCopy("aboutPageContent")}
         </Text>
-        <ArrowButton ctaTo={`/${Paths.Services}`} ctaText={getCopy("services")} upcase={false} />
+        <ArrowLink ctaTo={`/${Paths.Services}`} ctaText={getCopy("services")} upcase={false} />
       </Stack>
       <GetInTouchBanner />
     </PageWrapper>

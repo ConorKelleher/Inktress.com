@@ -1,22 +1,22 @@
 import { Text } from "@mantine/core";
 import ArrowIcon from "./Arrow.svg?react";
-import BlockButton, { BlockButtonProps } from "components/BlockButton";
+import BlockLink, { BlockLinkProps } from "components/BlockLink";
 import styles from "./styles.module.sass";
 
-export interface ArrowButtonProps extends BlockButtonProps {
+export interface ArrowLinkProps extends BlockLinkProps {
   ctaText?: string;
   // Should the ctaText content be upcased - defaults to true
   upcase?: boolean;
 }
 
-export const ArrowButton = ({ ctaText, upcase = true, ...buttonProps }: ArrowButtonProps) => {
+const ArrowLink = ({ ctaText, upcase = true, ...linkProps }: ArrowLinkProps) => {
   return (
-    <BlockButton {...buttonProps} className={styles.arrowButton}>
+    <BlockLink {...linkProps} className={styles.arrowLink}>
       <Text>{upcase ? ctaText?.toLocaleUpperCase() : ctaText}</Text>
       &nbsp;
       <ArrowIcon />
-    </BlockButton>
+    </BlockLink>
   );
 };
 
-export default ArrowButton;
+export default ArrowLink;

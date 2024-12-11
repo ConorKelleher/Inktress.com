@@ -2,17 +2,34 @@ import { Image, ImageProps } from "@mantine/core";
 import { decode as decodeBlurHash } from "blurhash";
 import { Images } from "constants/Images";
 import { cx, useImageLoader, useUpdatingRef } from "localboast";
-import { CSSProperties, useLayoutEffect, useRef } from "react";
+import { AriaAttributes, CSSProperties, ImgHTMLAttributes, useLayoutEffect, useRef } from "react";
 import styles from "./styles.module.sass";
 
-export interface SlowImageProps extends Omit<ImageProps, "src"> {
+export interface SlowImageProps extends Omit<ImageProps, "src">, AriaAttributes {
   imageId: keyof Images;
   blurQuality?: number;
-  imageContainerClassName?: string;
+  // Optional className passed to the wrapping container
+  className?: string;
+  // Optional className passed to the Mantine Image component
+  imageClassName?: string;
+  // Optional styles passed to the wrapping container
+  style?: CSSProperties;
+  // Optional styles passed to the Mantine Image component
+  imageStyle?: CSSProperties;
+  loading?: ImgHTMLAttributes<any>["loading"];
+  alt?: ImgHTMLAttributes<any>["alt"];
 }
-const SlowImage = ({ imageId, blurQuality = 32, imageContainerClassName, ...imageProps }: SlowImageProps) => {
+const SlowImage = ({
+  imageId,
+  blurQuality = 32,
+  className,
+  imageClassName,
+  style,
+  imageStyle,
+  ...imageProps
+}: SlowImageProps) => {
   const { imageURL, blurHash: imageHash, height: imageHeight, width: imageWidth } = Images[imageId];
-  const imageStyleRef = useUpdatingRef(imageProps.style);
+  const imageStyleRef = useUpdatingRef(imageStyle);
   const renderBlur = !!(imageHash && imageHeight && imageWidth);
   const { loaded, loading, failedToLoad } = useImageLoader({
     src: imageURL,
@@ -60,20 +77,22 @@ const SlowImage = ({ imageId, blurQuality = 32, imageContainerClassName, ...imag
       ref={(ref) => {
         if (ref) imageContainerRef.current = ref;
       }}
-      className={cx(styles.slow_image_container, imageContainerClassName)}
+      style={style}
+      className={cx(styles.slow_image_container, className)}
     >
       {shouldShowFullImage && (
         <Image
+          loading="lazy"
           mah="100%"
           maw="100%"
           src={imageURL}
           {...imageProps}
-          className={cx(styles.slow_image, imageProps.className)}
+          className={cx(styles.slow_image, imageClassName)}
           style={{
             // if image cached, speed up blur fade
             // animation: wasLoadedOnFirstRender ? "none" : undefined,
             animationDuration: wasLoadedOnFirstRender ? "0.1s" : undefined,
-            ...imageProps.style,
+            ...imageStyle,
           }}
         />
       )}

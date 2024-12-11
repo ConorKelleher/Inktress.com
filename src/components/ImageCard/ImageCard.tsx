@@ -42,7 +42,7 @@ const ImageCard = ({ cardText, ctaTo, ctaHref, imageId, containerClassName, imag
         imageId={imageId}
         style={{ objectFit: "cover", height: "unset", aspectRatio: "1 / 1" }}
         {...imageProps}
-        imageContainerClassName={styles.imageSection}
+        className={styles.imageSection}
       />
       <div className={styles.textSection}>
         <FancyTitle c="dark.2" className={styles.textBlock}>
