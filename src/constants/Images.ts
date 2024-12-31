@@ -1,26 +1,21 @@
+// import InkantressLogo from "src/assets/images/inkantress_logo.png";
+import InkantressLogo from "src/assets/images/inkantress_logo_v2.png";
+import InkantressLogoGif from "src/assets/images/logo_anim.gif";
 import ArtDesignHero from "assets/images/art_design_hero.png";
 import AboutHeader from "assets/images/about_header.jpg";
 import ContactHeader from "assets/images/contact_header.jpg";
 import PortfolioHero from "assets/images/portfolio_hero.jpeg";
 import PortfolioHeader from "assets/images/portfolio_header.jpg";
 import ServicesHeader from "assets/images/services_header.jpeg";
-import BirdBooksLogo from "assets/images/bird_books_logo.jpg";
-import UprootedCover from "assets/images/uprooted_cover.jpg";
-import StolenRemainsCover from "assets/images/stolen_remains_cover.png";
-import BirdBooksBranding from "assets/images/bird_books_branding.jpg";
 import WomanInWindowIllustration from "assets/images/woman_in_window.jpg";
 import BusinessCards from "assets/images/business_cards.jpg";
-import PlantSalePoster from "assets/images/plant_sale.jpg";
-import SocialProducts from "assets/images/social_products.jpg";
-import HobGob from "assets/images/hob_gob.jpg";
 import CosyGame from "assets/images/cosy_game.jpg";
-import AmandaFlyer from "assets/images/amanda_flyer.jpg";
+// import AmandaFlyer from "assets/images/amanda_flyer.jpg";
 import AmandaFlyers from "assets/images/amanda_flyers.jpg";
-import CandidKombuchaCan from "assets/images/candid_kombucha_can.jpg";
 import AlbumCoverHeader from "assets/images/album_cover_header.jpg";
 import BookCoverHeader from "assets/images/book_cover_header.jpg";
 import BrandingHeader from "assets/images/branding_header.jpg";
-import BusinessSuiteHeader from "assets/images/business_suite_header.jpg";
+// import BusinessSuiteHeader from "assets/images/business_suite_header.jpg";
 import CharactersHeader from "assets/images/characters_header.jpg";
 import DesignServicesHeader from "assets/images/design_services_header.jpg";
 import LogoDesignHeader from "assets/images/logo_design_header.jpg";
@@ -29,14 +24,95 @@ import IllustrationServicesHeader from "assets/images/illustration_services_head
 import PostersHeader from "assets/images/posters_header.jpg";
 import ScenesHeader from "assets/images/scenes_header.jpg";
 import SocialsHeader from "assets/images/socials_header.jpg";
-import AmandaLogo from "assets/images/amanda_logo.jpg";
-import GraveGirlsAlbum from "assets/images/grave_girls_album.jpg";
-import GraveGirlsBranding from "assets/images/grave_girls_branding.jpg";
 import DndPoster from "assets/images/dnd_poster.jpg";
 import BookCoverSocials from "assets/images/book_cover_socials.jpg";
-import AmandaBusinessSuite from "assets/images/amanda_business_suite.jpg";
+// import AmandaBusinessSuite from "assets/images/amanda_business_suite.jpg";
 import TurnMeOn from "assets/images/turn_me_on.jpg";
 import Clara from "assets/images/clara.jpg";
+
+/**
+ * Services
+ */
+
+// Album Covers
+import WonderAlbum from "assets/images/services/albums/wonder.jpg";
+import StolenRemainsAlbum from "assets/images/services/albums/stolen_remains.jpg";
+import StayAlbum from "assets/images/services/albums/stay.jpg";
+import OverwhelmedAlbum from "assets/images/services/albums/overwhelmed.jpg";
+import LemonsAlbum from "assets/images/services/albums/lemons.jpg";
+
+// Book Covers
+import AliceWonderlandBook from "assets/images/services/book_covers/alice.jpg";
+import EarlyRiserBook from "assets/images/services/book_covers/early_riser.jpg";
+import HitchhikerBook from "assets/images/services/book_covers/hitchhiker.jpg";
+import ImprobableFuturesBook from "assets/images/services/book_covers/improbable_futures.jpg";
+import MonstrousRegimentBook from "assets/images/services/book_covers/monstrous_regiment.jpg";
+import PridePrejudiceBook from "assets/images/services/book_covers/p_and_p.jpg";
+import UprootedBook from "assets/images/services/book_covers/uprooted.jpg";
+import ZombiesBook from "assets/images/services/book_covers/zombies.jpg";
+
+// Branding
+import AmandaWebsterBranding from "assets/images/services/visual_identity/amanda_webster.jpg";
+import ArclabsBranding from "assets/images/services/visual_identity/arclabs.jpg";
+import BirdBooksBranding from "assets/images/services/visual_identity/bird_books.jpg";
+import GraveGirlsBranding from "assets/images/services/visual_identity/gravegirls.jpg";
+import HiveBranding from "assets/images/services/visual_identity/hive.jpg";
+import KaliBranding from "assets/images/services/visual_identity/kali.jpg";
+import LocalboastBranding from "assets/images/services/visual_identity/local_boast.jpg";
+import SaiBranding from "assets/images/services/visual_identity/sai.jpg";
+
+// Characters
+import Alice from "assets/images/services/characters/alice.jpg";
+import Clive from "assets/images/services/characters/clive.jpg";
+import Comic from "assets/images/services/characters/comic.jpg";
+import Face from "assets/images/services/characters/face.jpg";
+import FantasyCreatures from "assets/images/services/characters/fantasy_creatures.jpg";
+import Hargle from "assets/images/services/characters/hargle.jpg";
+import Jen from "assets/images/services/characters/jen.jpg";
+import Lilith from "assets/images/services/characters/lilith.jpg";
+import Ranger from "assets/images/services/characters/ranger.jpg";
+import Trio from "assets/images/services/characters/trio.jpg";
+import Witch from "assets/images/services/characters/witch.jpg";
+
+// Flyers
+import AmandaWebsterFlyer from "assets/images/services/flyers/aw_therapy.jpg";
+import FlorasFlyer from "assets/images/services/flyers/floras.jpg";
+import PlantSaleFlyer from "assets/images/services/flyers/plant_sale.jpg";
+import PotteryWorkshopFlyer from "assets/images/services/flyers/pottery_workshop.jpg";
+import ThriftAndGiftFlyer from "assets/images/services/flyers/thrift_n_gift.jpg";
+import XmasBashFlyer from "assets/images/services/flyers/xmas_bash.jpg";
+
+// Design Services - tbd
+// Illustration Services - tbd
+// Scenes - tbd
+
+// Logo Design
+import AmandaWebsterLogo from "assets/images/services/logos/amanda_webster_therapies_white_on_green.jpg";
+import ArclabsLogo from "assets/images/services/logos/arclabs.jpg";
+import BirdBooksLogo from "assets/images/services/logos/bb_logo.jpg";
+import BillBarberLogo from "assets/images/services/logos/billbarber.jpg";
+import GraveGirlsLogo from "assets/images/services/logos/grave_girls_full_logo.jpg";
+import LocalboastLogo from "assets/images/services/logos/localboast.jpg";
+import InkantressMotionLogo from "assets/images/services/logos/logo_motion_gif.gif";
+import RemedeaseLogo from "assets/images/services/logos/remedease.jpg";
+import RoseNCrownLogo from "assets/images/services/logos/rose_n_crown.jpg";
+import SaiLogo from "assets/images/services/logos/sai.jpg";
+
+// Posters
+import AstronomyPoster from "assets/images/services/posters/astronomy.jpg";
+import CoffeePoster from "assets/images/services/posters/coffee.jpg";
+import CreateFestPoster from "assets/images/services/posters/create_fest.jpg";
+import DragonPoster from "assets/images/services/posters/dragon.jpg";
+import PlantPoster from "assets/images/services/posters/plant.jpg";
+
+// Socials
+import BirdBooksSocials from "assets/images/services/socials/birdbooks.jpg";
+import BushyMarketSocials from "assets/images/services/socials/bushy_market.gif";
+import CoffeeFestSocials from "assets/images/services/socials/coffee_fest.jpg";
+import CopperHollowSocials from "assets/images/services/socials/copper_hollow.jpg";
+import GraveGirlsSocials from "assets/images/services/socials/gravegirls.jpg";
+import InkantressSocials from "assets/images/services/socials/inkantress.jpg";
+import ThriftGiftSocials from "assets/images/services/socials/thrift_n_gift.jpg";
 
 export type Image = {
   imageURL: string;
@@ -52,43 +128,102 @@ export const ImageKeys = {
   PortfolioHero: "PortfolioHero",
   PortfolioHeader: "PortfolioHeader",
   ServicesHeader: "ServicesHeader",
-  AlbumCoverHeader: "AlbumCoverHeader",
-  AlbumCoverThumb: "AlbumCoverThumb",
-  BookCoverHeader: "BookCoverHeader",
-  BookCoverThumb: "BookCoverThumb",
-  BrandingHeader: "BrandingHeader",
-  BrandingThumb: "BrandingThumb",
-  BusinessSuiteHeader: "BusinessSuiteHeader",
-  BusinessSuiteThumb: "BusinessSuiteThumb",
-  CharactersHeader: "CharactersHeader",
-  CharactersThumb: "CharactersThumb",
+  // BusinessSuiteHeader: "BusinessSuiteHeader",
+  // BusinessSuiteThumb: "BusinessSuiteThumb",
   Clara: "Clara",
   DesignServicesHeader: "DesignServicesHeader",
   DesignServicesThumb: "DesignServicesThumb",
-  LogoDesignHeader: "LogoDesignHeader",
-  LogoDesignThumb: "LogoDesignThumb",
   FlyersHeader: "FlyersHeader",
-  FlyersThumb: "FlyersThumb",
   IllustrationServicesHeader: "IllustrationServicesHeader",
   IllustrationServicesThumb: "IllustrationServicesThumb",
+  InkantressLogo: "InkantressLogo",
+  InkantressLogoGif: "InkantressLogoGif",
   PostersHeader: "PostersHeader",
-  PostersThumb: "PostersThumb",
   ScenesHeader: "ScenesHeader",
   ScenesThumb: "ScenesThumb",
   SocialsHeader: "SocialsHeader",
-  SocialsThumb: "SocialsThumb",
   AmandaFlyers: "AmandaFlyers",
-  AmandaLogo: "AmandaLogo",
-  GraveGirlsAlbum: "GraveGirlsAlbum",
-  GraveGirlsBranding: "GraveGirlsBranding",
   DndPoster: "DndPoster",
-  PlantSalePoster: "PlantSalePoster",
   BookCoverSocials: "BookCoverSocials",
-  AmandaBusinessSuite: "AmandaBusinessSuite",
+  // AmandaBusinessSuite: "AmandaBusinessSuite",
   TurnMeOn: "TurnMeOn",
-  UprootedCover: "UprootedCover",
   CosyGame: "CosyGame",
-  CandidKombuchaCan: "CandidKombuchaCan",
+  /**
+   * Services
+   */
+  // Album Covers
+  AlbumCoverHeader: "AlbumCoverHeader",
+  StolenRemainsAlbum: "StolenRemainsAlbum",
+  WonderAlbum: "WonderAlbum",
+  StayAlbum: "StayAlbum",
+  OverwhelmedAlbum: "OverwhelmedAlbum",
+  LemonsAlbum: "LemonsAlbum",
+  // Book Covers
+  BookCoverHeader: "BookCoverHeader",
+  AliceWonderlandBook: "AliceWonderlandBook",
+  EarlyRiserBook: "EarlyRiserBook",
+  HitchhikerBook: "HitchhikerBook",
+  ImprobableFuturesBook: "ImprobableFuturesBook",
+  MonstrousRegimentBook: "MonstrousRegimentBook",
+  PridePrejudiceBook: "PridePrejudiceBook",
+  UprootedBook: "UprootedBook",
+  ZombiesBook: "ZombiesBook",
+  // Branding
+  BrandingHeader: "BrandingHeader",
+  AmandaWebsterBranding: "AmandaWebsterBranding",
+  ArclabsBranding: "ArclabsBranding",
+  BirdBooksBranding: "BirdBooksBranding",
+  GraveGirlsBranding: "GraveGirlsBranding",
+  HiveBranding: "HiveBranding",
+  KaliBranding: "KaliBranding",
+  LocalboastBranding: "LocalboastBranding",
+  SaiBranding: "SaiBranding",
+  // Characters
+  CharactersHeader: "CharactersHeader",
+  Alice: "Alice",
+  Clive: "Clive",
+  Comic: "Comic",
+  Face: "Face",
+  FantasyCreatures: "FantasyCreatures",
+  Hargle: "Hargle",
+  Jen: "Jen",
+  Lilith: "Lilith",
+  Ranger: "Ranger",
+  Trio: "Trio",
+  Witch: "Witch",
+  // Flyers
+  AmandaWebsterFlyer: "AmandaWebsterFlyer",
+  FlorasFlyer: "FlorasFlyer",
+  PlantSaleFlyer: "PlantSaleFlyer",
+  PotteryWorkshopFlyer: "PotteryWorkshopFlyer",
+  ThriftAndGiftFlyer: "ThriftAndGiftFlyer",
+  XmasBashFlyer: "XmasBashFlyer",
+  // Logo Design
+  LogoDesignHeader: "LogoDesignHeader",
+  AmandaWebsterLogo: "AmandaWebsterLogo",
+  ArclabsLogo: "ArclabsLogo",
+  BirdBooksLogo: "BirdBooksLogo",
+  BillBarberLogo: "BillBarberLogo",
+  GraveGirlsLogo: "GraveGirlsLogo",
+  LocalboastLogo: "LocalboastLogo",
+  InkantressMotionLogo: "InkantressMotionLogo",
+  RemedeaseLogo: "RemedeaseLogo",
+  RoseNCrownLogo: "RoseNCrownLogo",
+  SaiLogo: "SaiLogo",
+  // Posters
+  AstronomyPoster: "AstronomyPoster",
+  CoffeePoster: "CoffeePoster",
+  CreateFestPoster: "CreateFestPoster",
+  DragonPoster: "DragonPoster",
+  PlantPoster: "PlantPoster",
+  // Socials
+  BirdBooksSocials: "BirdBooksSocials",
+  BushyMarketSocials: "BushyMarketSocials",
+  CoffeeFestSocials: "CoffeeFestSocials",
+  CopperHollowSocials: "CopperHollowSocials",
+  GraveGirlsSocials: "GraveGirlsSocials",
+  InkantressSocials: "InkantressSocials",
+  ThriftGiftSocials: "ThriftGiftSocials",
 };
 
 export const Images: Record<keyof typeof ImageKeys, Image> = {
@@ -137,54 +272,34 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
     height: 932,
     width: 3712,
   },
-  BookCoverThumb: {
-    imageURL: UprootedCover,
-  },
-  LogoDesignThumb: {
-    imageURL: BirdBooksLogo,
-  },
-  AlbumCoverThumb: {
-    imageURL: StolenRemainsCover,
-  },
-  BrandingThumb: {
-    imageURL: BirdBooksBranding,
-  },
   IllustrationServicesThumb: {
     imageURL: WomanInWindowIllustration,
+  },
+  InkantressLogo: {
+    imageURL: InkantressLogo,
+  },
+  InkantressLogoGif: {
+    imageURL: InkantressLogoGif,
   },
   DesignServicesThumb: {
     imageURL: BusinessCards,
   },
-  PostersThumb: {
-    imageURL: PlantSalePoster,
-  },
-  SocialsThumb: {
-    imageURL: SocialProducts,
-  },
-  CharactersThumb: {
-    imageURL: HobGob,
-  },
   ScenesThumb: {
     imageURL: CosyGame,
   },
-  BusinessSuiteThumb: {
-    imageURL: AmandaFlyer,
-  },
-  FlyersThumb: {
-    imageURL: CandidKombuchaCan,
-  },
-  UprootedCover: { imageURL: UprootedCover },
+  // BusinessSuiteThumb: {
+  //   imageURL: AmandaFlyer,
+  // },
   AmandaFlyers: { imageURL: AmandaFlyers },
-  AmandaLogo: { imageURL: AmandaLogo },
-  GraveGirlsAlbum: { imageURL: GraveGirlsAlbum },
-  GraveGirlsBranding: { imageURL: GraveGirlsBranding },
   DndPoster: { imageURL: DndPoster },
-  PlantSalePoster: { imageURL: PlantSalePoster },
   BookCoverSocials: { imageURL: BookCoverSocials },
-  AmandaBusinessSuite: { imageURL: AmandaBusinessSuite },
+  // AmandaBusinessSuite: { imageURL: AmandaBusinessSuite },
   TurnMeOn: { imageURL: TurnMeOn },
-  CandidKombuchaCan: { imageURL: CandidKombuchaCan },
   CosyGame: { imageURL: CosyGame },
+  /**
+   * Services
+   */
+  // Album Covers
   AlbumCoverHeader: {
     imageURL: AlbumCoverHeader,
     blurHash:
@@ -192,6 +307,13 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
     height: 932,
     width: 3712,
   },
+  StolenRemainsAlbum: { imageURL: StolenRemainsAlbum },
+  WonderAlbum: { imageURL: WonderAlbum },
+  StayAlbum: { imageURL: StayAlbum },
+  OverwhelmedAlbum: { imageURL: OverwhelmedAlbum },
+  LemonsAlbum: { imageURL: LemonsAlbum },
+
+  // Book Covers
   BookCoverHeader: {
     imageURL: BookCoverHeader,
     blurHash:
@@ -199,6 +321,16 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
     height: 932,
     width: 3712,
   },
+  AliceWonderlandBook: { imageURL: AliceWonderlandBook },
+  EarlyRiserBook: { imageURL: EarlyRiserBook },
+  HitchhikerBook: { imageURL: HitchhikerBook },
+  ImprobableFuturesBook: { imageURL: ImprobableFuturesBook },
+  MonstrousRegimentBook: { imageURL: MonstrousRegimentBook },
+  PridePrejudiceBook: { imageURL: PridePrejudiceBook },
+  UprootedBook: { imageURL: UprootedBook },
+  ZombiesBook: { imageURL: ZombiesBook },
+
+  // Branding
   BrandingHeader: {
     imageURL: BrandingHeader,
     blurHash:
@@ -206,13 +338,16 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
     height: 932,
     width: 3712,
   },
-  BusinessSuiteHeader: {
-    imageURL: BusinessSuiteHeader,
-    blurHash:
-      "|EO3LZdB0f004nDh8w004:Z#aKyET1IAIAkVtmbvxbIUROxWt7tSxv-p%L.9x]Z~I9IoOZS$WAad4nRPjEoJ%2%N-;xus.RPRPjstRtRf,RjRPRjxIRQnhxCaxbco#t7n~%MogRiRPR*SNR*WBs:Mxs9t8kDj@adoekCkC",
-    height: 932,
-    width: 3712,
-  },
+  AmandaWebsterBranding: { imageURL: AmandaWebsterBranding },
+  ArclabsBranding: { imageURL: ArclabsBranding },
+  BirdBooksBranding: { imageURL: BirdBooksBranding },
+  GraveGirlsBranding: { imageURL: GraveGirlsBranding },
+  HiveBranding: { imageURL: HiveBranding },
+  KaliBranding: { imageURL: KaliBranding },
+  LocalboastBranding: { imageURL: LocalboastBranding },
+  SaiBranding: { imageURL: SaiBranding },
+
+  // Characters
   CharactersHeader: {
     imageURL: CharactersHeader,
     blurHash:
@@ -220,17 +355,86 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
     height: 932,
     width: 3712,
   },
-  DesignServicesHeader: {
-    imageURL: DesignServicesHeader,
-    blurHash:
-      "|BKd0y0000bw~C,DtkOYwHrrVt%3bvNZNGW=s:w^}@s:tlSxM{t7RjoLazoykCR-WFsmwbjFX9Nx.7-pnknPWVS2s:n*NHyCX7Vsi_s:j?ofWVWBv~=|o}X8n$RQjuX7ofxaWXOXNGnixaWCR*of^*%1$jrsNGbuaejHX8",
-    height: 932,
-    width: 3712,
-  },
+  Alice: { imageURL: Alice },
+  Clive: { imageURL: Clive },
+  Comic: { imageURL: Comic },
+  Face: { imageURL: Face },
+  FantasyCreatures: { imageURL: FantasyCreatures },
+  Hargle: { imageURL: Hargle },
+  Jen: { imageURL: Jen },
+  Lilith: { imageURL: Lilith },
+  Ranger: { imageURL: Ranger },
+  Trio: { imageURL: Trio },
+  Witch: { imageURL: Witch },
+
+  // Flyers
+  AmandaWebsterFlyer: { imageURL: AmandaWebsterFlyer },
+  FlorasFlyer: { imageURL: FlorasFlyer },
+  PlantSaleFlyer: { imageURL: PlantSaleFlyer },
+  PotteryWorkshopFlyer: { imageURL: PotteryWorkshopFlyer },
+  ThriftAndGiftFlyer: { imageURL: ThriftAndGiftFlyer },
+  XmasBashFlyer: { imageURL: XmasBashFlyer },
+
+  // Logo Design
   LogoDesignHeader: {
     imageURL: LogoDesignHeader,
     blurHash:
       "|HMj8f60I9q[=|%#tlR6VY0K9Z?H~W?Ho{buxar]s;M{M|RkIoRjV[ofW;?a-pt6R%j?xas:WBS2E1s:xat6xabHkCayoLRjM|ofxas:a{WUoLoL-:xtt6t6WBWBWBoLfkofj[RjRjfjs:ofWBWBIUWBt7t7t6aeayfkof",
+    height: 932,
+    width: 3712,
+  },
+  AmandaWebsterLogo: { imageURL: AmandaWebsterLogo },
+  ArclabsLogo: { imageURL: ArclabsLogo },
+  BirdBooksLogo: { imageURL: BirdBooksLogo },
+  BillBarberLogo: { imageURL: BillBarberLogo },
+  GraveGirlsLogo: { imageURL: GraveGirlsLogo },
+  LocalboastLogo: { imageURL: LocalboastLogo },
+  InkantressMotionLogo: { imageURL: InkantressMotionLogo },
+  RemedeaseLogo: { imageURL: RemedeaseLogo },
+  RoseNCrownLogo: { imageURL: RoseNCrownLogo },
+  SaiLogo: { imageURL: SaiLogo },
+
+  // Posters
+  PostersHeader: {
+    imageURL: PostersHeader,
+    blurHash:
+      "|DLD0~00s;Te1c0z-V}[wI%2oJs:aeayj]ayWVWW?It7Rjsmn$%1o0WBofxao1WCR*kCofo0nioL%2-poKM{s;WVR*WBjus:WBkCkBayj@ayjZoL-;t7WVoLe.s:j@WBbHWCbHoyj[WBR*kBofj[tRxukCWAxGsTWVS2W;",
+    height: 932,
+    width: 3712,
+  },
+  AstronomyPoster: { imageURL: AstronomyPoster },
+  CoffeePoster: { imageURL: CoffeePoster },
+  CreateFestPoster: { imageURL: CreateFestPoster },
+  DragonPoster: { imageURL: DragonPoster },
+  PlantPoster: { imageURL: PlantPoster },
+
+  // Socials
+  SocialsHeader: {
+    imageURL: SocialsHeader,
+    blurHash:
+      "|IL:$Q5,?b-BD*4:j]-pWnxZRjRjRjs:t7RkRjkB~q?bxus:WAs:n%V@WBtRozofbGofjZjFn%ofIURPMxIot7xut7t7ayt7a#oMj[bHofoej@WVR5IUIURjWCt7ozbHaxRPV@oLkCa}R*WBayj[MxV@oft7t7WBRjWBof",
+    height: 932,
+    width: 3712,
+  },
+  BirdBooksSocials: { imageURL: BirdBooksSocials },
+  BushyMarketSocials: { imageURL: BushyMarketSocials },
+  CoffeeFestSocials: { imageURL: CoffeeFestSocials },
+  CopperHollowSocials: { imageURL: CopperHollowSocials },
+  GraveGirlsSocials: { imageURL: GraveGirlsSocials },
+  InkantressSocials: { imageURL: InkantressSocials },
+  ThriftGiftSocials: { imageURL: ThriftGiftSocials },
+
+  // BusinessSuiteHeader: {
+  //   imageURL: BusinessSuiteHeader,
+  //   blurHash:
+  //     "|EO3LZdB0f004nDh8w004:Z#aKyET1IAIAkVtmbvxbIUROxWt7tSxv-p%L.9x]Z~I9IoOZS$WAad4nRPjEoJ%2%N-;xus.RPRPjstRtRf,RjRPRjxIRQnhxCaxbco#t7n~%MogRiRPR*SNR*WBs:Mxs9t8kDj@adoekCkC",
+  //   height: 932,
+  //   width: 3712,
+  // },
+  DesignServicesHeader: {
+    imageURL: DesignServicesHeader,
+    blurHash:
+      "|BKd0y0000bw~C,DtkOYwHrrVt%3bvNZNGW=s:w^}@s:tlSxM{t7RjoLazoykCR-WFsmwbjFX9Nx.7-pnknPWVS2s:n*NHyCX7Vsi_s:j?ofWVWBv~=|o}X8n$RQjuX7ofxaWXOXNGnixaWCR*of^*%1$jrsNGbuaejHX8",
     height: 932,
     width: 3712,
   },
@@ -248,24 +452,10 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
     height: 932,
     width: 3712,
   },
-  PostersHeader: {
-    imageURL: PostersHeader,
-    blurHash:
-      "|DLD0~00s;Te1c0z-V}[wI%2oJs:aeayj]ayWVWW?It7Rjsmn$%1o0WBofxao1WCR*kCofo0nioL%2-poKM{s;WVR*WBjus:WBkCkBayj@ayjZoL-;t7WVoLe.s:j@WBbHWCbHoyj[WBR*kBofj[tRxukCWAxGsTWVS2W;",
-    height: 932,
-    width: 3712,
-  },
   ScenesHeader: {
     imageURL: ScenesHeader,
     blurHash:
       "|QJQp90e~W^kNHRjxGIUE1xvt8xbofj]a}WBR*WBxbRlNGayj[ofWWoft7R+R+flWVWVa#oMoeof%1%2WVR*ofayoLofj[s:axj?j@ayj?j@j[ayxaf7R*WBWBj[WVa}j[aeWBaeWVayayfRa#fkxtxaWVR*j[ayayjtj[",
-    height: 932,
-    width: 3712,
-  },
-  SocialsHeader: {
-    imageURL: SocialsHeader,
-    blurHash:
-      "|IL:$Q5,?b-BD*4:j]-pWnxZRjRjRjs:t7RkRjkB~q?bxus:WAs:n%V@WBtRozofbGofjZjFn%ofIURPMxIot7xut7t7ayt7a#oMj[bHofoej@WVR5IUIURjWCt7ozbHaxRPV@oLkCa}R*WBayj[MxV@oft7t7WBRjWBof",
     height: 932,
     width: 3712,
   },

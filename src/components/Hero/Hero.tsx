@@ -17,7 +17,7 @@ export interface HeroProps {
   ctaHref?: string;
 }
 
-const CURSOR_FOLLOW_ZOOM = 25;
+const CURSOR_FOLLOW_ZOOM = 15;
 
 const Hero = (props: HeroProps) => {
   const hasCTA = !!(props.ctaText && (props.ctaTo || props.ctaHref));
@@ -59,6 +59,8 @@ const Hero = (props: HeroProps) => {
   const mouseOverImage = mouseXPosRatio > 0 && mouseYPosRatio > 0 && mouseXPosRatio < 1 && mouseYPosRatio < 1;
   const [delayedMouseOverImage] = useDelayedValue(mouseOverImage, { delay: 200, immediateIf: (value) => !value });
 
+  console.log({ mouseOverImage });
+  console.log({ delayedMouseOverImage });
   const imageStyle = {
     ...props.imageStyle,
     transition: `object-view-box ${delayedMouseOverImage ? "0.15s 0s" : "0.5s 0.2s"} ease`,
@@ -72,7 +74,7 @@ const Hero = (props: HeroProps) => {
     <Group className={styles.hero}>
       <div className={styles.hero_image_section} ref={(ref) => ref && (heroImageRef.current = ref)}>
         {!!props.imageSrc && <Image src={props.imageSrc} style={imageStyle} />}
-        {!!props.imageId && <SlowImage imageId={props.imageId} blurQuality={50} style={imageStyle} />}
+        {!!props.imageId && <SlowImage imageId={props.imageId} blurQuality={50} imageStyle={imageStyle} />}
       </div>
       <Stack className={styles.hero_text_section} gap="40px">
         <Text>{props.headingText}</Text>

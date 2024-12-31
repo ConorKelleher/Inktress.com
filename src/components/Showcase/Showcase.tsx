@@ -1,5 +1,5 @@
 import { Group, Stack, Text } from "@mantine/core";
-import BlockButton from "components/BlockButton";
+import BlockLink from "components/BlockLink";
 import { ImageKeys } from "constants/Images";
 import getCopy from "constants/localisation";
 import Paths from "Paths";
@@ -18,11 +18,12 @@ export const Showcase = (props: ShowcaseProps) => {
         <Text c="dark.9" fw={600} fz="lg">
           {props.description}
         </Text>
-        <BlockButton ctaTo={`/${Paths.Contact}`}>
+        {/** todo */}
+        <BlockLink ctaTo={`/${Paths.Contact}`}>
           <Text fz="lg">{getCopy("bookConsultationCTA")}</Text>
-        </BlockButton>
+        </BlockLink>
       </Stack>
-      {!!props.imageIds.length && <Album bg="dark.5" className={styles.imageContainer} imageIds={props.imageIds} />}
+      {!!props.imageIds.length && <Album bg="dark.9" className={styles.imageContainer} imageIds={props.imageIds} />}
     </Group>
   );
 };
