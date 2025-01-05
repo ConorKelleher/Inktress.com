@@ -1,34 +1,28 @@
-// import InkantressLogo from "src/assets/images/inkantress_logo.png";
-import InkantressLogo from "src/assets/images/inkantress_logo_v2.png";
-import InkantressLogoGif from "src/assets/images/logo_anim.gif";
-import ArtDesignHero from "assets/images/art_design_hero.png";
-import AboutHeader from "assets/images/about_header.jpg";
-import ContactHeader from "assets/images/contact_header.jpg";
-import PortfolioHero from "assets/images/portfolio_hero.jpeg";
-import PortfolioHeader from "assets/images/portfolio_header.jpg";
-import ServicesHeader from "assets/images/services_header.jpeg";
-import WomanInWindowIllustration from "assets/images/woman_in_window.jpg";
-import BusinessCards from "assets/images/business_cards.jpg";
-import CosyGame from "assets/images/cosy_game.jpg";
-// import AmandaFlyer from "assets/images/amanda_flyer.jpg";
-import AmandaFlyers from "assets/images/amanda_flyers.jpg";
-import AlbumCoverHeader from "assets/images/album_cover_header.jpg";
-import BookCoverHeader from "assets/images/book_cover_header.jpg";
-import BrandingHeader from "assets/images/branding_header.jpg";
-// import BusinessSuiteHeader from "assets/images/business_suite_header.jpg";
-import CharactersHeader from "assets/images/characters_header.jpg";
-import DesignServicesHeader from "assets/images/design_services_header.jpg";
-import LogoDesignHeader from "assets/images/logo_design_header.jpg";
-import FlyersHeader from "assets/images/flyers_header.jpg";
-import IllustrationServicesHeader from "assets/images/illustration_services_header.jpg";
-import PostersHeader from "assets/images/posters_header.jpg";
-import ScenesHeader from "assets/images/scenes_header.jpg";
-import SocialsHeader from "assets/images/socials_header.jpg";
-import DndPoster from "assets/images/dnd_poster.jpg";
-import BookCoverSocials from "assets/images/book_cover_socials.jpg";
-// import AmandaBusinessSuite from "assets/images/amanda_business_suite.jpg";
-import TurnMeOn from "assets/images/turn_me_on.jpg";
-import Clara from "assets/images/clara.jpg";
+// Logos
+// import InkantressLogo from "src/assets/images/logos/inkantress_logo.png";
+import InkantressLogo from "src/assets/images/logos/inkantress_logo_v2.png";
+import InkantressLogoGif from "src/assets/images/logos/logo_anim.gif";
+
+// Heroes
+import ArtDesignHero from "assets/images/heroes/art_design_hero.png";
+import PortfolioHero from "assets/images/heroes/portfolio_hero.jpeg";
+
+// Headers
+import AboutHeader from "assets/images/headers/about_header.jpg";
+import ContactHeader from "assets/images/headers/contact_header.jpg";
+import PortfolioHeader from "assets/images/headers/portfolio_header.jpg";
+import ServicesHeader from "assets/images/headers/services_header.jpeg";
+import AlbumCoverHeader from "assets/images/headers/album_cover_header.jpg";
+import BookCoverHeader from "assets/images/headers/book_cover_header.jpg";
+import BrandingHeader from "assets/images/headers/branding_header.jpg";
+import CharactersHeader from "assets/images/headers/characters_header.jpg";
+import DesignServicesHeader from "assets/images/headers/design_services_header.jpg";
+import LogoDesignHeader from "assets/images/headers/logo_design_header.jpg";
+import FlyersHeader from "assets/images/headers/flyers_header.jpg";
+import IllustrationServicesHeader from "assets/images/headers/illustration_services_header.jpg";
+import PostersHeader from "assets/images/headers/posters_header.jpg";
+import ScenesHeader from "assets/images/headers/scenes_header.jpg";
+import SocialsHeader from "assets/images/headers/socials_header.jpg";
 
 /**
  * Services
@@ -74,6 +68,17 @@ import Ranger from "assets/images/services/characters/ranger.jpg";
 import Trio from "assets/images/services/characters/trio.jpg";
 import Witch from "assets/images/services/characters/witch.jpg";
 
+// Design Services
+import BusinessCardsDesign from "assets/images/services/design/business_cards.jpg";
+import CandidDesign from "assets/images/services/design/candid.jpg";
+import CrocsDesign from "assets/images/services/design/crocs_advert.jpg";
+import GoodVibesDesign from "assets/images/services/design/good_vibes.jpg";
+import HDesign from "assets/images/services/design/h.jpg";
+import RemedeaseDesign from "assets/images/services/design/remedease_advert.jpg";
+import RushDesign from "assets/images/services/design/rush_typography_motion.gif";
+import TastyDesign from "assets/images/services/design/tasty_bakery.jpg";
+import ThanksDesign from "assets/images/services/design/thank_you.jpg";
+
 // Flyers
 import AmandaWebsterFlyer from "assets/images/services/flyers/aw_therapy.jpg";
 import FlorasFlyer from "assets/images/services/flyers/floras.jpg";
@@ -82,9 +87,19 @@ import PotteryWorkshopFlyer from "assets/images/services/flyers/pottery_workshop
 import ThriftAndGiftFlyer from "assets/images/services/flyers/thrift_n_gift.jpg";
 import XmasBashFlyer from "assets/images/services/flyers/xmas_bash.jpg";
 
-// Design Services - tbd
-// Illustration Services - tbd
-// Scenes - tbd
+// Illustration Services
+import BookmarksIllustration from "assets/images/services/illustration/bookmarks.jpg";
+import CatIllustration from "assets/images/services/illustration/cat.jpg";
+import DoggyIllustration from "assets/images/services/illustration/doggy.jpg";
+import FantasyCreaturesIllustration from "assets/images/services/illustration/fantasy_creatures.jpg";
+import FireIllustration from "assets/images/services/illustration/fire.jpg";
+import PinkMotionIllustration from "assets/images/services/illustration/pink_moon.jpg";
+import RadioIllustration from "assets/images/services/illustration/radio.jpg";
+import RecycleIllustration from "assets/images/services/illustration/recycle.jpg";
+import FishiesIllustration from "assets/images/services/illustration/the_fishies_come_to_town.jpg";
+import TreeIllustration from "assets/images/services/illustration/tree.jpg";
+import WaterIllustration from "assets/images/services/illustration/water.jpg";
+import WormIllustration from "assets/images/services/illustration/wise_old_worm.jpg";
 
 // Logo Design
 import AmandaWebsterLogo from "assets/images/services/logos/amanda_webster_therapies_white_on_green.jpg";
@@ -105,6 +120,19 @@ import CreateFestPoster from "assets/images/services/posters/create_fest.jpg";
 import DragonPoster from "assets/images/services/posters/dragon.jpg";
 import PlantPoster from "assets/images/services/posters/plant.jpg";
 
+// Scenes
+import BusStopScene from "assets/images/services/scenes/bus_stop.jpg";
+import FutureHomesScene from "assets/images/services/scenes/future_homes.jpg";
+import LobbyScene from "assets/images/services/scenes/lobby.jpg";
+import MarsScene from "assets/images/services/scenes/mars.jpg";
+import PlayAlongScene from "assets/images/services/scenes/play_along.jpg";
+import BayScene from "assets/images/services/scenes/the_bay.jpg";
+import CastleScene from "assets/images/services/scenes/the_castle.jpg";
+import DetectivesAbodeScene from "assets/images/services/scenes/the_detectives_abode.jpg";
+import MillScene from "assets/images/services/scenes/the_mill.jpg";
+import WaystationScene from "assets/images/services/scenes/waystation.jpg";
+import AirTempleScene from "assets/images/services/scenes/western_air_temple.jpg";
+
 // Socials
 import BirdBooksSocials from "assets/images/services/socials/birdbooks.jpg";
 import BushyMarketSocials from "assets/images/services/socials/bushy_market.gif";
@@ -122,32 +150,16 @@ export type Image = {
 };
 
 export const ImageKeys = {
-  ArtDesignHero: "ArtDesignHero",
   AboutHeader: "AboutHeader",
+  ArtDesignHero: "ArtDesignHero",
   ContactHeader: "ContactHeader",
-  PortfolioHero: "PortfolioHero",
   PortfolioHeader: "PortfolioHeader",
+  PortfolioHero: "PortfolioHero",
   ServicesHeader: "ServicesHeader",
-  // BusinessSuiteHeader: "BusinessSuiteHeader",
-  // BusinessSuiteThumb: "BusinessSuiteThumb",
-  Clara: "Clara",
-  DesignServicesHeader: "DesignServicesHeader",
-  DesignServicesThumb: "DesignServicesThumb",
-  FlyersHeader: "FlyersHeader",
-  IllustrationServicesHeader: "IllustrationServicesHeader",
-  IllustrationServicesThumb: "IllustrationServicesThumb",
   InkantressLogo: "InkantressLogo",
   InkantressLogoGif: "InkantressLogoGif",
   PostersHeader: "PostersHeader",
   ScenesHeader: "ScenesHeader",
-  ScenesThumb: "ScenesThumb",
-  SocialsHeader: "SocialsHeader",
-  AmandaFlyers: "AmandaFlyers",
-  DndPoster: "DndPoster",
-  BookCoverSocials: "BookCoverSocials",
-  // AmandaBusinessSuite: "AmandaBusinessSuite",
-  TurnMeOn: "TurnMeOn",
-  CosyGame: "CosyGame",
   /**
    * Services
    */
@@ -191,13 +203,39 @@ export const ImageKeys = {
   Ranger: "Ranger",
   Trio: "Trio",
   Witch: "Witch",
+  // Design Services
+  DesignServicesHeader: "DesignServicesHeader",
+  BusinessCardsDesign: "BusinessCardsDesign",
+  CandidDesign: "CandidDesign",
+  CrocsDesign: "CrocsDesign",
+  GoodVibesDesign: "GoodVibesDesign",
+  HDesign: "HDesign",
+  RemedeaseDesign: "RemedeaseDesign",
+  RushDesign: "RushDesign",
+  TastyDesign: "TastyDesign",
+  ThanksDesign: "ThanksDesign",
   // Flyers
+  FlyersHeader: "FlyersHeader",
   AmandaWebsterFlyer: "AmandaWebsterFlyer",
   FlorasFlyer: "FlorasFlyer",
   PlantSaleFlyer: "PlantSaleFlyer",
   PotteryWorkshopFlyer: "PotteryWorkshopFlyer",
   ThriftAndGiftFlyer: "ThriftAndGiftFlyer",
   XmasBashFlyer: "XmasBashFlyer",
+  // Illustration Services
+  IllustrationServicesHeader: "IllustrationServicesHeader",
+  BookmarksIllustration: "BookmarksIllustration",
+  CatIllustration: "CatIllustration",
+  DoggyIllustration: "DoggyIllustration",
+  FantasyCreaturesIllustration: "FantasyCreaturesIllustration",
+  FireIllustration: "FireIllustration",
+  PinkMotionIllustration: "PinkMotionIllustration",
+  RadioIllustration: "RadioIllustration",
+  RecycleIllustration: "RecycleIllustration",
+  FishiesIllustration: "FishiesIllustration",
+  TreeIllustration: "TreeIllustration",
+  WaterIllustration: "WaterIllustration",
+  WormIllustration: "WormIllustration",
   // Logo Design
   LogoDesignHeader: "LogoDesignHeader",
   AmandaWebsterLogo: "AmandaWebsterLogo",
@@ -216,7 +254,20 @@ export const ImageKeys = {
   CreateFestPoster: "CreateFestPoster",
   DragonPoster: "DragonPoster",
   PlantPoster: "PlantPoster",
+  // Scenes
+  BusStopScene: "BusStopScene",
+  FutureHomesScene: "FutureHomesScene",
+  LobbyScene: "LobbyScene",
+  MarsScene: "MarsScene",
+  PlayAlongScene: "PlayAlongScene",
+  BayScene: "BayScene",
+  CastleScene: "CastleScene",
+  DetectivesAbodeScene: "DetectivesAbodeScene",
+  MillScene: "MillScene",
+  WaystationScene: "WaystationScene",
+  AirTempleScene: "AirTempleScene",
   // Socials
+  SocialsHeader: "SocialsHeader",
   BirdBooksSocials: "BirdBooksSocials",
   BushyMarketSocials: "BushyMarketSocials",
   CoffeeFestSocials: "CoffeeFestSocials",
@@ -224,16 +275,11 @@ export const ImageKeys = {
   GraveGirlsSocials: "GraveGirlsSocials",
   InkantressSocials: "InkantressSocials",
   ThriftGiftSocials: "ThriftGiftSocials",
-};
+} as const;
+
+export type ImageKey = keyof typeof ImageKeys;
 
 export const Images: Record<keyof typeof ImageKeys, Image> = {
-  ArtDesignHero: {
-    imageURL: ArtDesignHero,
-    blurHash:
-      "|HJaG=*z0xcqOSkVRjkpoyM,xItQ0KNaNHf5a#Rk{l^*R+J-J%t7IoIoxt-UxbNGx@%2f,xZE1ELaiIBxto~IBkCR*xuM_xsxGWC%2n#o2s.bvx[t6Rjxaw0%2ofNGW=W;t7W;njWCSLM|X8niWBM{t7VtNGIVoz%2M|WB",
-    height: 1859,
-    width: 1920,
-  },
   AboutHeader: {
     imageURL: AboutHeader,
     blurHash:
@@ -241,8 +287,12 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
     height: 932,
     width: 3712,
   },
-  Clara: {
-    imageURL: Clara,
+  ArtDesignHero: {
+    imageURL: ArtDesignHero,
+    blurHash:
+      "|HJaG=*z0xcqOSkVRjkpoyM,xItQ0KNaNHf5a#Rk{l^*R+J-J%t7IoIoxt-UxbNGx@%2f,xZE1ELaiIBxto~IBkCR*xuM_xsxGWC%2n#o2s.bvx[t6Rjxaw0%2ofNGW=W;t7W;njWCSLM|X8niWBM{t7VtNGIVoz%2M|WB",
+    height: 1859,
+    width: 1920,
   },
   ContactHeader: {
     imageURL: ContactHeader,
@@ -250,6 +300,12 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
       "|ZL3cU~WIoRPt7t7RQxuRjRjoLxuM{WBt7V@kCWBs:ofj[WVWBWBt7RjWBaeofaffkjtWBofjZayNGafays:ayj[ayoLofayoLayj[f6fQa|jtfkofofayWVayayj[WBfkofjtj[ayayjtayj[ayWBWCj[j[fQfQayj[a|",
     height: 932,
     width: 3712,
+  },
+  InkantressLogo: {
+    imageURL: InkantressLogo,
+  },
+  InkantressLogoGif: {
+    imageURL: InkantressLogoGif,
   },
   PortfolioHero: {
     imageURL: PortfolioHero,
@@ -272,30 +328,6 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
     height: 932,
     width: 3712,
   },
-  IllustrationServicesThumb: {
-    imageURL: WomanInWindowIllustration,
-  },
-  InkantressLogo: {
-    imageURL: InkantressLogo,
-  },
-  InkantressLogoGif: {
-    imageURL: InkantressLogoGif,
-  },
-  DesignServicesThumb: {
-    imageURL: BusinessCards,
-  },
-  ScenesThumb: {
-    imageURL: CosyGame,
-  },
-  // BusinessSuiteThumb: {
-  //   imageURL: AmandaFlyer,
-  // },
-  AmandaFlyers: { imageURL: AmandaFlyers },
-  DndPoster: { imageURL: DndPoster },
-  BookCoverSocials: { imageURL: BookCoverSocials },
-  // AmandaBusinessSuite: { imageURL: AmandaBusinessSuite },
-  TurnMeOn: { imageURL: TurnMeOn },
-  CosyGame: { imageURL: CosyGame },
   /**
    * Services
    */
@@ -367,13 +399,59 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
   Trio: { imageURL: Trio },
   Witch: { imageURL: Witch },
 
+  // Design Services
+  DesignServicesHeader: {
+    imageURL: DesignServicesHeader,
+    blurHash:
+      "|BKd0y0000bw~C,DtkOYwHrrVt%3bvNZNGW=s:w^}@s:tlSxM{t7RjoLazoykCR-WFsmwbjFX9Nx.7-pnknPWVS2s:n*NHyCX7Vsi_s:j?ofWVWBv~=|o}X8n$RQjuX7ofxaWXOXNGnixaWCR*of^*%1$jrsNGbuaejHX8",
+    height: 932,
+    width: 3712,
+  },
+  BusinessCardsDesign: { imageURL: BusinessCardsDesign },
+  CandidDesign: { imageURL: CandidDesign },
+  CrocsDesign: { imageURL: CrocsDesign },
+  GoodVibesDesign: { imageURL: GoodVibesDesign },
+  HDesign: { imageURL: HDesign },
+  RemedeaseDesign: { imageURL: RemedeaseDesign },
+  RushDesign: { imageURL: RushDesign },
+  TastyDesign: { imageURL: TastyDesign },
+  ThanksDesign: { imageURL: ThanksDesign },
+
   // Flyers
+  FlyersHeader: {
+    imageURL: FlyersHeader,
+    blurHash:
+      "|PI}070dyE9tVE}Z$*Egtls:ayoMayayj[a|j[j[=|s:jFoeW;SgWUs:aes:oLW;WVayayjuoLoL-V$+RjoLt7R*j[jtWBoMf6oeWBR*jtoLoLj[-ps:aes:kCSMWVsoaeofoLj[ayWVWVjtjZfQxut7nis.kCR*ayn%e.",
+    height: 932,
+    width: 3712,
+  },
   AmandaWebsterFlyer: { imageURL: AmandaWebsterFlyer },
   FlorasFlyer: { imageURL: FlorasFlyer },
   PlantSaleFlyer: { imageURL: PlantSaleFlyer },
   PotteryWorkshopFlyer: { imageURL: PotteryWorkshopFlyer },
   ThriftAndGiftFlyer: { imageURL: ThriftAndGiftFlyer },
   XmasBashFlyer: { imageURL: XmasBashFlyer },
+
+  // Illustration
+  IllustrationServicesHeader: {
+    imageURL: IllustrationServicesHeader,
+    blurHash:
+      "|JL:o|0f0dRN~B-VRjJ9tSXSR*RjM{M{WBn%s:t7?Gsm$*xbNbX8ayaeRjsAaet7t7xtkCW;WBV@xD$*xaWrNaR*o1n%jZs:t6ofofkBofafWBj[nO%2t8R+RjRjs:t7oLxaj[ofkCWVWBjZj[WV%2juofjtNGWBofofj[",
+    height: 932,
+    width: 3712,
+  },
+  BookmarksIllustration: { imageURL: BookmarksIllustration },
+  CatIllustration: { imageURL: CatIllustration },
+  DoggyIllustration: { imageURL: DoggyIllustration },
+  FantasyCreaturesIllustration: { imageURL: FantasyCreaturesIllustration },
+  FireIllustration: { imageURL: FireIllustration },
+  PinkMotionIllustration: { imageURL: PinkMotionIllustration },
+  RadioIllustration: { imageURL: RadioIllustration },
+  RecycleIllustration: { imageURL: RecycleIllustration },
+  FishiesIllustration: { imageURL: FishiesIllustration },
+  TreeIllustration: { imageURL: TreeIllustration },
+  WaterIllustration: { imageURL: WaterIllustration },
+  WormIllustration: { imageURL: WormIllustration },
 
   // Logo Design
   LogoDesignHeader: {
@@ -408,6 +486,26 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
   DragonPoster: { imageURL: DragonPoster },
   PlantPoster: { imageURL: PlantPoster },
 
+  // Scenes
+  ScenesHeader: {
+    imageURL: ScenesHeader,
+    blurHash:
+      "|QJQp90e~W^kNHRjxGIUE1xvt8xbofj]a}WBR*WBxbRlNGayj[ofWWoft7R+R+flWVWVa#oMoeof%1%2WVR*ofayoLofj[s:axj?j@ayj?j@j[ayxaf7R*WBWBj[WVa}j[aeWBaeWVayayfRa#fkxtxaWVR*j[ayayjtj[",
+    height: 932,
+    width: 3712,
+  },
+  BusStopScene: { imageURL: BusStopScene },
+  FutureHomesScene: { imageURL: FutureHomesScene },
+  LobbyScene: { imageURL: LobbyScene },
+  MarsScene: { imageURL: MarsScene },
+  PlayAlongScene: { imageURL: PlayAlongScene },
+  BayScene: { imageURL: BayScene },
+  CastleScene: { imageURL: CastleScene },
+  DetectivesAbodeScene: { imageURL: DetectivesAbodeScene },
+  MillScene: { imageURL: MillScene },
+  WaystationScene: { imageURL: WaystationScene },
+  AirTempleScene: { imageURL: AirTempleScene },
+
   // Socials
   SocialsHeader: {
     imageURL: SocialsHeader,
@@ -423,41 +521,5 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
   GraveGirlsSocials: { imageURL: GraveGirlsSocials },
   InkantressSocials: { imageURL: InkantressSocials },
   ThriftGiftSocials: { imageURL: ThriftGiftSocials },
-
-  // BusinessSuiteHeader: {
-  //   imageURL: BusinessSuiteHeader,
-  //   blurHash:
-  //     "|EO3LZdB0f004nDh8w004:Z#aKyET1IAIAkVtmbvxbIUROxWt7tSxv-p%L.9x]Z~I9IoOZS$WAad4nRPjEoJ%2%N-;xus.RPRPjstRtRf,RjRPRjxIRQnhxCaxbco#t7n~%MogRiRPR*SNR*WBs:Mxs9t8kDj@adoekCkC",
-  //   height: 932,
-  //   width: 3712,
-  // },
-  DesignServicesHeader: {
-    imageURL: DesignServicesHeader,
-    blurHash:
-      "|BKd0y0000bw~C,DtkOYwHrrVt%3bvNZNGW=s:w^}@s:tlSxM{t7RjoLazoykCR-WFsmwbjFX9Nx.7-pnknPWVS2s:n*NHyCX7Vsi_s:j?ofWVWBv~=|o}X8n$RQjuX7ofxaWXOXNGnixaWCR*of^*%1$jrsNGbuaejHX8",
-    height: 932,
-    width: 3712,
-  },
-  FlyersHeader: {
-    imageURL: FlyersHeader,
-    blurHash:
-      "|PI}070dyE9tVE}Z$*Egtls:ayoMayayj[a|j[j[=|s:jFoeW;SgWUs:aes:oLW;WVayayjuoLoL-V$+RjoLt7R*j[jtWBoMf6oeWBR*jtoLoLj[-ps:aes:kCSMWVsoaeofoLj[ayWVWVjtjZfQxut7nis.kCR*ayn%e.",
-    height: 932,
-    width: 3712,
-  },
-  IllustrationServicesHeader: {
-    imageURL: IllustrationServicesHeader,
-    blurHash:
-      "|JL:o|0f0dRN~B-VRjJ9tSXSR*RjM{M{WBn%s:t7?Gsm$*xbNbX8ayaeRjsAaet7t7xtkCW;WBV@xD$*xaWrNaR*o1n%jZs:t6ofofkBofafWBj[nO%2t8R+RjRjs:t7oLxaj[ofkCWVWBjZj[WV%2juofjtNGWBofofj[",
-    height: 932,
-    width: 3712,
-  },
-  ScenesHeader: {
-    imageURL: ScenesHeader,
-    blurHash:
-      "|QJQp90e~W^kNHRjxGIUE1xvt8xbofj]a}WBR*WBxbRlNGayj[ofWWoft7R+R+flWVWVa#oMoeof%1%2WVR*ofayoLofj[s:axj?j@ayj?j@j[ayxaf7R*WBWBj[WVa}j[aeWBaeWVayayfRa#fkxtxaWVR*j[ayayjtj[",
-    height: 932,
-    width: 3712,
-  },
 };
 export type Images = typeof Images;

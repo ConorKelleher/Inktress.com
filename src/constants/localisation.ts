@@ -7,7 +7,6 @@ export const DEFAULT_LOCALE = {
   portfolioTitle: "Portfolio - Inkantress",
   servicesTitle: "Services - Inkantress",
   "404Title": "404 - Inkantress",
-  email: "Email",
   home: "Home",
   services: "Services",
   portfolio: "Portfolio",
@@ -28,6 +27,11 @@ export const DEFAULT_LOCALE = {
   aboutPageContent: AboutPageContent,
   contactFormSend: "Send",
   contactFormSending: "Sending",
+  contactFormSentTitle: "Sent!",
+  contactFormSentBody: "Thanks for getting in touch. I'll try get back to you within 5 working days.",
+  contactFormErrorTitle: "Oops...",
+  contactFormErrorBody:
+    "Something went wrong. Try again later or email me directly at <a href='emailto:inkantress@gmail.com'>inkantress@gmail.com</a>",
 };
 
 type Key = keyof typeof DEFAULT_LOCALE;

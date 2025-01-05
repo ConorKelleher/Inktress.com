@@ -1,13 +1,14 @@
-import { Group, Stack, Textarea, TextInput } from "@mantine/core";
+import { Center, Group, Stack, Text, Textarea, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import ArrowButton from "components/ArrowButton/ArrowButton";
 import getCopy from "constants/localisation";
 import usePageTitle from "localboast/hooks/usePageTitle";
 import PageHeader from "Pages/components/PageHeader";
 import PageWrapper from "Pages/components/PageWrapper";
-import { useCallback, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useCallback, useRef, useState } from "react";
 import styles from "./styles.module.sass";
 import { cx } from "localboast";
+import FancyTitle from "components/FancyTitle";
 
 type FormValues = {
   firstName: string;
@@ -17,11 +18,16 @@ type FormValues = {
   message: string;
 };
 
-const ContactPage = () => {
-  const [sending, setSending] = useState(false);
-  usePageTitle(getCopy("contactTitle"));
+type Status = "default" | "sending" | "success" | "error";
 
-  const form = useForm({
+interface ContactPageFormProps {
+  hidden: boolean;
+  status: Status;
+  onChangeStatus: Dispatch<SetStateAction<Status>>;
+}
+
+const ContactPageForm = ({ status, hidden, onChangeStatus }: ContactPageFormProps) => {
+  const form = useForm<FormValues>({
     mode: "uncontrolled",
     initialValues: {
       firstName: "",
@@ -50,79 +56,115 @@ const ContactPage = () => {
   });
   const formElRef = useRef<HTMLFormElement>();
 
-  const onSubmit = useCallback((values: FormValues) => {
-    setSending(true);
-    setTimeout(() => setSending(false), 4000);
+  const onSubmit = useCallback(() => {
+    onChangeStatus("sending");
     // @ts-ignore
-    // window.emailjs.sendForm("contact_service", "contact_form", formElRef.current).then(
-    //   () => {
-    //     debugger;
-    //     setSending(false);
-    //     console.log("SUCCESS!");
-    //   },
-    //   (error: Error) => {
-    //     debugger;
-    //     setSending(false);
-    //     console.log("FAILED...", error);
-    //   }
-    // );
-  }, []);
+    window.emailjs.sendForm("service_2z3cq29", "template_nhuizb4", formElRef.current).then(
+      () => {
+        onChangeStatus("success");
+        console.log("SUCCESS");
+      },
+      (error: Error) => {
+        onChangeStatus("error");
+        console.log("FAILED...", error);
+      }
+    );
+  }, [onChangeStatus]);
+
+  const sending = status === "sending";
+
+  return (
+    <form
+      ref={(ref) => ref && (formElRef.current = ref)}
+      onSubmit={form.onSubmit(onSubmit)}
+      className={cx(styles.form, { [styles.formSending]: sending })}
+      method="get"
+      autoComplete="on"
+      style={{ visibility: hidden ? "hidden" : undefined }}
+    >
+      <Stack gap="lg" p="lg">
+        <Group gap="md" w="100%" className={styles.smallInputGroup}>
+          <TextInput
+            withAsterisk
+            label="First Name"
+            name="firstName"
+            placeholder="Type Here"
+            {...form.getInputProps("firstName")}
+          />
+          <TextInput label="Last Name" name="lastName" placeholder="Type Here" {...form.getInputProps("lastName")} />
+        </Group>
+        <Group gap="md" w="100%" className={styles.mediumInputGroup}>
+          <TextInput
+            withAsterisk
+            label="Email"
+            name="email"
+            placeholder="your@email.com"
+            {...form.getInputProps("email")}
+          />
+          <TextInput
+            key={form.key("phoneNumber")}
+            label="Phone Number"
+            name="phoneNumber"
+            placeholder="+353 89 1234567"
+            {...form.getInputProps("phoneNumber")}
+          />
+        </Group>
+        <Textarea
+          withAsterisk
+          resize="vertical"
+          autoComplete="off"
+          rows={4}
+          label="Your Message"
+          name="message"
+          placeholder="Type Your Message Here..."
+          {...form.getInputProps("message")}
+        />
+        <Group justify="flex-end">
+          <ArrowButton
+            aria-label="Send Contact Button"
+            disabled={sending}
+            ctaText={sending ? getCopy("contactFormSending") : getCopy("contactFormSend")}
+            type="submit"
+          />
+        </Group>
+      </Stack>
+    </form>
+  );
+};
+
+const ContactPage = () => {
+  const [status, setStatus] = useState<Status>("default");
+  usePageTitle(getCopy("contactTitle"));
+
+  const showForm = !["success", "error"].includes(status);
 
   return (
     <PageWrapper>
       <PageHeader imageId="ContactHeader" />
-      <form
-        ref={(ref) => ref && (formElRef.current = ref)}
-        onSubmit={form.onSubmit(onSubmit)}
-        className={cx(styles.form, { [styles.formSending]: sending })}
-        method="get"
-        autoComplete="on"
-      >
-        <Stack gap="lg" p="lg">
-          <Group gap="md" w="100%" className={styles.smallInputGroup}>
-            <TextInput
-              withAsterisk
-              label="First Name"
-              name="firstName"
-              placeholder="Type Here"
-              {...form.getInputProps("firstName")}
+      <Center style={{ position: "relative" }}>
+        {!showForm && (
+          <Stack
+            justify="center"
+            w="100%"
+            h="100%"
+            p="xl"
+            gap="xl"
+            align="center"
+            style={{ position: "absolute", inset: 0 }}
+          >
+            <FancyTitle>
+              {status === "success" ? getCopy("contactFormSentTitle") : getCopy("contactFormErrorTitle")}
+            </FancyTitle>
+            <Text
+              c="dark.7"
+              dangerouslySetInnerHTML={{
+                __html: status === "success" ? getCopy("contactFormSentBody") : getCopy("contactFormErrorBody"),
+              }}
             />
-            <TextInput label="Last Name" name="lastName" placeholder="Type Here" {...form.getInputProps("lastName")} />
-          </Group>
-          <Group gap="md" w="100%" className={styles.mediumInputGroup}>
-            <TextInput
-              withAsterisk
-              label="Email"
-              name="email"
-              placeholder="your@email.com"
-              {...form.getInputProps("email")}
-            />
-            <TextInput
-              key={form.key("phoneNumber")}
-              label="Phone Number"
-              name="tel"
-              placeholder="+353 89 1234567"
-              {...form.getInputProps("phoneNumber")}
-            />
-          </Group>
-          <Textarea
-            withAsterisk
-            resize="vertical"
-            autoComplete="off"
-            rows={4}
-            label="Your Message"
-            placeholder="Type Your Message Here..."
-            {...form.getInputProps("message")}
-          />
-          <Group justify="flex-end">
-            <ArrowButton
-              disabled={sending}
-              ctaText={sending ? getCopy("contactFormSending") : getCopy("contactFormSend")}
-              type="submit"
-            />
-          </Group>
-        </Stack>
-      </form>
+          </Stack>
+        )}
+        <ContactPageForm hidden={!showForm} status={status} onChangeStatus={setStatus} />
+      </Center>
     </PageWrapper>
   );
 };

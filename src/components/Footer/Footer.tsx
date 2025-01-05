@@ -1,9 +1,8 @@
 import React, { FunctionComponent, MutableRefObject, forwardRef } from "react";
 import { Link } from "react-router-dom";
-import { Anchor, Box, Stack } from "@mantine/core";
+import { Anchor, Group } from "@mantine/core";
 // import { Anchor, Box, Stack, Text, lighten, useComputedColorScheme } from "@mantine/core";
 import styles from "./styles.module.sass";
-import * as LINKS from "constants/links";
 import getCopy from "constants/localisation";
 import Paths from "Paths";
 import { Haptic } from "localboast";
@@ -54,21 +53,9 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>((_props, ref) => {
 
   return (
     <div className={styles.footer_wrapper}>
-      <Box
-        id="page-footer"
-        className={styles.footer}
-        ref={ref}
-        // style={{
-        // backgroundColor,
-        // }}
-      >
-        <div>
-          <Stack>
-            <FooterAnchor to={Paths.Contact}>{getCopy("contact")}</FooterAnchor>
-            <FooterAnchor href={LINKS.MAILTO}>{getCopy("email")}</FooterAnchor>
-          </Stack>
-        </div>
-      </Box>
+      <Group id="page-footer" className={styles.footer} ref={ref}>
+        <FooterAnchor to={Paths.Contact}>{getCopy("contact")}</FooterAnchor>
+      </Group>
     </div>
   );
 });

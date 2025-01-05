@@ -1,13 +1,13 @@
 import { Group, Stack, Text } from "@mantine/core";
 import BlockLink from "components/BlockLink";
-import { ImageKeys } from "constants/Images";
+import { ImageKey } from "constants/Images";
 import getCopy from "constants/localisation";
 import Paths from "Paths";
 import styles from "./styles.module.sass";
 import Album from "components/Album";
 
 export interface ShowcaseProps {
-  imageIds: (keyof typeof ImageKeys)[];
+  imageIds: ImageKey[];
   description: string;
 }
 
