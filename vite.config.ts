@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
+import dynamicImportVars from "@rollup/plugin-dynamic-import-vars";
 import mkcert from "vite-plugin-mkcert";
 import svgr from "vite-plugin-svgr";
 
@@ -34,6 +35,7 @@ export default defineConfig({
   optimizeDeps: { exclude: ["localboast"] },
   build: {
     rollupOptions: {
+      plugins: [dynamicImportVars({})],
       output: {
         entryFileNames: `assets/[name].js`,
         chunkFileNames: `assets/[name].js`,
