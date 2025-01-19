@@ -8,13 +8,25 @@
     justify-content: flex-end
 
 .logo
+  position: relative
   display: unset
-  margin-bottom: 3% // accounting for uncentered logo
   width: 319px
-  padding-right: 10px
-  object-view-box: inset(37% 15% 41% 11%)
 
   @media (max-width: $mantine-breakpoint-md)
     width: 240px
   @media (max-width: $mantine-breakpoint-xs)
     width: 188px
+
+  .logoVideoContainer
+    margin-top: -5px // accounting for uncentered logo
+    margin-bottom: -10px // Elongate bottom to ensure no pixel peeking from behind
+    background-color: var(--colors-header, var(--mantine-color-body))
+    position: absolute
+    inset: 0
+    pointer-events: none
+    // clip-path: inset(0 100% 0 0%)
+    // transition: clip-path 2s 0s linear
+    clip-path: inset(0% 0% 0 0%)
+    &Reveal
+      clip-path: inset(0% 0% 0 0%)
+    .logoVideo
