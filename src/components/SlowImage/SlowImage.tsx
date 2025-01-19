@@ -5,9 +5,28 @@ import { cx, useImageLoader, useUpdatingRef } from "localboast";
 import { AriaAttributes, CSSProperties, ImgHTMLAttributes, useLayoutEffect, useRef } from "react";
 import styles from "./styles.module.sass";
 
+const QUALITY_SETTINGS = {
+  // Setting to only ever load thumbnail image (if present). Never use full size
+  "thumbnail": "thumbnail",
+  // Setting to begin with the thumbnail image and replace with the full size when available
+  "gradual": "gradual",
+  // Setting to only ever load full-size image. Never use thumbnail
+  "full": "full"
+} as const
+type QUALITY_SETTING = keyof typeof QUALITY_SETTINGS 
+const LOAD_THUMBNAIL_QUALITIES: QUALITY_SETTING[] = [
+  QUALITY_SETTINGS.gradual,
+  QUALITY_SETTINGS.thumbnail,
+]
+const LOAD_FULL_QUALITIES: QUALITY_SETTING[] = [
+  QUALITY_SETTINGS.gradual,
+  QUALITY_SETTINGS.full,
+]
+
 export interface SlowImageProps extends Omit<ImageProps, "src">, AriaAttributes {
   imageId: keyof Images;
   blurQuality?: number;
+
   // Optional className passed to the wrapping container
   className?: string;
   // Optional className passed to the Mantine Image component
@@ -16,6 +35,7 @@ export interface SlowImageProps extends Omit<ImageProps, "src">, AriaAttributes 
   style?: CSSProperties;
   // Optional styles passed to the Mantine Image component
   imageStyle?: CSSProperties;
+  quality?: QUALITY_SETTING;
   loading?: ImgHTMLAttributes<any>["loading"];
   alt?: ImgHTMLAttributes<any>["alt"];
 }
@@ -26,19 +46,30 @@ const SlowImage = ({
   imageClassName,
   style,
   imageStyle,
+  quality = QUALITY_SETTINGS.full,
   ...imageProps
 }: SlowImageProps) => {
-  const { imageURL, blurHash: imageHash, height: imageHeight, width: imageWidth } = Images[imageId];
+  const { imageURL: fullImageURL, thumbnailURL, blurHash: imageHash, height: imageHeight, width: imageWidth } = Images[imageId];
+  const imageAspectRatio = imageHeight && imageWidth ? `${imageWidth / imageHeight}` : undefined
   const imageStyleRef = useUpdatingRef(imageStyle);
   const renderBlur = !!(imageHash && imageHeight && imageWidth);
-  const { loaded, loading, failedToLoad } = useImageLoader({
-    src: imageURL,
-    load: renderBlur,
+  const loadFullImage = renderBlur && LOAD_FULL_QUALITIES.includes(quality)
+  const { loaded: loadedFull } = useImageLoader({
+    src: fullImageURL,
+    load: loadFullImage,
   });
-  const loadedOnFirstRenderRef = useRef(loaded);
+  const loadThumbnail = renderBlur && !!thumbnailURL && LOAD_THUMBNAIL_QUALITIES.includes(quality)
+  const { loaded: loadedThumb } = useImageLoader({
+    src: thumbnailURL || "",
+    load: loadThumbnail,
+  });
+  const imageURLForImgTag = (!loadThumbnail || (loadFullImage && loadedFull)) ? fullImageURL : thumbnailURL
+  const imageURLToShowHasLoaded = imageURLForImgTag === fullImageURL ? loadedFull : loadedThumb
+  // Check on first render if image to show was already loaded - skip blurhash if ready to show on first render 
+  const loadedOnFirstRenderRef = useRef(imageURLToShowHasLoaded);
   const wasLoadedOnFirstRender = loadedOnFirstRenderRef.current;
   const imageContainerRef = useRef<HTMLElement>();
-  const shouldShowFullImage = !renderBlur || (!loading && !failedToLoad);
+  const shouldShowImgTag = !renderBlur || imageURLToShowHasLoaded;
 
   useLayoutEffect(() => {
     const canvas = document.createElement("canvas");
@@ -48,7 +79,12 @@ const SlowImage = ({
     if (renderBlur && ctx && imageContainer) {
       canvas.height = blurQuality;
       canvas.width = blurQuality;
-      const pixels = decodeBlurHash(imageHash, blurQuality, blurQuality);
+      let pixels;
+      try {
+        pixels = decodeBlurHash(imageHash, blurQuality, blurQuality);
+      } catch (e) {
+        return console.error(e);
+      }
 
       const imageData = ctx.createImageData(blurQuality, blurQuality);
       imageData.data.set(pixels);
@@ -58,7 +94,7 @@ const SlowImage = ({
       canvas.style.minHeight = "100%";
       // canvas.style.height = `${imageHeight}px`;
       canvas.style.width = `${imageWidth}px`;
-      canvas.style.aspectRatio = `${imageWidth / imageHeight}`;
+      canvas.style.aspectRatio = imageAspectRatio!;
       Object.entries(imageStyleRef.current || ({} as CSSProperties)).forEach(([styleKey, styleValue]) => {
         // @ts-ignore
         canvas.style[styleKey] = styleValue;
@@ -70,22 +106,25 @@ const SlowImage = ({
         imageContainer.removeChild(canvas);
       };
     }
-  }, [renderBlur, wasLoadedOnFirstRender, imageStyleRef, blurQuality, imageHash, imageWidth, imageHeight]);
+  }, [renderBlur, wasLoadedOnFirstRender, imageStyleRef, blurQuality, imageHash, imageWidth, imageHeight, imageAspectRatio]);
 
   return (
     <div
       ref={(ref) => {
         if (ref) imageContainerRef.current = ref;
       }}
-      style={style}
+      style={{
+        ...style,
+        aspectRatio: imageAspectRatio,
+      }}
       className={cx(styles.slow_image_container, className)}
     >
-      {shouldShowFullImage && (
+      {shouldShowImgTag && (
         <Image
           loading="lazy"
           mah="100%"
           maw="100%"
-          src={imageURL}
+          src={imageURLForImgTag}
           {...imageProps}
           className={cx(styles.slow_image, imageClassName)}
           style={{

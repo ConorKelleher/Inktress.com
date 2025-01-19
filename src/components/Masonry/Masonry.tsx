@@ -73,12 +73,11 @@ export const Masonry = ({ children, imageIds }: MasonryProps) => {
       pb="xl"
       justify="center"
     >
-      {columnData.map((columnImages, index) => (
-        <Stack key={`masonry_col-${index}`} w={columnWidth} h="100%" p={GAP / 2} mb="auto" justify="flex-start">
-          {columnImages.map((imageId, index) =>
+      {columnData.map((columnImages, columnIndex) => (
+        <Stack key={`masonry_col-${columnIndex}`} w={columnWidth} h="100%" p={GAP / 2} mb="auto" justify="flex-start">
+          {columnImages.map((imageId, rowIndex) =>
             children({
-              key: `masonry_col-${index}_row-${index}`,
-              imageStyle: { position: "unset", borderRadius: "10px" },
+              key: `masonry_col-${columnIndex}_row-${rowIndex}`,
               imageId,
             })
           )}
