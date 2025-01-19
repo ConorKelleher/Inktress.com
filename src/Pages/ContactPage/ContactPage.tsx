@@ -140,7 +140,8 @@ const ContactPage = () => {
 
   return (
     <PageWrapper>
-      <PageHeader imageId="ContactHeader" />
+      {/* @ts-ignore */}
+      <PageHeader imageId="ContactHeader" style={{ objectViewBox: "inset(0% 0% 0% 5%)", objectPosition: "left" }} />
       <Center style={{ position: "relative" }}>
         {!showForm && (
           <Stack

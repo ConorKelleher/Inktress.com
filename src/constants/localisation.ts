@@ -32,6 +32,8 @@ export const DEFAULT_LOCALE = {
   contactFormErrorTitle: "Oops...",
   contactFormErrorBody:
     "Something went wrong. Try again later or email me directly at <a href='emailto:inkantress@gmail.com'>inkantress@gmail.com</a>",
+  portfolioModalServicesCTA: "Services",
+  portfolioModalRequestPrintCTA: "Request Print",
 };
 
 type Key = keyof typeof DEFAULT_LOCALE;
