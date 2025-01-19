@@ -31,6 +31,7 @@ const Services = {
     showcaseText: BookCoverDescription,
     showcaseImageIds: [
       ImageKeys.AliceWonderlandBook,
+      ImageKeys.DeadlyEducationBook,
       ImageKeys.EarlyRiserBook,
       ImageKeys.HitchhikerBook,
       ImageKeys.ImprobableFuturesBook,

@@ -1,7 +1,8 @@
 // Logos
-import InkantressLogo from "src/assets/images/logos/inkantress_logo.png";
+import RosieDevaneyLogo from "src/assets/images/logos/rosie_devaney_logo.png";
+import InkantressLogo from "src/assets/images/logos/inkantress_logo.jpg";
 // import InkantressLogo from "src/assets/images/logos/inkantress_logo_v2.png";
-import InkantressLogoGif from "src/assets/images/logos/logo_anim.gif";
+// import InkantressLogoGif from "src/assets/images/logos/logo_anim.gif";
 import InstagramLogo from "src/assets/images/logos/insta.png";
 import TikTokLogo from "src/assets/images/logos/tiktok.png";
 import LinkedInLogo from "src/assets/images/logos/linkedin.png";
@@ -36,7 +37,8 @@ export const ImageKeys = {
   PortfolioHero: "PortfolioHero",
   ServicesHeader: "ServicesHeader",
   InkantressLogo: "InkantressLogo",
-  InkantressLogoGif: "InkantressLogoGif",
+  RosieDevaneyLogo: "RosieDevaneyLogo",
+  // InkantressLogoGif: "InkantressLogoGif",
   InstagramLogo: "InstagramLogo",
   TikTokLogo: "TikTokLogo",
   LinkedInLogo: "LinkedInLogo",
@@ -72,9 +74,12 @@ export const Images: Record<keyof typeof ImageKeys, Image> = {
   InkantressLogo: {
     imageURL: InkantressLogo,
   },
-  InkantressLogoGif: {
-    imageURL: InkantressLogoGif,
+  RosieDevaneyLogo: {
+    imageURL: RosieDevaneyLogo,
   },
+  // InkantressLogoGif: {
+  //   imageURL: InkantressLogoGif,
+  // },
   InstagramLogo: { imageURL: InstagramLogo },
   TikTokLogo: { imageURL: TikTokLogo },
   LinkedInLogo: { imageURL: LinkedInLogo },

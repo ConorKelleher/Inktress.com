@@ -10,6 +10,7 @@ import LemonsAlbum from "assets/images/services/albums/lemons.jpg";
 
 // Book Covers
 import AliceWonderlandBook from "assets/images/services/book_covers/alice.jpg";
+import DeadlyEducationBook from "assets/images/services/book_covers/deadly_education.jpg";
 import EarlyRiserBook from "assets/images/services/book_covers/early_riser.jpg";
 import HitchhikerBook from "assets/images/services/book_covers/hitchhiker.jpg";
 import ImprobableFuturesBook from "assets/images/services/book_covers/improbable_futures.jpg";
@@ -136,6 +137,7 @@ export const ServiceImageKeys = {
   // Book Covers
   BookCoverHeader: "BookCoverHeader",
   AliceWonderlandBook: "AliceWonderlandBook",
+  DeadlyEducationBook: "DeadlyEducationBook",
   EarlyRiserBook: "EarlyRiserBook",
   HitchhikerBook: "HitchhikerBook",
   ImprobableFuturesBook: "ImprobableFuturesBook",
@@ -266,6 +268,7 @@ export const ServiceImages: Record<keyof typeof ServiceImageKeys, Image> = {
     width: 3712,
   },
   AliceWonderlandBook: { imageURL: AliceWonderlandBook },
+  DeadlyEducationBook: { imageURL: DeadlyEducationBook },
   EarlyRiserBook: { imageURL: EarlyRiserBook },
   HitchhikerBook: { imageURL: HitchhikerBook },
   ImprobableFuturesBook: { imageURL: ImprobableFuturesBook },
