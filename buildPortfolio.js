@@ -14,13 +14,20 @@ const sizeOf = util.promisify(imageSize);
 
 const portfolioDir = "src/assets/images/portfolio";
 const portfolioItemsPath = "src/constants/PortfolioItems.tsx";
+const IMPORTS_LIST_GEN_START = "// GENERATED PORTFOLIO ITEM IMPORTS START - DO NOT CHANGE THIS LINE";
+const IMPORTS_LIST_GEN_END = "// GENERATED PORTFOLIO ITEM IMPORTS END - DO NOT CHANGE THIS LINE";
 const KEYS_LIST_GEN_START = "// GENERATED PORTFOLIO ITEM KEYS START - DO NOT CHANGE THIS LINE";
 const KEYS_LIST_GEN_END = "// GENERATED PORTFOLIO ITEM KEYS END - DO NOT CHANGE THIS LINE";
 const ITEMS_LIST_GEN_START = "// GENERATED PORTFOLIO ITEMS START - DO NOT CHANGE THIS LINE";
 const ITEMS_LIST_GEN_END = "// GENERATED PORTFOLIO ITEMS END - DO NOT CHANGE THIS LINE";
 
+const replaceImportsRegExp = new RegExp(`${IMPORTS_LIST_GEN_START}.*${IMPORTS_LIST_GEN_END}`, "s"); // s flag to allow period to match newlines
+const replaceKeysRegExp = new RegExp(`${KEYS_LIST_GEN_START}.*${KEYS_LIST_GEN_END}`, "s"); // s flag to allow period to match newlines
+const replaceItemsRegExp = new RegExp(`${ITEMS_LIST_GEN_START}.*${ITEMS_LIST_GEN_END}`, "s"); // s flag to allow period to match newlines
+
 let imageData = {};
 let imageKeys = {};
+let imageImports = [];
 
 const BLUR_HASH_SIZE = 32;
 
@@ -66,11 +73,16 @@ async function processPortfolio() {
         .map((str) => str.charAt(0).toUpperCase() + str.slice(1))
         .join("")
         .replace(/[^A-Za-z0-9&]/g, "");
+
+      const importVariableKey = imageKey.replace(/[^A-Za-z]/g, "")
+      imageImports.push(`import ${importVariableKey}Full from "src/assets/images/portfolio/${portfolioPage}/${imageName} L.${imageExtension}"`)
+      imageImports.push(`import ${importVariableKey}Thumb from "src/assets/images/portfolio/${portfolioPage}/${imageName} S.${imageExtension}"`)
       imageData[imageKey] = {
         page: portfolioPage,
-        name: imageName,
         blurHash: imgBlurHash,
-        extension: imageExtension,
+        imageURL: `${importVariableKey}Full`,
+        thumbnailURL: `${importVariableKey}Thumb`,
+        name: imageName,
         height,
         width,
       };
@@ -83,19 +95,30 @@ async function processPortfolio() {
 
 async function writePortfolioData() {
   const originalFileString = await readFile(portfolioItemsPath, "utf-8");
+  const imageImportsString = imageImports.join("\n");
   const imageKeysJSONString = JSON.stringify(imageKeys, null, 2);
   const trimmedImageKeysJSONString = imageKeysJSONString.slice(2, -2);
   const imageDataJSONString = JSON.stringify(imageData, null, 2);
   const trimmedImageDataJSONString = imageDataJSONString.slice(2, -2);
-  const replaceKeysRegExp = new RegExp(`${KEYS_LIST_GEN_START}.*${KEYS_LIST_GEN_END}`, "s"); // s flag to allow period to match newlines
-  const replaceItemsRegExp = new RegExp(`${ITEMS_LIST_GEN_START}.*${ITEMS_LIST_GEN_END}`, "s"); // s flag to allow period to match newlines
   // Note - the replace 2nd arg NEEDS to be functions, to circumvent special character replacement (https://stackoverflow.com/a/59697678)
   const updatedFileString = originalFileString
+    .replace(
+      replaceImportsRegExp,
+      () => `${IMPORTS_LIST_GEN_START}\n${imageImportsString}\n${IMPORTS_LIST_GEN_END}`
+    )
     .replace(replaceKeysRegExp, () => `${KEYS_LIST_GEN_START}\n${trimmedImageKeysJSONString}\n  ${KEYS_LIST_GEN_END}`)
     .replace(
       replaceItemsRegExp,
       () => `${ITEMS_LIST_GEN_START}\n${trimmedImageDataJSONString}\n  ${ITEMS_LIST_GEN_END}`
-    );
+    )
+    .replace(
+      /("imageURL": )"([^"]+)"/g,
+      "$1$2"
+    ).replace(
+      /("thumbnailURL": )"([^"]+)"/g,
+      "$1$2"
+    )
+
   await writeFile(portfolioItemsPath, updatedFileString);
 }
 

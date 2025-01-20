@@ -7,6 +7,11 @@ import Promise from "bluebird";
 const bucketName = process.env.BUCKET_NAME;
 const accessKeyId = process.env.ACCESS_KEY_ID;
 const secretAccessKey = process.env.SECRET_ACCESS_KEY;
+
+if (!["true", "false"].includes(process.env.IGNORE_MEDIA)) {
+  throw new Error("Refusing to run without specifying IGNORE_MEDIA option. Prefer to run a yarn script")
+}
+const ignoreMedia = process.env.IGNORE_MEDIA === "true"
 /* eslint-enable */
 
 const s3Client = new S3Client({
@@ -19,10 +24,17 @@ const s3Client = new S3Client({
 
 const rootDir = "dist";
 
+function skipFile(fileName) {
+  return ignoreMedia && (fileName.endsWith(".jpg") || fileName.endsWith(".jpeg") || fileName.endsWith(".png") || fileName.endsWith(".gif") || fileName.endsWith(".mp4"))
+}
+
 function uploadAllFilesInDirectory(directory) {
   fs.readdir(directory, function (err, items) {
     items.forEach((item) => {
       const builtPath = `${directory}/${item}`;
+      if (skipFile(item)) {
+        return
+      }
       fs.lstat(builtPath, (err, stats) => {
         if (err) {
           return console.error(err);
@@ -74,6 +86,9 @@ async function clearBucket() {
   }
 
   await Promise.each(files, (item) => {
+    if (skipFile(item.Key)) {
+      return Promise.resolve()
+    }
     var deleteParams = { Bucket: bucketName, Key: item.Key };
     const deleteCommand = new DeleteObjectCommand(deleteParams);
     return s3Client.send(deleteCommand);

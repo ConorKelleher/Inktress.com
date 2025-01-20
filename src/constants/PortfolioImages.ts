@@ -11,8 +11,8 @@ for (let i = 0; i < PortfolioItemKeyList.length; i++) {
   const pImageId = PortfolioItemKeyList[i];
   const pItem = PortfolioItems[pImageId];
   _PortfolioImages[pImageId] = {
-    imageURL: (await import(`../assets/images/portfolio/${pItem.page}/${pItem.name} L.${pItem.extension}`)).default,
-    thumbnailURL: (await import(`../assets/images/portfolio/${pItem.page}/${pItem.name} S.${pItem.extension}`)).default,
+    imageURL: pItem.imageURL,
+    thumbnailURL: pItem.thumbnailURL,
     blurHash: pItem.blurHash,
     height: pItem.height,
     width: pItem.width,
