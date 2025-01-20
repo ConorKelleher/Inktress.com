@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.sass";
 import { PropsWithChildren } from "react";
 
-export interface BlockLinkProps extends AnchorProps, PropsWithChildren {
+export interface BlockLinkProps extends AnchorProps, Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof AnchorProps>, PropsWithChildren {
   ctaTo?: string;
   ctaHref?: string;
 }

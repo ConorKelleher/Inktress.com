@@ -21,29 +21,30 @@ interface ReversibleVideoProps
 const ReversibleVideo = ({ startOffset, endOffset, src, type, direction, ...videoProps }: ReversibleVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>();
 
-  const { start: startAnimation, stop } = useAnimationFrames()
+  const { start: startAnimation, stop } = useAnimationFrames();
 
   useEffect(() => {
     if (!videoRef.current) {
-      return
+      return;
     }
-    const { currentTime, duration } = videoRef.current
-    const minTime = startOffset || 0
-    const maxTime = endOffset ? Math.max(0, duration - endOffset) : duration
-    const shouldPlay = (direction === "forwards" && currentTime < maxTime) || (direction === "backwards" && currentTime > minTime)
-    const remainingTime = shouldPlay ? (direction === "forwards" ? maxTime - currentTime : currentTime - minTime) : 0
+    const { currentTime, duration } = videoRef.current;
+    const minTime = startOffset || 0;
+    const maxTime = endOffset ? Math.max(0, duration - endOffset) : duration;
+    const shouldPlay =
+      (direction === "forwards" && currentTime < maxTime) || (direction === "backwards" && currentTime > minTime);
+    const remainingTime = shouldPlay ? (direction === "forwards" ? maxTime - currentTime : currentTime - minTime) : 0;
     if (shouldPlay) {
       startAnimation((progress) => {
         if (!videoRef.current) {
-          return stop()
+          return stop();
         }
-        const deltaTime = progress * remainingTime
-        const newTime = direction === "forwards" ? currentTime + deltaTime : currentTime - deltaTime
-        videoRef.current.currentTime = Math.max(Math.min(newTime, maxTime), minTime)
-      }, remainingTime * 1000)
+        const deltaTime = progress * remainingTime;
+        const newTime = direction === "forwards" ? currentTime + deltaTime : currentTime - deltaTime;
+        videoRef.current.currentTime = Math.max(Math.min(newTime, maxTime), minTime);
+      }, remainingTime * 1000);
     }
-    return stop
-  }, [direction, startAnimation, stop, startOffset, endOffset])
+    return stop;
+  }, [direction, startAnimation, stop, startOffset, endOffset]);
 
   return (
     <video
@@ -70,14 +71,8 @@ const HomeIcon = () => {
 
   return (
     <Group wrap="nowrap" className={styles.logoContainer}>
-      <Anchor
-        component={Link}
-        to={Paths.Home}
-        className={styles.logoButton}
-        onMouseEnter={onFocusIcon}
-        onFocus={onFocusIcon}
-      >
-        <Haptic focusScaleMultiplier={0.5} className={styles.logo} aria-label="Back to homepage">
+      <Haptic focusScaleMultiplier={0.5} className={styles.logo} aria-label="Back to homepage">
+        <Anchor component={Link} to={Paths.Home} className={styles.logoButton} onMouseEnter={onFocusIcon}>
           <img alt="Website logo image" src={Images.RosieDevaneyLogo.imageURL} className={styles.logoImage} />
           <Box className={cx(styles.logoVideoContainer, { [styles.logoVideoContainerReveal]: showingVideo })}>
             <ReversibleVideo
@@ -88,11 +83,10 @@ const HomeIcon = () => {
               direction={showingVideo ? "forwards" : "backwards"}
               src={InkantressLogoAnim}
               type="video/mp4"
-              className={styles.logoVideo}
             />
           </Box>
-        </Haptic>
-      </Anchor>
+        </Anchor>
+      </Haptic>
     </Group>
   );
 };

@@ -10,12 +10,17 @@
 .logo
   position: relative
   display: unset
-  width: 319px
 
-  @media (max-width: $mantine-breakpoint-md)
-    width: 240px
-  @media (max-width: $mantine-breakpoint-xs)
-    width: 188px
+  img,
+  video
+    width: 320px
+    @media (max-width: $mantine-breakpoint-sm)
+      width: 240px
+    @media (max-width: $mantine-breakpoint-xs)
+      width: 188px
+
+  .logoButton
+    display: flex
 
   .logoVideoContainer
     margin-top: -5px // accounting for uncentered logo
@@ -24,9 +29,14 @@
     position: absolute
     inset: 0
     pointer-events: none
-    // clip-path: inset(0 100% 0 0%)
-    // transition: clip-path 2s 0s linear
-    clip-path: inset(0% 0% 0 0%)
+    --mask: linear-gradient(to right, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 55%)      
+    -webkit-mask: var(--mask)
+    mask: var(--mask)
+    mask-size: 210%
+    mask-position: 100%
+    transition: mask-position 1s 0.6s linear
+    transition-timing-function: ease-out
     &Reveal
-      clip-path: inset(0% 0% 0 0%)
-    .logoVideo
+      mask-position: 0%
+      transition-timing-function: ease-in
+      transition-delay: 0.5s

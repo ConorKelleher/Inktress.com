@@ -79,23 +79,27 @@ const PortfolioPage = () => {
   const focusedImageConfig = focusedImageId && PortfolioItems[focusedImageId];
   // Delayed value updates immediately if new truthy value is provided. Used to persist value for modal after being cleared
   const [delayedFocusedImageId] = useDelayedValue(focusedImageId, { delay: 1000, immediateIf: (value) => !!value });
-  const { setRef: setImageSectionRef, size: imageSectionSize } = useSize()
+  const { setRef: setImageSectionRef, size: imageSectionSize } = useSize();
   const imageWrapperStyle = useMemo(() => {
-    const style: CSSProperties = {}
-    if (focusedImageConfig?.width && focusedImageConfig?.height && imageSectionSize?.height && imageSectionSize?.width) {
-      const focusedImageAspectRatio =
-      focusedImageConfig.width / focusedImageConfig.height
-      style.aspectRatio = focusedImageAspectRatio
-      const imageSectionAspectRatio = imageSectionSize.width / imageSectionSize.height
-      const imageScalingHorizontally = focusedImageAspectRatio > imageSectionAspectRatio
+    const style: CSSProperties = {};
+    if (
+      focusedImageConfig?.width &&
+      focusedImageConfig?.height &&
+      imageSectionSize?.height &&
+      imageSectionSize?.width
+    ) {
+      const focusedImageAspectRatio = focusedImageConfig.width / focusedImageConfig.height;
+      style.aspectRatio = focusedImageAspectRatio;
+      const imageSectionAspectRatio = imageSectionSize.width / imageSectionSize.height;
+      const imageScalingHorizontally = focusedImageAspectRatio > imageSectionAspectRatio;
       if (imageScalingHorizontally) {
-        style.width = focusedImageConfig.width
+        style.width = focusedImageConfig.width;
       } else {
-        style.height = focusedImageConfig.height
+        style.height = focusedImageConfig.height;
       }
     }
-    return style
-  }, [imageSectionSize?.height, imageSectionSize?.width, focusedImageConfig?.height, focusedImageConfig?.width])
+    return style;
+  }, [imageSectionSize?.height, imageSectionSize?.width, focusedImageConfig?.height, focusedImageConfig?.width]);
 
   return (
     <PageWrapper>
@@ -121,22 +125,13 @@ const PortfolioPage = () => {
             mih="100%"
             className={styles.imageSection}
             ref={(ref) => {
-              if(ref) setImageSectionRef(ref)
+              if (ref) setImageSectionRef(ref);
             }}
           >
-            <Box
-              className={styles.imageWrapper}
-              style={imageWrapperStyle}
-            >
-              {
-                !!delayedFocusedImageId && (
-                  <SlowImage
-                    imageId={delayedFocusedImageId}
-                    quality="gradual"
-                    className={styles.slowImage}
-                  />
-                )
-              }
+            <Box className={styles.imageWrapper} style={imageWrapperStyle}>
+              {!!delayedFocusedImageId && (
+                <SlowImage imageId={delayedFocusedImageId} quality="gradual" className={styles.slowImage} />
+              )}
               <Box className={styles.closeButtonWrapper}>
                 <Haptic>
                   <CloseButton aria-label="Close Modal" radius="50%" onClick={clearFocusedImage} />
@@ -153,12 +148,14 @@ const PortfolioPage = () => {
                 ctaTo={`/${Paths.Services}`}
                 ctaText={getCopy("portfolioModalServicesCTA")}
               />
-              <ArrowLink
-                className={styles.modalLink}
-                upcase={false}
-                ctaTo={`/${Paths.Contact}`}
-                ctaText={getCopy("portfolioModalRequestPrintCTA")}
-              />
+              {focusedImageConfig?.page === "illustration" && (
+                <ArrowLink
+                  className={styles.modalLink}
+                  upcase={false}
+                  ctaTo={`/${Paths.Contact}`}
+                  ctaText={getCopy("portfolioModalRequestPrintCTA")}
+                />
+              )}
             </Group>
           </Stack>
         </Group>

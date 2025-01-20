@@ -2,7 +2,7 @@ import { Group, Stack, Text } from "@mantine/core";
 import BlockLink from "components/BlockLink";
 import { ImageKey } from "constants/Images";
 import getCopy from "constants/localisation";
-import Paths from "Paths";
+import * as Links from "constants/links";
 import styles from "./styles.module.sass";
 import Album from "components/Album";
 
@@ -19,7 +19,7 @@ export const Showcase = (props: ShowcaseProps) => {
           {props.description}
         </Text>
         {/** todo */}
-        <BlockLink ctaTo={`/${Paths.Contact}`}>
+        <BlockLink ctaHref={Links.CALENDLY_30_MINS} target="_blank" rel="noopener noreferrer">
           <Text fz="lg">{getCopy("bookConsultationCTA")}</Text>
         </BlockLink>
       </Stack>

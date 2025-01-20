@@ -6,3 +6,4 @@ export const BEHANCE = "https://www.behance.net/rosiedevaney2";
 export const LINKTREE = "https://linktr.ee/inkantress";
 export const COOKIE_POLICY = "/cookie_policy.html";
 export const PRIVACY_POLICY = "/privacy_policy.html";
+export const CALENDLY_30_MINS = "https://calendly.com/inkantress/30min"
