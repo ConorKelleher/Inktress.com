@@ -53,12 +53,12 @@ const SlowImage = ({
   const imageAspectRatio = imageHeight && imageWidth ? `${imageWidth / imageHeight}` : undefined
   const imageStyleRef = useUpdatingRef(imageStyle);
   const renderBlur = !!(imageHash && imageHeight && imageWidth);
-  const loadFullImage = renderBlur && LOAD_FULL_QUALITIES.includes(quality)
+  const loadThumbnail = renderBlur && !!thumbnailURL && LOAD_THUMBNAIL_QUALITIES.includes(quality)
+  const loadFullImage = renderBlur && (!thumbnailURL || LOAD_FULL_QUALITIES.includes(quality))
   const { loaded: loadedFull } = useImageLoader({
     src: fullImageURL,
     load: loadFullImage,
   });
-  const loadThumbnail = renderBlur && !!thumbnailURL && LOAD_THUMBNAIL_QUALITIES.includes(quality)
   const { loaded: loadedThumb } = useImageLoader({
     src: thumbnailURL || "",
     load: loadThumbnail,

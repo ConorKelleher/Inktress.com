@@ -275,7 +275,7 @@ export const PortfolioItemKeys = {
 export type PortfolioItem = {
   page: SpecificPortfolioPage;
   imageURL: string;
-  thumbnailURL: string;
+  thumbnailURL?: string;
   name: string;
   height: number;
   width: number;

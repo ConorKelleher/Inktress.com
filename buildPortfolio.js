@@ -25,9 +25,11 @@ const replaceImportsRegExp = new RegExp(`${IMPORTS_LIST_GEN_START}.*${IMPORTS_LI
 const replaceKeysRegExp = new RegExp(`${KEYS_LIST_GEN_START}.*${KEYS_LIST_GEN_END}`, "s"); // s flag to allow period to match newlines
 const replaceItemsRegExp = new RegExp(`${ITEMS_LIST_GEN_START}.*${ITEMS_LIST_GEN_END}`, "s"); // s flag to allow period to match newlines
 
+// When we find a thumbnail before finding the full one, stick it here till we're ready for it
+const tempThumbnailData = {};
 let imageData = {};
 let imageKeys = {};
-let imageImports = [];
+const imageImports = [];
 
 const BLUR_HASH_SIZE = 32;
 
@@ -57,31 +59,38 @@ async function processPortfolio() {
     const portfolioImages = await readdir(builtPagePath);
     for (let j = 0; j < portfolioImages.length; j++) {
       const portfolioImageName = portfolioImages[j];
-      const [imageName, imageExtension] = portfolioImageName.split(/ [LS]\./);
+      const [imageName, imageExtension] = portfolioImageName.split(/ ?[LS]?\./);
+      const fileNameWithoutExtension = portfolioImageName.replace(new RegExp(`${imageExtension}$`), '').slice(0, -1)
       const isThumb = portfolioImageName.endsWith(` S.${imageExtension}`);
-      if (isThumb) {
-        // currently, not doing anything with thumbnails - just seeing they exist and moving on
-        continue;
-      }
       const builtImagePath = `${builtPagePath}/${portfolioImageName}`;
-
-      //todo - promise.all these
-      const { height, width } = await sizeOf(builtImagePath);
-      const imgBlurHash = await encodeImageToBlurhash(builtImagePath);
       const imageKey = imageName
         .split(" ")
         .map((str) => str.charAt(0).toUpperCase() + str.slice(1))
         .join("")
         .replace(/[^A-Za-z0-9&]/g, "");
-
       const importVariableKey = imageKey.replace(/[^A-Za-z]/g, "")
-      imageImports.push(`import ${importVariableKey}Full from "src/assets/images/portfolio/${portfolioPage}/${imageName} L.${imageExtension}"`)
-      imageImports.push(`import ${importVariableKey}Thumb from "src/assets/images/portfolio/${portfolioPage}/${imageName} S.${imageExtension}"`)
+      const addThumbnailImport = () => {
+        imageImports.push(`import ${importVariableKey}Thumb from "src/assets/images/portfolio/${portfolioPage}/${imageName} S.${imageExtension}"`)
+      }
+      if (isThumb) {
+        if (imageData[imageKey]) {
+          imageData[imageKey].thumbnailURL = `${importVariableKey}Thumb`
+          addThumbnailImport()
+        }
+        continue;
+      }
+      const { height, width } = await sizeOf(builtImagePath);
+      const imgBlurHash = await encodeImageToBlurhash(builtImagePath);
+      const hasThumbnail = !!tempThumbnailData[imageKey]
+      imageImports.push(`import ${importVariableKey}Full from "src/assets/images/portfolio/${portfolioPage}/${fileNameWithoutExtension}.${imageExtension}"`)
+      if (hasThumbnail) {
+        addThumbnailImport()
+      }
+
       imageData[imageKey] = {
         page: portfolioPage,
         blurHash: imgBlurHash,
         imageURL: `${importVariableKey}Full`,
-        thumbnailURL: `${importVariableKey}Thumb`,
         name: imageName,
         height,
         width,
