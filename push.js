@@ -3,6 +3,13 @@ import * as fs from "fs";
 import mime from "mime";
 import Promise from "bluebird";
 
+/** Please please todo
+ * Put in some sort of diff checking.
+ * So we can only delete and push the files that are changed.
+ * Maybe write to a persisted JSON file alongside this that we read at the start and write to at the end
+ * Maybe the file system gives us things like file size that we could use to check for change
+ */
+
 /* eslint-disable */
 const bucketName = process.env.BUCKET_NAME;
 const accessKeyId = process.env.ACCESS_KEY_ID;

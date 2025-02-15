@@ -3,14 +3,25 @@ import * as util from "util";
 import Promise from "bluebird";
 import sharp from "sharp";
 import { encode } from "blurhash";
+import getMediaDimensions from "get-media-dimensions"
 // import { createCanvas, Image } from "canvas";
 
-import imageSize from "image-size";
+// import imageSize from "image-size";
+// import getVideoDimensions from "get-video-dimensions"
 
 const readdir = util.promisify(fs.readdir);
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
-const sizeOf = util.promisify(imageSize);
+// const getImageDimensions = util.promisify(imageSize)
+
+const sizeOf = async (filePath) => {
+  return await getMediaDimensions(filePath, filePath.endsWith(".mp4") ? "video" : "image")
+}
+// const sizeOf = (filePath) => {
+//   return filePath.endsWith(".mp4")
+//     ? getVideoDimensions(filePath)
+//     : getImageDimensions(filePath);
+// }
 
 const portfolioDir = "src/assets/images/portfolio";
 const portfolioItemsPath = "src/constants/PortfolioItems.tsx";
@@ -80,7 +91,7 @@ async function processPortfolio() {
         continue;
       }
       const { height, width } = await sizeOf(builtImagePath);
-      const imgBlurHash = await encodeImageToBlurhash(builtImagePath);
+      const imgBlurHash = imageExtension === "mp4" ? undefined : await encodeImageToBlurhash(builtImagePath);
       const hasThumbnail = !!tempThumbnailData[imageKey]
       imageImports.push(`import ${importVariableKey}Full from "src/assets/images/portfolio/${portfolioPage}/${fileNameWithoutExtension}.${imageExtension}"`)
       if (hasThumbnail) {

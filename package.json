@@ -14,6 +14,7 @@
     "pushWithMedia": "IGNORE_MEDIA=false env-cmd node ./push.js",
     "invalidate": "env-cmd node ./invalidate.js",
     "deploy": "yarn build && yarn pushWithoutMedia && yarn invalidate",
+    "deployWithMedia": "yarn build && yarn pushWithMedia && yarn invalidate",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -45,6 +46,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "fs": "^0.0.1-security",
+    "get-image-pixels": "^1.0.1",
+    "get-media-dimensions": "^2.0.2",
+    "get-video-dimensions": "^1.0.0",
     "image-size": "^1.2.0",
     "mime": "^4.0.0",
     "postcss-preset-mantine": "^1.12.3",
