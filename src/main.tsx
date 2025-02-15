@@ -16,8 +16,8 @@ const router = createBrowserRouter(RootRouter);
 
 let appContent = (
   <>
-    <ColorSchemeScript defaultColorScheme="auto" />
-    <MantineProvider theme={appTheme} defaultColorScheme="auto">
+    <ColorSchemeScript defaultColorScheme="dark" />
+    <MantineProvider theme={appTheme} forceColorScheme="dark" defaultColorScheme="dark">
       {/* <Notifications /> */}
       <RouterProvider router={router} />
     </MantineProvider>

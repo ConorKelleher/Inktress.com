@@ -10,7 +10,7 @@ const ColorPalette = [
   "#A87272",
   "#7C3F3F",
   "#451414",
-  "#381705",
+  "#3A1300",
 ] as const;
 // // All generated from the base branding colour scheme with https://mantine.dev/colors-generator
 export const COLOR_PALETTES: { [color: string]: MantineColorsTuple } = {
@@ -37,6 +37,7 @@ export const appTheme = createTheme({
   cursorType: "pointer",
   colors: {
     dark: COLOR_PALETTES.dark,
+    light: COLOR_PALETTES.dark,
   },
   components: {
     Anchor: Anchor.extend({
