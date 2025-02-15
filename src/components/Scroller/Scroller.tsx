@@ -43,7 +43,7 @@ const Scroller = (props: ScrollerProps) => {
       <Stack align="center" w="100%" id={scrollWrapperId} className={styles.scrollerWrapper}>
         <ScrollArea
           scrollbars="x"
-          type="hover"
+          type="always"
           offsetScrollbars
           pb={showShowMore ? 45 : undefined}
           className={styles.scrollArea}
