@@ -4,6 +4,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import dynamicImportVars from "@rollup/plugin-dynamic-import-vars";
 import mkcert from "vite-plugin-mkcert";
 import svgr from "vite-plugin-svgr";
+import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,6 +15,7 @@ export default defineConfig({
     svgr({
       include: "**/*.svg?react",
     }),
+    svgLoader()
   ],
   css: {
     preprocessorOptions: {

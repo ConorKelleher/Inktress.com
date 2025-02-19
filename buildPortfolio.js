@@ -62,6 +62,10 @@ const JSONSort = (json) => {
   return newJson
 }
 
+const getImageBlurHash = async (imageExtension, imagePath) => {
+  return imageExtension === "mp4" ? undefined : await encodeImageToBlurhash(imagePath);
+}
+
 async function processPortfolio() {
   const portfolioPages = await readdir(portfolioDir);
   for (let i = 0; i < portfolioPages.length; i++) {
@@ -80,28 +84,41 @@ async function processPortfolio() {
         .join("")
         .replace(/[^A-Za-z0-9&]/g, "");
       const importVariableKey = imageKey.replace(/[^A-Za-z]/g, "")
-      const addThumbnailImport = () => {
+      const addThumbnailImport = (imageExtension) => {
         imageImports.push(`import ${importVariableKey}Thumb from "src/assets/images/portfolio/${portfolioPage}/${imageName} S.${imageExtension}"`)
       }
       if (isThumb) {
         if (imageData[imageKey]) {
           imageData[imageKey].thumbnailURL = `${importVariableKey}Thumb`
-          addThumbnailImport()
+          if (!imageData[imageKey].blurHash) {
+            imageData[imageKey].blurHash = await getImageBlurHash(imageExtension, builtImagePath)
+          }
+          addThumbnailImport(imageExtension)
+        } else {
+          tempThumbnailData[imageKey] = {
+            builtImagePath,
+            imageExtension,
+          }
         }
         continue;
       }
       const { height, width } = await sizeOf(builtImagePath);
-      const imgBlurHash = imageExtension === "mp4" ? undefined : await encodeImageToBlurhash(builtImagePath);
+      let imgBlurHash = await getImageBlurHash(imageExtension, builtImagePath)
       const hasThumbnail = !!tempThumbnailData[imageKey]
       imageImports.push(`import ${importVariableKey}Full from "src/assets/images/portfolio/${portfolioPage}/${fileNameWithoutExtension}.${imageExtension}"`)
       if (hasThumbnail) {
-        addThumbnailImport()
+        addThumbnailImport(tempThumbnailData[imageKey].imageExtension)
+        if (!imgBlurHash && hasThumbnail) {
+          imgBlurHash = await getImageBlurHash(tempThumbnailData[imageKey].imageExtension, tempThumbnailData[imageKey].builtImagePath)
+        }
+        delete tempThumbnailData[imageKey]
       }
 
       imageData[imageKey] = {
         page: portfolioPage,
         blurHash: imgBlurHash,
         imageURL: `${importVariableKey}Full`,
+        thumbnailURL: hasThumbnail ? `${importVariableKey}Thumb` : undefined,
         name: imageName,
         height,
         width,

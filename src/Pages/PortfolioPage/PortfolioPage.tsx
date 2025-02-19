@@ -1,4 +1,4 @@
-import { capitalize } from "localboast/utils";
+import { capitalize, last } from "localboast/utils";
 import usePageTitle from "localboast/hooks/usePageTitle";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PageWrapper from "Pages/components/PageWrapper";
@@ -21,6 +21,7 @@ import Paths from "Paths";
 import { PortfolioImageKeys, PortfolioImageKey } from "constants/PortfolioImages";
 import useDelayedValue from "localboast/hooks/useDelayedValue";
 import { useSize } from "localboast";
+import SlowVideo from "components/SlowVideo";
 
 export const Pages = ["all", "design", "illustration"] as const;
 export type PortfolioPage = (typeof Pages)[number];
@@ -101,6 +102,14 @@ const PortfolioPage = () => {
     return style;
   }, [imageSectionSize?.height, imageSectionSize?.width, focusedImageConfig?.height, focusedImageConfig?.width]);
 
+  let focusedMediaIsVideo = false
+  if (delayedFocusedImageId) {
+    const { imageURL } = Images[delayedFocusedImageId];
+    const extension = last(imageURL.split('.'))
+    focusedMediaIsVideo = extension === "mp4"
+  }
+  const FocusedMediaImageComponent = focusedMediaIsVideo ? SlowVideo : SlowImage
+
   return (
     <PageWrapper>
       <PageHeader imageId="PortfolioHeader" />
@@ -130,7 +139,14 @@ const PortfolioPage = () => {
           >
             <Box className={styles.imageWrapper} style={imageWrapperStyle}>
               {!!delayedFocusedImageId && (
-                <SlowImage imageId={delayedFocusedImageId} quality="gradual" className={styles.slowImage} />
+                <FocusedMediaImageComponent
+                  // @ts-ignore
+                  imageId={focusedMediaIsVideo ? undefined : delayedFocusedImageId}
+                  // @ts-ignore
+                  videoId={focusedMediaIsVideo ? delayedFocusedImageId : undefined}
+                  quality="gradual"
+                  className={styles.slowImage}
+                />
               )}
               <Box className={styles.closeButtonWrapper}>
                 <Haptic>
@@ -181,7 +197,10 @@ const PortfolioPage = () => {
       </Group>
       <Masonry imageIds={imageIds}>
         {({ key, ...imageProps }) => {
-          const { blurHash } = Images[imageProps.imageId];
+          const { blurHash, imageURL } = Images[imageProps.imageId];
+          const extension = last(imageURL.split('.'))
+          const isVideo = extension === "mp4"
+          const ImageComponent = isVideo ? SlowVideo : SlowImage
           return (
             <Haptic
               key={key}
@@ -189,19 +208,27 @@ const PortfolioPage = () => {
               focusScaleMultiplier={0.25}
               clickScaleMultiplier={0.2}
               className={styles.masonryImage}
-              onClick={() => setFocusedImage(imageProps.imageId as PortfolioImageKey)}
-            >
-              <SlowImage
-                {...imageProps}
-                quality="thumbnail"
-                imageStyle={{
-                  ...imageProps.imageStyle,
-                  // Bit unpleasant. SlowImage auto-derives height if we're not using the blurhash layer
-                  // So if we have blurhash, we know the height and it works here. If not, we can't let it be positioned absolutely
-                  position: blurHash ? undefined : "unset",
-                }}
-              />
-            </Haptic>
+              delayedOnClick={() => setFocusedImage(imageProps.imageId as PortfolioImageKey)}
+              renderWithStatus={(hapticStatus) => {
+                return (
+                  <ImageComponent
+                    {...imageProps}
+                    {...hapticStatus}
+                    // @ts-ignore only making it undefined for images, which don't expect it
+                    videoId={isVideo ? imageProps.imageId : undefined}
+                    // @ts-ignore only making it undefined for images, which don't expect it
+                    imageId={isVideo ? undefined : imageProps.imageId}
+                    quality="thumbnail"
+                    imageStyle={{
+                      ...imageProps.imageStyle,
+                      // Bit unpleasant. SlowImage auto-derives height if we're not using the blurhash layer
+                      // So if we have blurhash, we know the height and it works here. If not, we can't let it be positioned absolutely
+                      position: blurHash ? undefined : "unset",
+                    }}
+                  />
+                )
+              }}
+            />
           );
         }}
       </Masonry>
