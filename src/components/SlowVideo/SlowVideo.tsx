@@ -32,7 +32,7 @@ const SlowVideo = ({ videoId, focused, hovered, ...imageProps }: SlowVideoProps)
     controls: true,
     disablePictureInPicture: false,
     muted: false,
-    loop: false,
+    loop: true,
   }
 
   useEffect(() => {

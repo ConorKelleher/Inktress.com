@@ -1,9 +1,5 @@
 import { PortfolioPage } from "Pages/PortfolioPage/PortfolioPage";
 // GENERATED PORTFOLIO ITEM IMPORTS START - DO NOT CHANGE THIS LINE
-import AContagionOfZombiesFull from "src/assets/images/portfolio/design/A Contagion of Zombies L.jpg"
-import AContagionOfZombiesThumb from "src/assets/images/portfolio/design/A Contagion of Zombies S.jpg"
-import AliceInWonderlandFull from "src/assets/images/portfolio/design/Alice in Wonderland L.jpg"
-import AliceInWonderlandThumb from "src/assets/images/portfolio/design/Alice in Wonderland S.jpg"
 import AmandaWebsterChristmasFlyerFull from "src/assets/images/portfolio/design/Amanda Webster Christmas Flyer L.jpg"
 import AmandaWebsterChristmasFlyerThumb from "src/assets/images/portfolio/design/Amanda Webster Christmas Flyer S.jpg"
 import AmandaWebsterTherapiesFull from "src/assets/images/portfolio/design/Amanda Webster Therapies L.jpg"
@@ -24,22 +20,14 @@ import ClarksBlackFridayFull from "src/assets/images/portfolio/design/Clarks Bla
 import ClarksBlackFridayThumb from "src/assets/images/portfolio/design/Clarks Black Friday S.jpg"
 import ClarksCampaignFull from "src/assets/images/portfolio/design/Clarks Campaign.mp4"
 import ClarksCampaignThumb from "src/assets/images/portfolio/design/Clarks Campaign S.jpg"
-import CopperHollowSocialsFull from "src/assets/images/portfolio/design/Copper Hollow Socials L.jpg"
-import CopperHollowSocialsThumb from "src/assets/images/portfolio/design/Copper Hollow Socials S.jpg"
 import CrocsComeAsYouAreFull from "src/assets/images/portfolio/design/Crocs Come As You Are.mp4"
 import CrocsComeAsYouAreThumb from "src/assets/images/portfolio/design/Crocs Come As You Are S.jpg"
 import CrocsHolidayRushFull from "src/assets/images/portfolio/design/Crocs Holiday Rush L.jpg"
 import CrocsHolidayRushThumb from "src/assets/images/portfolio/design/Crocs Holiday Rush S.jpg"
 import CroctoberFull from "src/assets/images/portfolio/design/Croctober L.jpg"
 import CroctoberThumb from "src/assets/images/portfolio/design/Croctober S.jpg"
-import DDFull from "src/assets/images/portfolio/design/D&D L.jpg"
-import DDThumb from "src/assets/images/portfolio/design/D&D S.jpg"
-import EarlyRiserFull from "src/assets/images/portfolio/design/Early Riser L.jpg"
-import EarlyRiserThumb from "src/assets/images/portfolio/design/Early Riser S.jpg"
 import FireFull from "src/assets/images/portfolio/design/Fire L.jpg"
 import FireThumb from "src/assets/images/portfolio/design/Fire S.jpg"
-import FlorasFull from "src/assets/images/portfolio/design/Flora's L.jpg"
-import FlorasThumb from "src/assets/images/portfolio/design/Flora's S.jpg"
 import GoOutdoorsDigitalCircularFull from "src/assets/images/portfolio/design/Go Outdoors Digital Circular.mp4"
 import GoOutdoorsDigitalCircularThumb from "src/assets/images/portfolio/design/Go Outdoors Digital Circular S.jpg"
 import GoodVibesFull from "src/assets/images/portfolio/design/Good Vibes L.jpg"
@@ -50,22 +38,16 @@ import GraveGirlsSocialsFull from "src/assets/images/portfolio/design/Grave Girl
 import GraveGirlsSocialsThumb from "src/assets/images/portfolio/design/Grave Girls Socials S.jpg"
 import HSignFull from "src/assets/images/portfolio/design/H Sign L.jpg"
 import HSignThumb from "src/assets/images/portfolio/design/H Sign S.jpg"
-import ImprobableFuturesFull from "src/assets/images/portfolio/design/Improbable Futures L.jpg"
-import ImprobableFuturesThumb from "src/assets/images/portfolio/design/Improbable Futures S.jpg"
 import InkantressSocialsFull from "src/assets/images/portfolio/design/Inkantress Socials L.jpg"
 import InkantressSocialsThumb from "src/assets/images/portfolio/design/Inkantress Socials S.jpg"
 import JDBlackFridayFull from "src/assets/images/portfolio/design/JD Black Friday L.jpg"
 import JDBlackFridayThumb from "src/assets/images/portfolio/design/JD Black Friday S.jpg"
 import JohnLewisUniversityFull from "src/assets/images/portfolio/design/John Lewis University.mp4"
 import JohnLewisUniversityThumb from "src/assets/images/portfolio/design/John Lewis University S.jpg"
-import LemonsFull from "src/assets/images/portfolio/design/Lemons L.jpg"
-import LemonsThumb from "src/assets/images/portfolio/design/Lemons S.jpg"
 import LocalBoastFull from "src/assets/images/portfolio/design/Local Boast L.jpg"
 import LocalBoastThumb from "src/assets/images/portfolio/design/Local Boast S.jpg"
 import MonsterousRegimentFull from "src/assets/images/portfolio/design/Monsterous Regiment L.jpg"
 import MonsterousRegimentThumb from "src/assets/images/portfolio/design/Monsterous Regiment S.jpg"
-import OverwhelmedFull from "src/assets/images/portfolio/design/Overwhelmed L.jpg"
-import OverwhelmedThumb from "src/assets/images/portfolio/design/Overwhelmed S.jpg"
 import PapierCampaignFull from "src/assets/images/portfolio/design/Papier Campaign.mp4"
 import PapierCampaignThumb from "src/assets/images/portfolio/design/Papier Campaign S.jpg"
 import PlantSaleFull from "src/assets/images/portfolio/design/Plant Sale L.jpg"
@@ -78,20 +60,18 @@ import RemedeaseAdFull from "src/assets/images/portfolio/design/Remedease Ad L.j
 import RemedeaseAdThumb from "src/assets/images/portfolio/design/Remedease Ad S.jpg"
 import RemedeaseFull from "src/assets/images/portfolio/design/Remedease L.jpg"
 import RemedeaseThumb from "src/assets/images/portfolio/design/Remedease S.jpg"
-import RoastersFestFull from "src/assets/images/portfolio/design/Roasters Fest L.jpg"
-import RoastersFestThumb from "src/assets/images/portfolio/design/Roasters Fest S.jpg"
 import RoastersFestSocialsFull from "src/assets/images/portfolio/design/Roasters Fest Socials L.jpg"
 import RoastersFestSocialsThumb from "src/assets/images/portfolio/design/Roasters Fest Socials S.jpg"
 import RoseCrownFull from "src/assets/images/portfolio/design/Rose & Crown L.jpg"
 import RoseCrownThumb from "src/assets/images/portfolio/design/Rose & Crown S.jpg"
 import SAIFull from "src/assets/images/portfolio/design/SAI L.jpg"
 import SAIThumb from "src/assets/images/portfolio/design/SAI S.jpg"
+import SearchFull from "src/assets/images/portfolio/design/Search.mp4"
+import SearchThumb from "src/assets/images/portfolio/design/Search S.jpg"
 import SizeTiktokFull from "src/assets/images/portfolio/design/Size Tiktok.mp4"
 import SizeTiktokThumb from "src/assets/images/portfolio/design/Size Tiktok S.jpg"
 import StayFull from "src/assets/images/portfolio/design/Stay L.jpg"
 import StayThumb from "src/assets/images/portfolio/design/Stay S.jpg"
-import StolenRemainsFull from "src/assets/images/portfolio/design/Stolen Remains L.jpg"
-import StolenRemainsThumb from "src/assets/images/portfolio/design/Stolen Remains S.jpg"
 import TastyBakeryDesktopFull from "src/assets/images/portfolio/design/Tasty Bakery Desktop L.jpg"
 import TastyBakeryDesktopThumb from "src/assets/images/portfolio/design/Tasty Bakery Desktop S.jpg"
 import TastyBakeryPhoneFull from "src/assets/images/portfolio/design/Tasty Bakery Phone L.jpg"
@@ -106,18 +86,20 @@ import ThriftGiftFull from "src/assets/images/portfolio/design/Thrift & Gift L.j
 import ThriftGiftThumb from "src/assets/images/portfolio/design/Thrift & Gift S.jpg"
 import ThriftGiftSocialsFull from "src/assets/images/portfolio/design/Thrift & Gift Socials L.jpg"
 import ThriftGiftSocialsThumb from "src/assets/images/portfolio/design/Thrift & Gift Socials S.jpg"
-import UprootedFull from "src/assets/images/portfolio/design/Uprooted L.jpg"
-import UprootedThumb from "src/assets/images/portfolio/design/Uprooted S.jpg"
 import WonderFull from "src/assets/images/portfolio/design/Wonder L.jpg"
 import WonderThumb from "src/assets/images/portfolio/design/Wonder S.jpg"
 import WowFull from "src/assets/images/portfolio/design/Wow L.jpg"
 import WowThumb from "src/assets/images/portfolio/design/Wow S.jpg"
-import XmasBashFull from "src/assets/images/portfolio/design/Xmas Bash L.jpg"
-import XmasBashThumb from "src/assets/images/portfolio/design/Xmas Bash S.jpg"
+import AContagionOfZombiesFull from "src/assets/images/portfolio/illustration/A Contagion of Zombies L.jpg"
+import AContagionOfZombiesThumb from "src/assets/images/portfolio/illustration/A Contagion of Zombies S.jpg"
 import AFieryFamiliarFull from "src/assets/images/portfolio/illustration/A Fiery Familiar L.jpg"
 import AFieryFamiliarThumb from "src/assets/images/portfolio/illustration/A Fiery Familiar S.jpg"
+import AHouseInTheHillsFull from "src/assets/images/portfolio/illustration/A House in the Hills L.jpg"
+import AHouseInTheHillsThumb from "src/assets/images/portfolio/illustration/A House in the Hills S.jpg"
 import AliceFull from "src/assets/images/portfolio/illustration/Alice L.jpg"
 import AliceThumb from "src/assets/images/portfolio/illustration/Alice S.jpg"
+import AliceInWonderlandFull from "src/assets/images/portfolio/illustration/Alice in Wonderland L.jpg"
+import AliceInWonderlandThumb from "src/assets/images/portfolio/illustration/Alice in Wonderland S.jpg"
 import AutumnLongingFull from "src/assets/images/portfolio/illustration/Autumn Longing L.jpg"
 import AutumnLongingThumb from "src/assets/images/portfolio/illustration/Autumn Longing S.jpg"
 import CastleFull from "src/assets/images/portfolio/illustration/Castle L.jpg"
@@ -130,18 +112,26 @@ import CliveFull from "src/assets/images/portfolio/illustration/Clive L.jpg"
 import CliveThumb from "src/assets/images/portfolio/illustration/Clive S.jpg"
 import CloseUpFull from "src/assets/images/portfolio/illustration/Close Up L.jpg"
 import CloseUpThumb from "src/assets/images/portfolio/illustration/Close Up S.jpg"
+import CopperHollowSocialsFull from "src/assets/images/portfolio/illustration/Copper Hollow Socials L.jpg"
+import CopperHollowSocialsThumb from "src/assets/images/portfolio/illustration/Copper Hollow Socials S.jpg"
+import DDFull from "src/assets/images/portfolio/illustration/D&D L.jpg"
+import DDThumb from "src/assets/images/portfolio/illustration/D&D S.jpg"
 import DetectivesAbodeFull from "src/assets/images/portfolio/illustration/Detective's Abode L.jpg"
 import DetectivesAbodeThumb from "src/assets/images/portfolio/illustration/Detective's Abode S.jpg"
 import DoggyFull from "src/assets/images/portfolio/illustration/Doggy L.jpg"
 import DoggyThumb from "src/assets/images/portfolio/illustration/Doggy S.jpg"
 import DoughnutMoonFull from "src/assets/images/portfolio/illustration/Doughnut Moon L.jpg"
 import DoughnutMoonThumb from "src/assets/images/portfolio/illustration/Doughnut Moon S.jpg"
+import EarlyRiserFull from "src/assets/images/portfolio/illustration/Early Riser L.jpg"
+import EarlyRiserThumb from "src/assets/images/portfolio/illustration/Early Riser S.jpg"
 import EnglishBusStopFull from "src/assets/images/portfolio/illustration/English Bus Stop L.jpg"
 import EnglishBusStopThumb from "src/assets/images/portfolio/illustration/English Bus Stop S.jpg"
 import FishiesComeToTownFull from "src/assets/images/portfolio/illustration/Fishies Come To Town L.jpg"
 import FishiesComeToTownThumb from "src/assets/images/portfolio/illustration/Fishies Come To Town S.jpg"
 import FlightOfTheNightLightsFull from "src/assets/images/portfolio/illustration/Flight of the Night Lights L.jpg"
 import FlightOfTheNightLightsThumb from "src/assets/images/portfolio/illustration/Flight of the Night Lights S.jpg"
+import FlorasFull from "src/assets/images/portfolio/illustration/Flora's L.jpg"
+import FlorasThumb from "src/assets/images/portfolio/illustration/Flora's S.jpg"
 import FlumphFull from "src/assets/images/portfolio/illustration/Flumph L.jpg"
 import FlumphThumb from "src/assets/images/portfolio/illustration/Flumph S.jpg"
 import FroggingFull from "src/assets/images/portfolio/illustration/Frogging L.jpg"
@@ -152,8 +142,16 @@ import GetSnuffedFull from "src/assets/images/portfolio/illustration/Get Snuffed
 import GetSnuffedThumb from "src/assets/images/portfolio/illustration/Get Snuffed S.jpg"
 import GoldenCityFull from "src/assets/images/portfolio/illustration/Golden City L.jpg"
 import GoldenCityThumb from "src/assets/images/portfolio/illustration/Golden City S.jpg"
+import HobgobFull from "src/assets/images/portfolio/illustration/Hobgob L.jpg"
+import HobgobThumb from "src/assets/images/portfolio/illustration/Hobgob S.jpg"
+import ImprobableFuturesFull from "src/assets/images/portfolio/illustration/Improbable Futures L.jpg"
+import ImprobableFuturesThumb from "src/assets/images/portfolio/illustration/Improbable Futures S.jpg"
+import LemonsFull from "src/assets/images/portfolio/illustration/Lemons L.jpg"
+import LemonsThumb from "src/assets/images/portfolio/illustration/Lemons S.jpg"
 import LetsPlayFull from "src/assets/images/portfolio/illustration/Let's Play L.jpg"
 import LetsPlayThumb from "src/assets/images/portfolio/illustration/Let's Play S.jpg"
+import LittleJohnFull from "src/assets/images/portfolio/illustration/Little John L.jpg"
+import LittleJohnThumb from "src/assets/images/portfolio/illustration/Little John S.jpg"
 import LobbyFull from "src/assets/images/portfolio/illustration/Lobby L.jpg"
 import LobbyThumb from "src/assets/images/portfolio/illustration/Lobby S.jpg"
 import MaggieFull from "src/assets/images/portfolio/illustration/Maggie L.jpg"
@@ -164,38 +162,56 @@ import MushmanFull from "src/assets/images/portfolio/illustration/Mushman L.jpg"
 import MushmanThumb from "src/assets/images/portfolio/illustration/Mushman S.jpg"
 import NightSkyFull from "src/assets/images/portfolio/illustration/Night Sky L.jpg"
 import NightSkyThumb from "src/assets/images/portfolio/illustration/Night Sky S.jpg"
+import NoOneKnowsAnythingFull from "src/assets/images/portfolio/illustration/No One Knows Anything L.jpg"
+import NoOneKnowsAnythingThumb from "src/assets/images/portfolio/illustration/No One Knows Anything S.jpg"
+import OverwhelmedFull from "src/assets/images/portfolio/illustration/Overwhelmed L.jpg"
+import OverwhelmedThumb from "src/assets/images/portfolio/illustration/Overwhelmed S.jpg"
 import RadiosFull from "src/assets/images/portfolio/illustration/Radios L.jpg"
 import RadiosThumb from "src/assets/images/portfolio/illustration/Radios S.jpg"
 import RangerFull from "src/assets/images/portfolio/illustration/Ranger L.jpg"
 import RangerThumb from "src/assets/images/portfolio/illustration/Ranger S.jpg"
 import RecycleFull from "src/assets/images/portfolio/illustration/Recycle L.jpg"
 import RecycleThumb from "src/assets/images/portfolio/illustration/Recycle S.jpg"
+import RoastersFestFull from "src/assets/images/portfolio/illustration/Roasters Fest L.jpg"
+import RoastersFestThumb from "src/assets/images/portfolio/illustration/Roasters Fest S.jpg"
 import SimonJaxFull from "src/assets/images/portfolio/illustration/Simon Jax L.jpg"
 import SimonJaxThumb from "src/assets/images/portfolio/illustration/Simon Jax S.jpg"
 import SlitherinAndShiverinFull from "src/assets/images/portfolio/illustration/Slitherin and Shiverin L.jpg"
 import SlitherinAndShiverinThumb from "src/assets/images/portfolio/illustration/Slitherin and Shiverin S.jpg"
+import StolenRemainsFull from "src/assets/images/portfolio/illustration/Stolen Remains L.jpg"
+import StolenRemainsThumb from "src/assets/images/portfolio/illustration/Stolen Remains S.jpg"
 import SubmAIRineFull from "src/assets/images/portfolio/illustration/SubmAIRine L.jpg"
 import SubmAIRineThumb from "src/assets/images/portfolio/illustration/SubmAIRine S.jpg"
 import SvenFull from "src/assets/images/portfolio/illustration/Sven L.jpg"
 import SvenThumb from "src/assets/images/portfolio/illustration/Sven S.jpg"
 import TheBayFull from "src/assets/images/portfolio/illustration/The Bay L.jpg"
 import TheBayThumb from "src/assets/images/portfolio/illustration/The Bay S.jpg"
+import TheBirdTheHouseFull from "src/assets/images/portfolio/illustration/The Bird & the House L.jpg"
+import TheBirdTheHouseThumb from "src/assets/images/portfolio/illustration/The Bird & the House S.jpg"
+import TheEndIsNearerThanYouThinkFull from "src/assets/images/portfolio/illustration/The End is Nearer than you Think L.jpg"
+import TheEndIsNearerThanYouThinkThumb from "src/assets/images/portfolio/illustration/The End is Nearer than you Think S.jpg"
 import TheMillFull from "src/assets/images/portfolio/illustration/The Mill L.jpg"
 import TheMillThumb from "src/assets/images/portfolio/illustration/The Mill S.jpg"
 import TurnMeOnFull from "src/assets/images/portfolio/illustration/Turn Me On L.jpg"
 import TurnMeOnThumb from "src/assets/images/portfolio/illustration/Turn Me On S.jpg"
+import UprootedFull from "src/assets/images/portfolio/illustration/Uprooted L.jpg"
+import UprootedThumb from "src/assets/images/portfolio/illustration/Uprooted S.jpg"
 import WaterFull from "src/assets/images/portfolio/illustration/Water L.jpg"
 import WaterThumb from "src/assets/images/portfolio/illustration/Water S.jpg"
 import WayStationFull from "src/assets/images/portfolio/illustration/Way Station L.jpg"
 import WayStationThumb from "src/assets/images/portfolio/illustration/Way Station S.jpg"
 import WesternAirTempleFull from "src/assets/images/portfolio/illustration/Western Air Temple L.jpg"
 import WesternAirTempleThumb from "src/assets/images/portfolio/illustration/Western Air Temple S.jpg"
+import WhereNoOneCanFindUsFull from "src/assets/images/portfolio/illustration/Where No One Can Find Us L.jpg"
+import WhereNoOneCanFindUsThumb from "src/assets/images/portfolio/illustration/Where No One Can Find Us S.jpg"
 import WhiteCliffsOfVictoriaFull from "src/assets/images/portfolio/illustration/White Cliffs Of Victoria L.jpg"
 import WhiteCliffsOfVictoriaThumb from "src/assets/images/portfolio/illustration/White Cliffs Of Victoria S.jpg"
 import WiseOldWormFull from "src/assets/images/portfolio/illustration/Wise Old Worm L.jpg"
 import WiseOldWormThumb from "src/assets/images/portfolio/illustration/Wise Old Worm S.jpg"
 import WitchFull from "src/assets/images/portfolio/illustration/Witch L.jpg"
 import WitchThumb from "src/assets/images/portfolio/illustration/Witch S.jpg"
+import XmasBashFull from "src/assets/images/portfolio/illustration/Xmas Bash L.jpg"
+import XmasBashThumb from "src/assets/images/portfolio/illustration/Xmas Bash S.jpg"
 // GENERATED PORTFOLIO ITEM IMPORTS END - DO NOT CHANGE THIS LINE
 
 type SpecificPortfolioPage = Exclude<PortfolioPage, "all">;
@@ -204,6 +220,7 @@ export const PortfolioItemKeys = {
   // GENERATED PORTFOLIO ITEM KEYS START - DO NOT CHANGE THIS LINE
   "AContagionOfZombies": "AContagionOfZombies",
   "AFieryFamiliar": "AFieryFamiliar",
+  "AHouseInTheHills": "AHouseInTheHills",
   "Alice": "Alice",
   "AliceInWonderland": "AliceInWonderland",
   "AmandaWebsterChristmasFlyer": "AmandaWebsterChristmasFlyer",
@@ -246,12 +263,14 @@ export const PortfolioItemKeys = {
   "GraveGirls": "GraveGirls",
   "GraveGirlsSocials": "GraveGirlsSocials",
   "HSign": "HSign",
+  "Hobgob": "Hobgob",
   "ImprobableFutures": "ImprobableFutures",
   "InkantressSocials": "InkantressSocials",
   "JDBlackFriday": "JDBlackFriday",
   "JohnLewisUniversity": "JohnLewisUniversity",
   "Lemons": "Lemons",
   "LetsPlay": "LetsPlay",
+  "LittleJohn": "LittleJohn",
   "Lobby": "Lobby",
   "LocalBoast": "LocalBoast",
   "Maggie": "Maggie",
@@ -259,6 +278,7 @@ export const PortfolioItemKeys = {
   "MonsterousRegiment": "MonsterousRegiment",
   "Mushman": "Mushman",
   "NightSky": "NightSky",
+  "NoOneKnowsAnything": "NoOneKnowsAnything",
   "Overwhelmed": "Overwhelmed",
   "PapierCampaign": "PapierCampaign",
   "PlantSale": "PlantSale",
@@ -273,6 +293,7 @@ export const PortfolioItemKeys = {
   "RoastersFestSocials": "RoastersFestSocials",
   "Rose&Crown": "Rose&Crown",
   "SAI": "SAI",
+  "Search": "Search",
   "SimonJax": "SimonJax",
   "SizeTiktok": "SizeTiktok",
   "SlitherinAndShiverin": "SlitherinAndShiverin",
@@ -284,7 +305,9 @@ export const PortfolioItemKeys = {
   "TastyBakeryPhone": "TastyBakeryPhone",
   "ThankYouCard": "ThankYouCard",
   "TheBay": "TheBay",
+  "TheBird&TheHouse": "TheBird&TheHouse",
   "TheEnd": "TheEnd",
+  "TheEndIsNearerThanYouThink": "TheEndIsNearerThanYouThink",
   "TheHitchhikersGuideToTheGalaxy": "TheHitchhikersGuideToTheGalaxy",
   "TheMill": "TheMill",
   "Thrift&Gift": "Thrift&Gift",
@@ -294,6 +317,7 @@ export const PortfolioItemKeys = {
   "Water": "Water",
   "WayStation": "WayStation",
   "WesternAirTemple": "WesternAirTemple",
+  "WhereNoOneCanFindUs": "WhereNoOneCanFindUs",
   "WhiteCliffsOfVictoria": "WhiteCliffsOfVictoria",
   "WiseOldWorm": "WiseOldWorm",
   "Witch": "Witch",
@@ -314,7 +338,7 @@ export type PortfolioItem = {
 const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
   // GENERATED PORTFOLIO ITEMS START - DO NOT CHANGE THIS LINE
   "AContagionOfZombies": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|68hK]xZ02M}MxRQM{kVRk00S5-.WBxus,o3xtoM_Nt7RisSRjbaM|RRk9IAkVV_V[tQWEtQRkofM#WEtPkBoxk9WDoeV[%fniM|oeRkWVofa#j@DjV[xubbt7ogofkBj[%gjZRQWCWUWBjZj[j?DjWBxuofbIkCt7ofkC",
     "imageURL": AContagionOfZombiesFull,
     "thumbnailURL": AContagionOfZombiesThumb,
@@ -331,6 +355,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "height": 1200,
     "width": 1200
   },
+  "AHouseInTheHills": {
+    "page": "illustration",
+    "blurHash": "|mL3NiOas;kYXAt8j]ofWBO_OFs:ohogoMfkj[axktngjDs9jFjYWBjZjYXowbnhR%jYbIoJfPj[W?s;W?R*spbIoLj]j[xHazWWoIn$ayjtj[j@WBaxoJoJWBayoLbIbHn%off+oMWqjFa|bIj[XAoMayj]j@axaxayo0",
+    "imageURL": AHouseInTheHillsFull,
+    "thumbnailURL": AHouseInTheHillsThumb,
+    "name": "A House in the Hills",
+    "height": 2122,
+    "width": 1500
+  },
   "Alice": {
     "page": "illustration",
     "blurHash": "|IM@7Q_L%LaL_2WC%L?HxuWAxuoyV[t7NGs:fiof_2IVRjxuM{%LkBj[Rj?aRjV[baae%2R*xaWBS1xaRjWBs:R%afWUof~VNGM|xtR*s:bFRkR*-:f6R*t6M|bFafRjayRkxat6WCoeRjt6WBof%LWBf6oyRkWBWBWBWC",
@@ -341,7 +374,7 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "width": 2000
   },
   "AliceInWonderland": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|6Bo?OMc4o?H03bc$gxtWX9]-owJ9bxuaKt6%0Rk00XA?GIn}?%1EhRkofxb9wIo}=xVNbt7E3oy^j%KM|rrNdNIjFWqjv--n#$*NLE3xuNGs.t7EMt6M|I?%2M{-oxZNGNJxaxFEMoJxZI;t6xFxaE3xt%0NG$%I;afsn",
     "imageURL": AliceInWonderlandFull,
     "thumbnailURL": AliceInWonderlandThumb,
@@ -494,7 +527,7 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "width": 2048
   },
   "CopperHollowSocials": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|OEyYyXR%3R6~qyB.7Vt-=w3njo|kpWCixn+XRXR-;oLR*W;WBoMjZbHjZkpbaaLM|kCtQkBV[jI~WjbbaozV[jGWBt6WU%LoeWCsCofW:oeWVja-;j[jsofWBayWCkCWBoyWVjaafoff*Wpn%oL?vofoKkCRkoLaeW;oJ",
     "imageURL": CopperHollowSocialsFull,
     "thumbnailURL": CopperHollowSocialsThumb,
@@ -530,7 +563,7 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "width": 1080
   },
   "D&D": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|7Avd:0#RP=x0#-UIqWCR*^OV[Iqf6oes:kBs:bF0f~AI;EM=_EMoejas.nixZxsoeR+NHR+R+s:-A9u%1juS4t6ocxZR+xZs,bHt6W;WVWCR+M}M|xZR,xZNHs.a#I;s.xtoeR*NHr@jboLW.oxNwxZs.NH$%R+oeR+S2",
     "imageURL": DDFull,
     "thumbnailURL": DDThumb,
@@ -566,7 +599,7 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "width": 2000
   },
   "EarlyRiser": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|QCsp.o#kXtRM}o#IUadNH~Vt7kWt7RjofMxafRj.9ofoff+WBoeWBayafM_ayjYWBjFjZozj[j[MyWBWBaeayWBtQkCofIVWBV@aekCWVtRj?ofW=ayaeayofj[j?fkj@ozj]afj[ofj[WBayazozj[ayj[ofjuWBfka{",
     "imageURL": EarlyRiserFull,
     "thumbnailURL": EarlyRiserThumb,
@@ -611,7 +644,7 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "width": 1201
   },
   "Floras": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|26j]-=|0156I:%1-Vt6xaJ~NGsq-Vs:R*X6S2WB0{I:^Q-VofWBNaWoR*~W-o9a56WBxaxat6s:NaR*ofxaxHNZR*s:R*56NG-p%1WCWBWUfkWB^7xaJPIoNHxasoNHxG#qWBS_s:a}R*njj[ay9aWC%1ofoeWVafs:Rk",
     "imageURL": FlorasFull,
     "thumbnailURL": FlorasThumb,
@@ -709,8 +742,17 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "height": 1080,
     "width": 1080
   },
+  "Hobgob": {
+    "page": "illustration",
+    "blurHash": "|nHU|QV@~qj[_3tR-;%Mxut7ofayoLkCa|oeayj[-=ofRjofWBoLWCWVfRbIWBaxWVoejZbHj[j[-;j[RjbHRjayWBjZayxtaxj[aykCj]juofWV-;j[RjoLWBa#WBazayt7a#oLj@kBjsbHfkj@%MazWAfQWBj@WBfRax",
+    "imageURL": HobgobFull,
+    "thumbnailURL": HobgobThumb,
+    "name": "Hobgob",
+    "height": 1792,
+    "width": 1000
+  },
   "ImprobableFutures": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|4Au{oNF01=|5mNbOsIokBtdsnM}f5RkNHxGbHo000xa^lE1$*oMNF-VjZXojZ9[WX$%t7weI:oL}vRjInxaR%s,S$NGWX0Nfk^jofs.WAofxaWB0#Wq=wjF$*WBad$*R*NyW=WANGof-VaxNGbb1cWC$*WonOs:$*WAbH",
     "imageURL": ImprobableFuturesFull,
     "thumbnailURL": ImprobableFuturesThumb,
@@ -746,7 +788,7 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "width": 1080
   },
   "Lemons": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|DKu$6n5YH-m05$%9csqQ;%KWV$~odWCj?RSn+Rk03t79dM}.gNHxZadyAMgfSM$RlbIoMo]k8xsTcW,t4ofx.j]kRoyIEwPoIS1oexoWC%cofWBy3fSj@WBIIjGW=R+%I^Jj]Xjj?Iaa#IFRkWFV_WBXQkUs9t6n$juNw",
     "imageURL": LemonsFull,
     "thumbnailURL": LemonsThumb,
@@ -762,6 +804,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "name": "Let's Play",
     "height": 1411,
     "width": 1398
+  },
+  "LittleJohn": {
+    "page": "illustration",
+    "blurHash": "|QKAl;xa~UxZ9axZxtxtayoeWVoeoLoLWBayoeoe%LayE2j[ofRkt6j[R*xtj[afayRkf6s.fQj[IVRkoeoLofWVRka|t6t6ayayoLs:WVWBWCazWBWVWBWCofj[R*j[oL%1WVWCWCWVoeoeoeays.oeM|ays:ayj[ayWC",
+    "imageURL": LittleJohnFull,
+    "thumbnailURL": LittleJohnThumb,
+    "name": "Little John",
+    "height": 2122,
+    "width": 1500
   },
   "Lobby": {
     "page": "illustration",
@@ -826,8 +877,17 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "height": 1090,
     "width": 1090
   },
+  "NoOneKnowsAnything": {
+    "page": "illustration",
+    "blurHash": "|78Ebuqwu,l89v.6X4+|rr.m0fRnN[9v%LIo$*aK*hf,?]w0RQ-BR6yCR*Dk9uO-w|V@xGMyOUSzx[$*v$%1n$s:a}R*oz9tSxNGWBj?NHX8NHs:Vd-ok9sDxaNHtQRks:ACxaMzSgxZIptQRPs:O--VR6S|xZIpxua1s;",
+    "imageURL": NoOneKnowsAnythingFull,
+    "thumbnailURL": NoOneKnowsAnythingThumb,
+    "name": "No One Knows Anything",
+    "height": 2048,
+    "width": 2048
+  },
   "Overwhelmed": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|CC#lj-q8{M{9Z8{.8~qRj#nozbvRjNGs:njaytRL$M{t,xutl-;IT9Fs:-VaeIpozbvWBxHozRP=yt7NaRjNGV[s:oyf5idM{g3x]t7oLWBM{RjjHaeWobHj]s:s:WBay%3xuayIUM{n*baxuxubvofjZWBV@Rjfkt7of",
     "imageURL": OverwhelmedFull,
     "thumbnailURL": OverwhelmedThumb,
@@ -917,7 +977,7 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "width": 1080
   },
   "RoastersFest": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|9Db+nxaJ5bt-V?GIoIooL.7kC%exaNGbFt7xtV@.7t6nlxaIoIpxt%2WB~pkCIobar]spa{RkWUtRfkxas:S1oft7oeM|^+oLM|fks:oLS1ofoexubGoLj[bGayRkoLo2xto2t6oLR*fjs:oeRkxtbGNGR*t7ofWBayj[",
     "imageURL": RoastersFestFull,
     "thumbnailURL": RoastersFestThumb,
@@ -951,6 +1011,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "name": "SAI",
     "height": 694,
     "width": 1008
+  },
+  "Search": {
+    "page": "design",
+    "blurHash": "|DE0W$xG0{R*WVja-BxGoLw|jtWVa|jufQoLj[ay0{S1}as:oLoLJ6WVWVWVa|spoLWVfQWVayoL-Bj[NaWVWVaysooLoLo2ayayj[oLjtWVj[a|-Bj[NaWVjuj[soayWVw|oLWVWVWVa}sojtWVJ6a{xGj[oLayR*oLso",
+    "imageURL": SearchFull,
+    "thumbnailURL": SearchThumb,
+    "name": "Search",
+    "height": 1080,
+    "width": 1080
   },
   "SimonJax": {
     "page": "illustration",
@@ -989,7 +1058,7 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "width": 1114
   },
   "StolenRemains": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|DC5C,s:0LNG?G%2RjM{S2weWCX8s:R*WBs:bHWC0fR*}[xaE2M|ozt7sVxts:M|NG%1t7NGV[s:%1s:NGR*t6kCjFniWpIoWBxut7NGRjs:t7a|Sga|WVWVsosoa|W;fQxuofRjRjt7t7WBjFR+NafQoej[sVjtWVayoe",
     "imageURL": StolenRemainsFull,
     "thumbnailURL": StolenRemainsThumb,
@@ -1051,6 +1120,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "height": 1640,
     "width": 2360
   },
+  "TheBird&TheHouse": {
+    "page": "illustration",
+    "blurHash": "|NDlQWV[ITrXsAxatSRiV@_NNGIURQWXt7tRRPV@yXV[Mek8oeozkWVtadkqRkIUtRofs:kCaKjsR+aeROtRkCoMfkaxoLWVbHa0o}j]ayaxoLoLX7kCnNX9jbWUWVs:a#tRt7i_R*oLayj[s;WVtRozaKRjazn$j[ogWB",
+    "imageURL": TheBirdTheHouseFull,
+    "thumbnailURL": TheBirdTheHouseThumb,
+    "name": "The Bird & the House",
+    "height": 1025,
+    "width": 1500
+  },
   "TheEnd": {
     "page": "design",
     "blurHash": "|AHZ|Rs*WCsAj[]nsmNwW:=]}FS2EzxF,?WXNuso-T=ej?S4w{W.JRw^$P^4$jsowwS4Sgw^WXSN]-$jbHS2S2oLw{o2WV]n$hsoS4sAsnODsnsBs.xFsosUS2a|soSLWW,sw{WojtSMbG$PjtSLbFwfWVN[oLsojtjtWp",
@@ -1059,6 +1137,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "name": "The End",
     "height": 1001,
     "width": 1000
+  },
+  "TheEndIsNearerThanYouThink": {
+    "page": "illustration",
+    "blurHash": "|GA+R5ORWWs=bbniS#s:ba}^xDn+kDkCWBoMoMof-E$*ODoMs:WXjtj]s:K6-CW;a#xGW=WBoMs;Fe$+bHaxs:fladofs:bco#jFn$ofjbR%s:ofxbbcnijskCf5WBoLj]$+X8jYjZWVn%WBWUkCxaspbHWBaxoeR*R*of",
+    "imageURL": TheEndIsNearerThanYouThinkFull,
+    "thumbnailURL": TheEndIsNearerThanYouThinkThumb,
+    "name": "The End is Nearer than you Think",
+    "height": 2360,
+    "width": 1640
   },
   "TheHitchhikersGuideToTheGalaxy": {
     "page": "design",
@@ -1106,7 +1193,7 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "width": 2000
   },
   "Uprooted": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|mFPvUNHWXjEX9t7WBa}j?_MoykCRjozoeaykBoLTJxZofbcoIR*fkofWVNuofjZt7adR*kCfjWVbvR+WBs:Rkayj[afaytkWBV@WBa#j[ayWCf6bbofWBWBofj[oeayj[axofkBofWVfQofaykCWBofofofj[j@azayj]",
     "imageURL": UprootedFull,
     "thumbnailURL": UprootedThumb,
@@ -1140,6 +1227,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "name": "Western Air Temple",
     "height": 2829,
     "width": 2000
+  },
+  "WhereNoOneCanFindUs": {
+    "page": "illustration",
+    "blurHash": "|AAn_jRQK9MfOW_N%fT0R7*=IUH@Q-I:%Lt5NHR6MJTIxTxZIqeSj?M{xZHscF%g.7NHMxXSWD%MXURls:%zR5R*Mxj[x[nMVZRjozt8X9RPoekWX9i_MyMyt7Rkaft6RPTyxa%gS1n|Rjjvt7MxIBsotQM{tRRlozoLR*",
+    "imageURL": WhereNoOneCanFindUsFull,
+    "thumbnailURL": WhereNoOneCanFindUsThumb,
+    "name": "Where No One Can Find Us",
+    "height": 2122,
+    "width": 1500
   },
   "WhiteCliffsOfVictoria": {
     "page": "illustration",
@@ -1187,7 +1283,7 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "width": 1707
   },
   "XmasBash": {
-    "page": "design",
+    "page": "illustration",
     "blurHash": "|NI:%yof|HxGxt$*K4%2Nv0JWBxGaxkCWoRjWBni}us:BkkCJRS2s.WVxGxaofsmoLa1o1ofofbIvNayxajasWofV@jFS1?HayNGbHbGWBt6jZoLK0WVbuWVjFayoMkCjG#8oLkWjuofofRjafSepbofVZf8nijZkCfkbH",
     "imageURL": XmasBashFull,
     "thumbnailURL": XmasBashThumb,

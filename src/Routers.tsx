@@ -4,7 +4,7 @@ import ErrorPage from "Pages/ErrorPage";
 import ExternalLinkPage from "Pages/ExternalLinkPage";
 import { ExternalLinkMappings } from "Pages/ExternalLinkPage/constants";
 import HomePage from "Pages/HomePage";
-import PortfolioPage, { SinglePortfolioPage } from "Pages/PortfolioPage";
+import PortfolioPage from "Pages/PortfolioPage";
 import Root from "Pages/Root";
 import ServicesPage, { SingleServicePage } from "Pages/ServicesPage";
 import Paths, { ServicesPaths } from "Paths";
@@ -46,10 +46,6 @@ export const RootRouter = wrapRoutesInErrors([
       {
         path: Paths.Portfolio,
         element: <PortfolioPage />,
-        children: ServicesPaths.map((portfolioPath) => ({
-          path: portfolioPath,
-          element: <SinglePortfolioPage />,
-        })),
       },
       {
         path: Paths.About,

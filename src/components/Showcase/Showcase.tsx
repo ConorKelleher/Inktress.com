@@ -18,7 +18,6 @@ export const Showcase = (props: ShowcaseProps) => {
         <Text c="dark.9" fw={600} fz="lg">
           {props.description}
         </Text>
-        {/** todo */}
         <BlockLink ctaHref={Links.CALENDLY_30_MINS} target="_blank" rel="noopener noreferrer">
           <Text fz="lg">{getCopy("bookConsultationCTA")}</Text>
         </BlockLink>

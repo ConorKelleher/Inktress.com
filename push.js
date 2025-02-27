@@ -3,22 +3,10 @@ import * as fs from "fs";
 import mime from "mime";
 import Promise from "bluebird";
 
-/** Please please todo
- * Put in some sort of diff checking.
- * So we can only delete and push the files that are changed.
- * Maybe write to a persisted JSON file alongside this that we read at the start and write to at the end
- * Maybe the file system gives us things like file size that we could use to check for change
- */
-
 /* eslint-disable */
 const bucketName = process.env.BUCKET_NAME;
 const accessKeyId = process.env.ACCESS_KEY_ID;
 const secretAccessKey = process.env.SECRET_ACCESS_KEY;
-
-if (!["true", "false"].includes(process.env.IGNORE_MEDIA)) {
-  throw new Error("Refusing to run without specifying IGNORE_MEDIA option. Prefer to run a yarn script")
-}
-const ignoreMedia = process.env.IGNORE_MEDIA === "true"
 /* eslint-enable */
 
 const s3Client = new S3Client({
@@ -29,53 +17,81 @@ const s3Client = new S3Client({
   },
 });
 
-const rootDir = "dist";
+const buildDir = "dist";
+const cachedImagesFileName = "mediaUploadCache.json"
 
-function skipFile(fileName) {
-  return ignoreMedia && (fileName.endsWith(".jpg") || fileName.endsWith(".jpeg") || fileName.endsWith(".png") || fileName.endsWith(".gif") || fileName.endsWith(".mp4"))
+let oldCachedImages = {}
+const newCachedImages = {}
+
+const MediaExtensions = [".jpg", ".jpeg", ".png", ".gif", ".mp4"]
+
+function newFileMatchesCache(fileKey, localFileSize, remoteFileSize = null) {
+  const cacheFileSize = oldCachedImages[fileKey] && oldCachedImages[fileKey].size
+  const sizesEqual = localFileSize === cacheFileSize && (!remoteFileSize || remoteFileSize === localFileSize)
+  return sizesEqual && MediaExtensions.some((ext) => oldCachedImages[fileKey].projectPath.endsWith(ext))
 }
 
-function uploadAllFilesInDirectory(directory) {
-  fs.readdir(directory, function (err, items) {
-    items.forEach((item) => {
-      const builtPath = `${directory}/${item}`;
-      if (skipFile(item)) {
-        return
-      }
-      fs.lstat(builtPath, (err, stats) => {
-        if (err) {
-          return console.error(err);
-        }
-        if (stats.isDirectory()) {
-          return uploadAllFilesInDirectory(builtPath);
-        } else {
-          fs.readFile(builtPath, async function (err, data) {
+async function uploadAllFilesInDirectory(directory) {
+  return new Promise(function(resolveReadDir) {
+    fs.readdir(directory, async function (err, items) {
+      for(let i=0; i<items.length; i++) {
+        const item = items[i]
+        const builtPath = `${directory}/${item}`;
+        const fileKey = builtPath.split(`${buildDir}/`)[1]
+        await new Promise(function (resolveLStat) {
+          fs.lstat(builtPath, async function (err, stats) {
             if (err) {
               console.error(err);
-              return;
+            } else {
+              if (stats.isDirectory()) {
+                await uploadAllFilesInDirectory(builtPath);
+              } else {
+                const fileSize = fs.statSync(builtPath).size
+                if (newFileMatchesCache(fileKey, fileSize)) {
+                  // console.log("Cache hit, not uploading", fileKey)
+                  newCachedImages[fileKey] = oldCachedImages[fileKey]
+                } else {
+                  console.log("Cache miss, uploading", fileKey)
+                  await new Promise(function (resolveReadFile) {
+                    fs.readFile(builtPath, async function (err, data) {
+                      if (err) {
+                        console.error(err);
+                      } else {
+                        // S3 ManagedUpload with callbacks are not supported in AWS SDK for JavaScript (v3).
+                        // Please convert to 'await client.upload(params, options).promise()', and re-run aws-sdk-js-codemod.
+                        // S3 ManagedUpload with callbacks are not supported in AWS SDK for JavaScript (v3).
+                        // Please convert to 'await client.upload(params, options).promise()', and re-run aws-sdk-js-codemod.
+                        const uploadCommand = new PutObjectCommand({
+                          Bucket: bucketName,
+                          Key: fileKey,
+                          Body: data,
+                          ACL: "public-read",
+                          ContentType: mime.getType(builtPath),
+                        });
+                        try {
+                          const response = await s3Client.send(uploadCommand);
+                          console.log(response);
+                          newCachedImages[fileKey] = {
+                            projectPath: builtPath,
+                            size: fileSize,
+                          }
+                        } catch (err) {
+                          console.error(err);
+                        }
+                        resolveReadFile()
+                      }
+                    });
+                  })
+                }
+              }
             }
-            // S3 ManagedUpload with callbacks are not supported in AWS SDK for JavaScript (v3).
-            // Please convert to 'await client.upload(params, options).promise()', and re-run aws-sdk-js-codemod.
-            // S3 ManagedUpload with callbacks are not supported in AWS SDK for JavaScript (v3).
-            // Please convert to 'await client.upload(params, options).promise()', and re-run aws-sdk-js-codemod.
-            const uploadCommand = new PutObjectCommand({
-              Bucket: bucketName,
-              Key: builtPath.split(`${rootDir}/`)[1],
-              Body: data,
-              ACL: "public-read",
-              ContentType: mime.getType(builtPath),
-            });
-            try {
-              const response = await s3Client.send(uploadCommand);
-              console.log(response);
-            } catch (err) {
-              console.error(err);
-            }
-          });
-        }
-      });
+            resolveLStat()
+          })
+        });
+      }
+      resolveReadDir()
     });
-  });
+  })
 }
 
 async function clearBucket() {
@@ -93,18 +109,45 @@ async function clearBucket() {
   }
 
   await Promise.each(files, (item) => {
-    if (skipFile(item.Key)) {
+    const cachedUpload = oldCachedImages[item.Key]
+    if (cachedUpload && fs.existsSync(cachedUpload.projectPath) && newFileMatchesCache(item.Key, fs.statSync(cachedUpload.projectPath).size, item.Size)) {
+      // console.log("Cache hit, not deleting", item.Key)
       return Promise.resolve()
     }
+    console.log("Cache miss, deleting", item.Key)
     var deleteParams = { Bucket: bucketName, Key: item.Key };
     const deleteCommand = new DeleteObjectCommand(deleteParams);
     return s3Client.send(deleteCommand);
   });
 }
 
-async function push(dir) {
-  await clearBucket();
-  uploadAllFilesInDirectory(dir);
+async function readCachedImages() {
+  oldCachedImages = await new Promise((resolve) => {
+    fs.readFile(cachedImagesFileName, "utf-8", async function (err, data) {
+      let cache = {}
+      try {
+        cache = JSON.parse(data)
+      } catch(e) {
+        //
+      }
+      resolve(cache)
+    })
+  })
+}
+async function writeCachedImages() {
+  await new Promise((resolve) => {
+    fs.writeFile(cachedImagesFileName, JSON.stringify(newCachedImages, null, 2), function () {
+      resolve()
+    })
+  })
 }
 
-push(rootDir);
+async function push(dir) {
+  await readCachedImages();
+  await clearBucket();
+  await uploadAllFilesInDirectory(dir);
+  await writeCachedImages()
+  // console.log(oldCachedImages)
+}
+
+push(buildDir);

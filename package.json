@@ -10,11 +10,9 @@
     "buildPortfolio": "node buildPortfolio.js",
     "build": "yarn buildPortfolio && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "pushWithoutMedia": "IGNORE_MEDIA=true env-cmd node ./push.js",
-    "pushWithMedia": "IGNORE_MEDIA=false env-cmd node ./push.js",
+    "push": "env-cmd node ./push.js",
     "invalidate": "env-cmd node ./invalidate.js",
-    "deploy": "yarn build && yarn pushWithoutMedia && yarn invalidate",
-    "deployWithMedia": "yarn build && yarn pushWithMedia && yarn invalidate",
+    "deploy": "yarn build && yarn push && yarn invalidate",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -63,7 +61,6 @@
     "vite": "^4.4.5",
     "vite-plugin-mkcert": "^1.17.1",
     "vite-plugin-svgr": "^4.2.0",
-    "vite-svg-loader": "^5.1.0",
     "vite-tsconfig-paths": "^4.2.2"
   },
   "packageManager": "yarn@4.0.2",
