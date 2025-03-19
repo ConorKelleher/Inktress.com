@@ -1,7 +1,7 @@
 import { PortfolioPage } from "Pages/PortfolioPage/PortfolioPage";
 // GENERATED PORTFOLIO ITEM IMPORTS START - DO NOT CHANGE THIS LINE
-import AmandaWebsterChristmasFlyerFull from "src/assets/images/portfolio/design/Amanda Webster Christmas Flyer L.jpg"
-import AmandaWebsterChristmasFlyerThumb from "src/assets/images/portfolio/design/Amanda Webster Christmas Flyer S.jpg"
+import AWTTrifoldFull from "src/assets/images/portfolio/design/AWT Trifold.jpg"
+import AWTTrifoldThumb from "src/assets/images/portfolio/design/AWT Trifold S.jpg"
 import AmandaWebsterTherapiesFull from "src/assets/images/portfolio/design/Amanda Webster Therapies L.jpg"
 import AmandaWebsterTherapiesThumb from "src/assets/images/portfolio/design/Amanda Webster Therapies S.jpg"
 import ArcLabsFull from "src/assets/images/portfolio/design/Arc Labs L.jpg"
@@ -20,6 +20,8 @@ import ClarksBlackFridayFull from "src/assets/images/portfolio/design/Clarks Bla
 import ClarksBlackFridayThumb from "src/assets/images/portfolio/design/Clarks Black Friday S.jpg"
 import ClarksCampaignFull from "src/assets/images/portfolio/design/Clarks Campaign.mp4"
 import ClarksCampaignThumb from "src/assets/images/portfolio/design/Clarks Campaign S.jpg"
+import CreateFestFull from "src/assets/images/portfolio/design/CreateFest.jpg"
+import CreateFestThumb from "src/assets/images/portfolio/design/CreateFest S.jpg"
 import CrocsComeAsYouAreFull from "src/assets/images/portfolio/design/Crocs Come As You Are.mp4"
 import CrocsComeAsYouAreThumb from "src/assets/images/portfolio/design/Crocs Come As You Are S.jpg"
 import CrocsHolidayRushFull from "src/assets/images/portfolio/design/Crocs Holiday Rush L.jpg"
@@ -28,6 +30,8 @@ import CroctoberFull from "src/assets/images/portfolio/design/Croctober L.jpg"
 import CroctoberThumb from "src/assets/images/portfolio/design/Croctober S.jpg"
 import FireFull from "src/assets/images/portfolio/design/Fire L.jpg"
 import FireThumb from "src/assets/images/portfolio/design/Fire S.jpg"
+import FortuneTellerFOEFull from "src/assets/images/portfolio/design/Fortune Teller FOE.jpg"
+import FortuneTellerFOEThumb from "src/assets/images/portfolio/design/Fortune Teller FOE S.jpg"
 import GoOutdoorsDigitalCircularFull from "src/assets/images/portfolio/design/Go Outdoors Digital Circular.mp4"
 import GoOutdoorsDigitalCircularThumb from "src/assets/images/portfolio/design/Go Outdoors Digital Circular S.jpg"
 import GoodVibesFull from "src/assets/images/portfolio/design/Good Vibes L.jpg"
@@ -48,6 +52,8 @@ import LocalBoastFull from "src/assets/images/portfolio/design/Local Boast L.jpg
 import LocalBoastThumb from "src/assets/images/portfolio/design/Local Boast S.jpg"
 import MonsterousRegimentFull from "src/assets/images/portfolio/design/Monsterous Regiment L.jpg"
 import MonsterousRegimentThumb from "src/assets/images/portfolio/design/Monsterous Regiment S.jpg"
+import OddboxFull from "src/assets/images/portfolio/design/Oddbox.jpg"
+import OddboxThumb from "src/assets/images/portfolio/design/Oddbox S.jpg"
 import PapierCampaignFull from "src/assets/images/portfolio/design/Papier Campaign.mp4"
 import PapierCampaignThumb from "src/assets/images/portfolio/design/Papier Campaign S.jpg"
 import PlantSaleFull from "src/assets/images/portfolio/design/Plant Sale L.jpg"
@@ -66,6 +72,8 @@ import RoseCrownFull from "src/assets/images/portfolio/design/Rose & Crown L.jpg
 import RoseCrownThumb from "src/assets/images/portfolio/design/Rose & Crown S.jpg"
 import SAIFull from "src/assets/images/portfolio/design/SAI L.jpg"
 import SAIThumb from "src/assets/images/portfolio/design/SAI S.jpg"
+import SEAWFullDesignFull from "src/assets/images/portfolio/design/SEAW Full Design.jpg"
+import SEAWFullDesignThumb from "src/assets/images/portfolio/design/SEAW Full Design S.jpg"
 import SearchFull from "src/assets/images/portfolio/design/Search.mp4"
 import SearchThumb from "src/assets/images/portfolio/design/Search S.jpg"
 import SizeTiktokFull from "src/assets/images/portfolio/design/Size Tiktok.mp4"
@@ -221,9 +229,9 @@ export const PortfolioItemKeys = {
   "AContagionOfZombies": "AContagionOfZombies",
   "AFieryFamiliar": "AFieryFamiliar",
   "AHouseInTheHills": "AHouseInTheHills",
+  "AWTTrifold": "AWTTrifold",
   "Alice": "Alice",
   "AliceInWonderland": "AliceInWonderland",
-  "AmandaWebsterChristmasFlyer": "AmandaWebsterChristmasFlyer",
   "AmandaWebsterTherapies": "AmandaWebsterTherapies",
   "ArcLabs": "ArcLabs",
   "AutumnLonging": "AutumnLonging",
@@ -240,6 +248,7 @@ export const PortfolioItemKeys = {
   "Clive": "Clive",
   "CloseUp": "CloseUp",
   "CopperHollowSocials": "CopperHollowSocials",
+  "CreateFest": "CreateFest",
   "CrocsComeAsYouAre": "CrocsComeAsYouAre",
   "CrocsHolidayRush": "CrocsHolidayRush",
   "Croctober": "Croctober",
@@ -254,6 +263,7 @@ export const PortfolioItemKeys = {
   "FlightOfTheNightLights": "FlightOfTheNightLights",
   "Floras": "Floras",
   "Flumph": "Flumph",
+  "FortuneTellerFOE": "FortuneTellerFOE",
   "Frogging": "Frogging",
   "FutureHomes": "FutureHomes",
   "GetSnuffed": "GetSnuffed",
@@ -279,6 +289,7 @@ export const PortfolioItemKeys = {
   "Mushman": "Mushman",
   "NightSky": "NightSky",
   "NoOneKnowsAnything": "NoOneKnowsAnything",
+  "Oddbox": "Oddbox",
   "Overwhelmed": "Overwhelmed",
   "PapierCampaign": "PapierCampaign",
   "PlantSale": "PlantSale",
@@ -293,6 +304,7 @@ export const PortfolioItemKeys = {
   "RoastersFestSocials": "RoastersFestSocials",
   "Rose&Crown": "Rose&Crown",
   "SAI": "SAI",
+  "SEAWFullDesign": "SEAWFullDesign",
   "Search": "Search",
   "SimonJax": "SimonJax",
   "SizeTiktok": "SizeTiktok",
@@ -364,6 +376,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "height": 2122,
     "width": 1500
   },
+  "AWTTrifold": {
+    "page": "design",
+    "blurHash": "|KLh3w~WEJX7E1SxW,%29Z9Y%3NHNG%2WnflRjj[0Jxt%2R*oMays;WBs:M|NGs;s:bFxaoMWBoe00IUxus:t7t7j]WBt7xvNGs:s:WVWCoKj[WB?aIoM{t7kCj[RjoLa}Iooes:WBW.RkbFoft79YNGRjayt7s:R*azxu",
+    "imageURL": AWTTrifoldFull,
+    "thumbnailURL": AWTTrifoldThumb,
+    "name": "AWT Trifold",
+    "height": 1834,
+    "width": 1300
+  },
   "Alice": {
     "page": "illustration",
     "blurHash": "|IM@7Q_L%LaL_2WC%L?HxuWAxuoyV[t7NGs:fiof_2IVRjxuM{%LkBj[Rj?aRjV[baae%2R*xaWBS1xaRjWBs:R%afWUof~VNGM|xtR*s:bFRkR*-:f6R*t6M|bFafRjayRkxat6WCoeRjt6WBof%LWBf6oyRkWBWBWBWC",
@@ -381,15 +402,6 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "name": "Alice in Wonderland",
     "height": 2014,
     "width": 1309
-  },
-  "AmandaWebsterChristmasFlyer": {
-    "page": "design",
-    "blurHash": "|35F~|MJ4Ty;Q.%gtlo|pH-;R5NFkWXmxaRjninP8wix%3VtrYafMKjHayc?xFM1bbwKOqt6bvS1umxtJ$RQtkNa%MbbRjH?t7yqR6VFSgrsX8X8IUTI%fs:RjozS}VtjHxaOVs:tkNaxaR*nOt7aeRjx]i_IBxaRPoet7",
-    "imageURL": AmandaWebsterChristmasFlyerFull,
-    "thumbnailURL": AmandaWebsterChristmasFlyerThumb,
-    "name": "Amanda Webster Christmas Flyer",
-    "height": 1418,
-    "width": 1000
   },
   "AmandaWebsterTherapies": {
     "page": "design",
@@ -535,6 +547,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "height": 1980,
     "width": 1980
   },
+  "CreateFest": {
+    "page": "design",
+    "blurHash": "|VPP7d%2?^jv.S-:%h%Ntl-Vj=RPjJWVayWoWVo#iwX8bvw^tQR-aeo0jv-Vkrkpe-WWjYofjEaKyYT0a0nhRPsnW.adWB=yRQSgt6oybbo2t7W;_2nhRQbvRkWVNGoLWVtktQxZWBWXoLWBR*WCtQs+bbR,WBj[oJflV@",
+    "imageURL": CreateFestFull,
+    "thumbnailURL": CreateFestThumb,
+    "name": "CreateFest",
+    "height": 2780,
+    "width": 1304
+  },
   "CrocsComeAsYouAre": {
     "page": "design",
     "blurHash": "|VK.-qzhoLxvsDxvn+xvn+qAjIaybajbkBazf*jbt5j[aybFf7juazfQazx]jba#fkj?j[a{j[jtoxfjayjuf7j@aya|azxvjbayj[juj[a{fkfQoxfjayfQf7juayfQazxvjba{fkjtj[a|j[fQoxj@ayfRf7j[azfRfQ",
@@ -660,6 +681,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "name": "Flumph",
     "height": 2879,
     "width": 2000
+  },
+  "FortuneTellerFOE": {
+    "page": "design",
+    "blurHash": "|BO:^U~TI,yD=x_3-B%M=}00x9M~NHogn+X7IWS100xB$+kDIosmNaIUJ7Nfs;t8tRNZjExaM{xat8Rn%3o|NGs.ofRjkCyqV_x[tjrvRjsDa{s;D$jbkCf4xvn,WCoeof$Qxur]ROx]s;IooKOA00-qbvRiofE1n,ofs:",
+    "imageURL": FortuneTellerFOEFull,
+    "thumbnailURL": FortuneTellerFOEThumb,
+    "name": "Fortune Teller FOE",
+    "height": 1979,
+    "width": 1000
   },
   "Frogging": {
     "page": "illustration",
@@ -886,6 +916,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "height": 2048,
     "width": 2048
   },
+  "Oddbox": {
+    "page": "design",
+    "blurHash": "|CKA$hyD=dvz8^?HHrslxu_NITxu?HMdOYMdofo#-;MxMxNGj[-;tRofRk?bx^xuV@IUMxaet7jZn5V@RjbHtRs:RjWAt7?GRPMxRjx]-;M{RPkC-;o#xv%2IoIURPWBWB%gxaa0M_kWxvozRjV@iIs:I;t7%2M{oJaeoz",
+    "imageURL": OddboxFull,
+    "thumbnailURL": OddboxThumb,
+    "name": "Oddbox",
+    "height": 2804,
+    "width": 900
+  },
   "Overwhelmed": {
     "page": "illustration",
     "blurHash": "|CC#lj-q8{M{9Z8{.8~qRj#nozbvRjNGs:njaytRL$M{t,xutl-;IT9Fs:-VaeIpozbvWBxHozRP=yt7NaRjNGV[s:oyf5idM{g3x]t7oLWBM{RjjHaeWobHj]s:s:WBay%3xuayIUM{n*baxuxubvofjZWBV@Rjfkt7of",
@@ -1011,6 +1050,15 @@ const PortfolioItems: Record<keyof typeof PortfolioItemKeys, PortfolioItem> = {
     "name": "SAI",
     "height": 694,
     "width": 1008
+  },
+  "SEAWFullDesign": {
+    "page": "design",
+    "blurHash": "|HQk:SnT%h?a_2=|xv_3Rj.m%Nn}ITVrozITs,RjOrR6oso}kqX8M_odxu-pozV_V@jXn$ogj[V@VqbaRpoMnio0xvRkRj^*ngRjt8M~R*ofRktR~ps.RjWCE1ozM{V[ofr:R%bcxat7n%xvRja#yCofayfkaeofWBRjae",
+    "imageURL": SEAWFullDesignFull,
+    "thumbnailURL": SEAWFullDesignThumb,
+    "name": "SEAW Full Design",
+    "height": 2428,
+    "width": 1200
   },
   "Search": {
     "page": "design",
